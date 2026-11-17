@@ -1,0 +1,4222 @@
+/* ---------- Fonts ---------- */
+
+@font-face {
+  font-family: "AF Neue Berlin";
+  src: url("assets/fonts/AFNeueBerlin-Medium.woff2") format("woff2"),
+       url("assets/fonts/AFNeueBerlin-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "AF Neue Berlin";
+  src: url("assets/fonts/AFNeueBerlin-MediumItalic.woff2") format("woff2"),
+       url("assets/fonts/AFNeueBerlin-MediumItalic.woff") format("woff");
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "AF Neue Berlin";
+  src: url("assets/fonts/AFNeueBerlin-SemiBold.woff2") format("woff2"),
+       url("assets/fonts/AFNeueBerlin-SemiBold.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "GT America Compressed Black";
+  src: url("assets/fonts/GT-America-Compressed-Black-Trial.otf") format("opentype");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "GT America Compressed Black";
+  src: url("assets/fonts/GT-America-Compressed-Black-Italic-Trial.otf") format("opentype");
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "GT America Compressed";
+  src: url("assets/fonts/GT-America-Compressed-Bold-Trial.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "GT America Compressed";
+  src: url("assets/fonts/GT-America-Compressed-Bold-Italic-Trial.otf") format("opentype");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "GT America Compressed";
+  src: url("assets/fonts/GT-America-Compressed-Light-Trial.otf") format("opentype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "AF Neue Berlin";
+  src: url("assets/fonts/AFNeueBerlin-BoldItalic.woff2") format("woff2");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "GT America Compressed";
+  src: url("assets/fonts/GT-America-Compressed-Medium-Trial.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "GT America Compressed";
+  src: url("assets/fonts/GT-America-Compressed-Medium-Italic-Trial.otf") format("opentype");
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "FT System Grotesk";
+  src: url("assets/fonts/FTSystemTrial-GroteskMedium.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Newsreader";
+  src: url("assets/fonts/Newsreader_14pt-MediumItalic.woff2") format("woff2"),
+       url("assets/fonts/Newsreader_14pt-MediumItalic.ttf") format("truetype");
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Late Serif";
+  src: url("assets/fonts/LateSerif-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ---------- Tokens ---------- */
+
+:root {
+  --ink: #242222;
+  --logo-ink: #21282e;
+  --red-accent: #ec4d3d;
+  --red-wordmark: #ea3826;
+  --grid-line: #e5e1e0;
+  --bg: #fffff7;
+
+  --side-pad: clamp(20px, 5.6vw, 100px);
+  --v-pad: clamp(20px, 3.35vw, 60px);
+}
+
+/* ---------- Reset ---------- */
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "AF Neue Berlin", "Helvetica Neue", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Scroll is locked until the intro's name animation finishes (see index.html). */
+html.scroll-locked,
+html.scroll-locked body {
+  overflow: hidden;
+}
+
+/* Keep the scrollbar's space reserved so unlocking doesn't shift the layout. */
+html {
+  scrollbar-gutter: stable;
+  /* No rubber-band bounce past the top or the footer (it showed a light strip
+     below the dark footer on macOS). */
+  overscroll-behavior-y: none;
+}
+
+/* ---------- Page ---------- */
+
+.page {
+  position: relative;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  /* Clip (not scroll) anything transformed past the page edges, e.g. the red
+     frame reaching the bottom. overflow-x alone made the page its own vertical
+     scroller. hidden is the fallback for browsers without clip. */
+  overflow: hidden;
+  overflow: clip;
+  padding-left: var(--side-pad);
+  padding-right: var(--side-pad);
+}
+
+/* Background vertical grid lines (5 lines / 4 columns) */
+.grid-lines {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: var(--side-pad);
+  right: var(--side-pad);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.grid-lines span {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: var(--grid-line);
+}
+
+.grid-lines span:nth-child(1) { left: 0%; }
+.grid-lines span:nth-child(2) { left: 25%; }
+.grid-lines span:nth-child(3) { left: 50%; }
+.grid-lines span:nth-child(4) { left: 75%; }
+.grid-lines span:nth-child(5) { left: 100%; }
+
+/* ---------- Nav ---------- */
+
+.nav {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: clamp(16px, 4vw, 40px);
+  padding-top: var(--v-pad);
+  flex-wrap: wrap;
+}
+
+.logo img {
+  width: clamp(32px, 2.5vw, 45px);
+  height: auto;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  /* Figma 1:834: four links right-aligned with equal gaps, sized so that
+     PROTOTYPED WITH AI starts on the grid line at 75% and DOWNLOAD RESUME ends
+     on the right edge. The gap is the last quarter of the page (50% of this
+     half-width row) minus the widths of those two labels at 14.6px
+     (148.2 + 142 = 290.2px); below that it falls back to a fixed gap. */
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  width: 50%;
+  column-gap: max(20px, calc(50% - 290.2px));
+  row-gap: 0;
+  font-family: "AF Neue Berlin";
+  font-weight: 600;
+  font-size: 14.6px;
+  color: var(--red-accent);
+  text-transform: uppercase;
+  text-align: right;
+}
+
+.nav-links a {
+  position: relative;
+}
+
+/* Current page: underlined caps. */
+.nav-links a.is-active .nav-label {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* Hover: only the hovered nav label drops to 20% opacity and shows its 54x69
+   image ('Tejasvi' / 'work' / 'resume'), centred on the word. */
+.nav-label {
+  transition: opacity 0.2s ease;
+}
+
+.nav-links a:hover .nav-label,
+.nav-links a:focus-visible .nav-label {
+  opacity: 0.2;
+}
+
+.nav-hover {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 54px;
+  height: 69px;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.nav-links a:hover .nav-hover,
+.nav-links a:focus-visible .nav-hover {
+  opacity: 1;
+}
+
+.nav-hover img {
+  position: absolute;
+  left: calc(50% + 0.09px);
+  top: calc(50% - 0.66px);
+  max-width: none;
+}
+
+.nav-hover--tejasvi img {
+  width: 47.129px;
+  height: 62.803px;
+  object-fit: cover;
+  transform: translate(-50%, -50%) rotate(9.45deg);
+}
+
+.nav-hover--work img {
+  transform: translate(-50%, -50%) rotate(-4.19deg);
+}
+
+/* Sparkles (Figma 1342:111986), centred on PROTOTYPED WITH AI. */
+.nav-hover--ai img {
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.nav-hover--resume img {
+  left: 0;
+  top: 0;
+}
+
+/* ---------- Hero ---------- */
+
+.hero {
+  position: relative;
+  z-index: 1;
+  flex: 1 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: clamp(48px, 8vw, 100px) 0;
+}
+
+.hero-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(16px, 2vw, 28px);
+}
+
+.hero-visual {
+  --hero-fs: clamp(42px, 14.4vw, 257.74px);
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: calc(var(--hero-fs) * 1.366);
+}
+
+.hero-photo {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  /* Figma 1:840: 583.65 x 352 against the 257.74px title. */
+  width: calc(var(--hero-fs) * 2.2645);
+  height: 100%;
+  overflow: hidden;
+  z-index: 0;
+  pointer-events: none;
+  background: var(--red-wordmark);
+}
+
+.hero-photo-frame {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(1) contrast(1.05);
+  transform: translateY(-100%);
+}
+
+/* First frame sits in place; JS (assets/js/main.js) drives the loop. */
+.hero-photo-frame:first-child {
+  transform: translateY(0%);
+}
+
+/* With JS, the frame starts as a small red block at 15% size; images slide in
+   once the loop starts and the frame then grows to full width. */
+html.js .hero-photo {
+  transform: translate(-50%, -50%) scale(0.15);
+}
+
+html.js .hero-photo-frame:first-child {
+  transform: translateY(-100%);
+}
+
+.hero-title {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: center;
+  /* Figma 1:841: -14.06px tracking and a ~68px gap between the words at 257.74px. */
+  gap: 0 calc(var(--hero-fs) * 0.3);
+  font-family: "GT America Compressed Black";
+  font-weight: 900;
+  font-style: normal;
+  font-size: var(--hero-fs);
+  line-height: 0.88;
+  letter-spacing: -0.0545em;
+  color: var(--red-wordmark);
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.hero-title .italic {
+  font-style: italic;
+}
+
+/* Intro sequence — see assets/js/main.js. Elements start hidden only when JS
+   is running (html.js), so the page is fully visible without it. */
+html.js .logo,
+html.js .nav-links a,
+html.js .contact a,
+html.js .hero-title,
+html.js .hero-sub-inner {
+  visibility: hidden;
+}
+
+/* Set by assets/js/main.js when the growing photo frame covers the element.
+   !important beats the inline opacity left by the intro animation. */
+.is-covered {
+  opacity: 0 !important;
+  pointer-events: none;
+}
+
+/* Only after the intro, so this transition doesn't fight the GSAP reveal. */
+html.intro-done .logo,
+html.intro-done .nav-links a,
+html.intro-done .contact a {
+  transition: opacity 0.25s ease;
+}
+
+.hero-title .char {
+  display: inline-block;
+  will-change: transform, opacity;
+}
+
+.hero-sub {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  font-family: "AF Neue Berlin";
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 32px;
+  color: var(--ink);
+}
+
+/* The intro animates this inner wrapper; the scroll sequence fades the outer
+   .hero-sub, so the two never fight over the same element. */
+.hero-sub-inner {
+  display: inline-block;
+}
+
+.hero-sub .italic-conj {
+  font-style: italic;
+}
+
+.hero-sub .link {
+  font-style: italic;
+  color: var(--red-accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* ---------- About (Figma "secondfold") ---------- */
+
+/* Sizes follow the 1792px Figma frame: 34px text on 82px lines, 36px italics —
+   scaled with the viewport and capped at the Figma size. The text block is
+   centred on the red background. */
+.about-intro {
+  --about-fs: clamp(17px, 1.9vw, 34px);
+  position: relative;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* vertical centre */
+  align-items: center; /* horizontal centre; lines stay left-aligned inside */
+  margin-inline: calc(var(--side-pad) * -1);
+  padding-block: clamp(48px, 8vw, 100px);
+  padding-inline: var(--side-pad);
+  background: var(--red-wordmark);
+  color: rgba(255, 255, 255, 0.2);
+  font-family: "FT System Grotesk", "AF Neue Berlin", "Helvetica Neue", Arial, sans-serif;
+  font-weight: 500;
+  font-size: var(--about-fs);
+  letter-spacing: -0.5px; /* both fonts, per Figma */
+}
+
+/* With JS: overlay the pinned hero; the red comes from the grown photo frame. */
+html.js .about-intro {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+  background: none;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.about-text {
+  position: relative;
+  z-index: 1; /* above the Windows 95 desktop */
+  max-width: 100%;
+}
+
+/* Windows 95 desktop (Figma "secondfold3"): replaces the red background while
+   "Microsoft" is hovered. Every size is Figma's (1792 x 1107 frame) times --px,
+   one Figma pixel scaled to the viewport, so the desktop keeps its proportions
+   on any screen. */
+.about-intro {
+  /* One Figma pixel (1792 x 1107 frames) scaled to the viewport. */
+  --px: clamp(0.72px, min(100vw / 1792, 100vh / 1107), 1.25px);
+}
+.win95 {
+  --win95-font: "W95FA", "Microsoft Sans Serif", "MS Sans Serif", Tahoma, Arial, sans-serif;
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  background: url("assets/images/win95/desktop-noise.png") top left / 1024px 1024px, #bccddc;
+  font-family: var(--win95-font);
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0s linear 0.3s;
+}
+.about-intro:has(.about-ms:hover) .win95 {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.3s ease, visibility 0s;
+}
+/* On the desktop the text turns black and the illustrations' red lines black
+   (grayscale + contrast maps the red to black and keeps the white fill). */
+.about-line,
+.about-line-white {
+  transition: color 0.3s ease;
+}
+.about-line-white .about-icon {
+  transition: filter 0.3s ease;
+}
+.about-intro:has(.about-ms:hover) .about-line {
+  color: rgba(0, 0, 0, 0.2);
+}
+.about-intro:has(.about-ms:hover) .about-line-white {
+  color: #000;
+}
+.about-intro:has(.about-ms:hover) .about-line-white .about-icon {
+  filter: grayscale(1) contrast(4);
+}
+/* Villa Savoye photo (Figma "secondfold3", 1:1188): rises in at the bottom
+   right of the red background while "buildings" is hovered. The frame crops
+   the photo exactly as Figma does. */
+.about-building {
+  position: absolute;
+  right: calc(99 * var(--px));
+  bottom: -1px;
+  z-index: 0;
+  width: calc(609 * var(--px));
+  max-width: 80%;
+  aspect-ratio: 609 / 303.075;
+  overflow: hidden;
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(8%);
+  transition: opacity 0.3s ease, transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.about-building img {
+  position: absolute;
+  left: -18.14%;
+  top: -51.99%;
+  width: 137.14%;
+  height: 184.98%;
+  max-width: none;
+}
+.about-intro:has(.about-bld:hover) .about-building {
+  opacity: 1;
+  transform: none;
+}
+/* Runner photo (Figma "secondfold3", 716:94465): rises in at the bottom right
+   edge while "running" is hovered, cropped exactly as Figma does. */
+.about-running {
+  position: absolute;
+  right: 0;
+  bottom: -1px;
+  z-index: 0;
+  width: calc(295 * var(--px));
+  aspect-ratio: 295 / 577;
+  overflow: hidden;
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(8%);
+  transition: opacity 0.3s ease, transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.about-running img {
+  position: absolute;
+  left: -24.41%;
+  top: -24.79%;
+  width: 141.36%;
+  height: 129.48%;
+  max-width: none;
+}
+.about-intro:has(.about-run:hover) .about-running {
+  opacity: 1;
+  transform: none;
+}
+/* The intro section ignores the pointer while pinned; these words still hover. */
+.about-ms,
+.about-bld,
+.about-run {
+  pointer-events: auto;
+  cursor: default;
+}
+.win95 img {
+  max-width: none;
+  image-rendering: pixelated;
+}
+.win95-icons {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: calc(59 * var(--px));
+  margin: 0;
+  padding: calc(60 * var(--px)) calc(42 * var(--px)) calc(42 * var(--px));
+  list-style: none;
+}
+.win95-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: calc(8.91 * var(--px));
+  width: calc(111.379 * var(--px));
+}
+.win95-icon {
+  position: relative;
+  width: calc(47.522 * var(--px));
+  height: calc(47.522 * var(--px));
+  overflow: hidden;
+}
+.win95-icon img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+.win95-icon--folder img {
+  left: -16.07%;
+  top: -16.07%;
+  width: 132.14%;
+  height: 132.14%;
+}
+.win95-icon--network img {
+  top: calc(-2.97 * var(--px));
+}
+.win95-label {
+  width: calc(109.894 * var(--px));
+  color: #060606;
+  font-size: calc(17.821 * var(--px));
+  line-height: normal;
+  text-align: center;
+}
+.win95-taskbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: calc(6.04 * var(--px));
+  padding-bottom: calc(6.04 * var(--px) + env(safe-area-inset-bottom, 0px));
+  background: #c3c3c3;
+  box-shadow: inset calc(1.51 * var(--px)) calc(1.51 * var(--px)) 0 0 #f0f0f0;
+  color: #000;
+}
+.win95-start {
+  display: flex;
+  align-items: center;
+  gap: calc(8.19 * var(--px)); /* logo at 6.04, text at 38.51 */
+  width: calc(90.603 * var(--px));
+  height: calc(37.751 * var(--px));
+  padding-left: calc(6.04 * var(--px));
+  box-sizing: border-box;
+  background: #c3c3c3;
+  font-size: calc(19.63 * var(--px));
+  white-space: nowrap;
+  --b1: calc(1.51 * var(--px));
+  --b2: calc(3.02 * var(--px));
+  box-shadow: inset calc(var(--b1) * -1) calc(var(--b1) * -1) 0 0 #262626,
+    inset var(--b1) var(--b1) 0 0 #f0f0f0,
+    inset calc(var(--b2) * -1) calc(var(--b2) * -1) 0 0 #7e7e7e,
+    inset var(--b2) var(--b2) 0 0 #b1b1b1;
+}
+.win95-start img,
+.win95-clock img {
+  width: calc(24.161 * var(--px));
+  height: calc(24.161 * var(--px));
+}
+.win95-clock {
+  display: flex;
+  align-items: center;
+  gap: calc(7.55 * var(--px));
+  padding: calc(5.285 * var(--px));
+  font-size: calc(18.12 * var(--px));
+  white-space: nowrap;
+  --b1: calc(1.51 * var(--px));
+  box-shadow: inset calc(var(--b1) * -1) calc(var(--b1) * -1) 0 0 #f0f0f0,
+    inset var(--b1) var(--b1) 0 0 #7e7e7e;
+}
+/* Phones: the icons run along the top so they stay clear of the text. */
+@media (max-width: 640px) {
+  .about-intro { --px: 0.85px; }
+  .about-building { right: 16px; }
+  .win95-icons {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 4px;
+    padding: 20px 12px;
+  }
+  .win95-item { width: 25%; }
+  .win95-label { width: 100%; }
+}
+
+/* Lines start at 20% white (Figma "secondfold") and are turned 100% white by
+   the scroll sequence (Figma "secondfold1-3"). The icons are the white Figma
+   versions, dimmed to the same 20%. */
+.about-line {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.2);
+  /* 82 / 34. An absolute value (not unitless) so the larger italic words
+     inherit the same line height instead of stretching their line. */
+  line-height: calc(var(--about-fs) * 2.41);
+}
+
+.about-line em {
+  font-family: "Newsreader", Georgia, serif;
+  font-style: italic;
+  font-weight: 500;
+  font-size: 1.059em; /* 36 / 34 */
+  letter-spacing: -0.5px;
+  line-height: 1; /* the serif's taller metrics must not stretch the line */
+}
+
+.about-line em.u {
+  text-decoration: underline;
+  text-decoration-thickness: from-font;
+  text-underline-position: from-font;
+}
+
+/* Per-letter whitening (assets/js/main.js): a white duplicate of each line sits
+   exactly over the dim one, and its letters pull up into place like the
+   "TEJASVI ARYA" intro. Letters stay inline (relative + top, not transforms) so
+   layout, kerning and the underline match the dim line exactly. */
+.about-line {
+  position: relative;
+  /* Letters are separate spans (for the per-letter reveal), which can't kern or
+     ligate across each other; turned off explicitly so both layers match. */
+  font-kerning: none;
+  font-variant-ligatures: none;
+}
+
+.about-line-white {
+  position: absolute;
+  inset: 0;
+  color: #fff;
+  pointer-events: none;
+  /* Revealed top to bottom: --w (0 -> 1, driven by assets/js/main.js) moves a
+     soft-edged mask down the line. */
+  --edge: 30%;
+  -webkit-mask-image: linear-gradient(to bottom, #000 calc(var(--w, 0) * (100% + var(--edge)) - var(--edge)), transparent calc(var(--w, 0) * (100% + var(--edge))));
+  mask-image: linear-gradient(to bottom, #000 calc(var(--w, 0) * (100% + var(--edge)) - var(--edge)), transparent calc(var(--w, 0) * (100% + var(--edge))));
+}
+
+/* The white copy's icon is the one shown (revealed by the mask with the text);
+   the dim line's icon only holds the space. */
+html.js .about-line > .about-icon {
+  visibility: hidden;
+}
+.about-line-white .about-icon {
+  opacity: 1;
+}
+
+/* Icons: Figma sizes relative to the 34px text. */
+.about-icon {
+  display: inline-block;
+  vertical-align: middle;
+  height: 1.53em; /* 52 / 34 */
+  width: auto;
+  object-fit: contain; /* keeps its shape while its gap opens */
+  margin-block: -1em; /* never stretches the line box, so line spacing stays even */
+  opacity: 0.2; /* dim, like the text (only seen without JS) */
+}
+
+.about-icon--interfaces { height: 1.463em; } /* 49.74 / 34 */
+.about-icon--running { height: 1.471em; } /* 50 / 34 */
+
+@media (max-width: 640px) {
+  .about-intro {
+    --about-fs: clamp(15px, 4.2vw, 20px);
+  }
+
+  .about-line {
+    line-height: calc(var(--about-fs) * 1.9);
+  }
+}
+
+/* ---------- "SCROLL" pills ---------- */
+
+/* A small "↓ SCROLL" hint; each page positions and colours its own. */
+.scroll-pill {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  height: 24px;
+  padding: 6px 10px;
+  border-radius: 80px;
+  font-family: "AF Neue Berlin";
+  font-weight: 600;
+  font-size: 14.2px;
+  line-height: 12px;
+  letter-spacing: 0;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+/* The exported arrow points right; Figma turns it to point down. */
+.scroll-pill-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 10px;
+  height: 12px;
+}
+
+.scroll-pill-arrow img {
+  flex: none;
+  max-width: none;
+  transform: rotate(90deg);
+}
+
+/* About page pill (Figma 174:45825): white on 20% white, under the text's
+   left edge (set by assets/js/main.js), shown on the empty scroll before the
+   work page slides in. */
+.about-scroll {
+  left: var(--side-pad);
+  bottom: clamp(16px, 4.16dvh, 46px); /* 46 / 1107 */
+  z-index: 1;
+  padding-inline: 8px;
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+}
+
+html.js .about-scroll {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* ---------- Work page (Figma "Work", 153:24356) ---------- */
+
+/* Figma frame: 1792 x 1107. Nav on top, a "FEATURED PROJECTS" label and two
+   project cards side by side. Each card is a title, caption, a 736 x 436
+   stage and the stats; the card width (--wk-cw) is the largest that fits
+   both its column and the height left under the label, so the page always
+   fits on screen. Everything vertical scales with the viewport height. */
+.work {
+  /* Card internals (Figma values; trimmed for small screens below). */
+  --wk-pad-y: 23px;
+  --wk-pad-x: 32px;
+  --wk-title-fs: 34px;
+  --wk-title-h: 54px;
+  --wk-cap-fs: 16px;
+  --wk-cap-lh: 26px;
+  --wk-cap-lines: 1;
+  --wk-gap-stage: 20px;
+  --wk-gap-stats: clamp(16px, 5.2dvh - 13px, 44px);
+  --wk-stats-h: 41.6px; /* 15.6 + 4 + 22 */
+  /* Page rhythm: Figma's values at 1107px tall, shrinking faster than the
+     viewport on shorter screens so the cards keep most of the height. */
+  --wk-lh: clamp(26px, 3.87dvh, 42.842px); /* nav + label line height */
+  --wk-gap-label: clamp(12px, 20dvh - 110px, 112px); /* nav -> label */
+  --wk-gap-cards: clamp(8px, 4.2dvh, 46px); /* label -> cards */
+  --wk-gap-bottom: clamp(16px, 23dvh - 125px, 130px); /* cards -> page bottom */
+  --wk-gap: clamp(16px, 2.23vw, 40px); /* between cards */
+
+  --wk-fixed: calc(2 * var(--wk-pad-y) + 2px + var(--wk-title-h) + 4px + var(--wk-cap-lines) * var(--wk-cap-lh) + var(--wk-gap-stage) + var(--wk-gap-stats) + var(--wk-stats-h));
+  --wk-avail: calc(100dvh - var(--v-pad) - 2 * var(--wk-lh) - var(--wk-gap-label) - var(--wk-gap-cards) - var(--wk-gap-bottom));
+  --wk-col: calc((100cqw - var(--wk-gap)) / 2); /* cqw: .work's content box */
+  --wk-cw: max(220px, min(var(--wk-col), (var(--wk-avail) - var(--wk-fixed)) * 736 / 436 + 2 * var(--wk-pad-x) + 2px));
+
+  container-type: inline-size;
+  position: relative;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+  margin-inline: calc(var(--side-pad) * -1);
+  padding: var(--v-pad) var(--side-pad) var(--wk-gap-bottom);
+  overflow: hidden;
+  background: var(--bg);
+}
+
+/* With JS: laid over the pinned page, below it, until it pushes the red page up. */
+html.js .work {
+  position: absolute;
+  inset: 0;
+  min-height: 0;
+  margin: 0;
+  transform: translateY(100%);
+}
+
+.work-grid span {
+  background: #e5e1e0;
+}
+
+.work-nav {
+  position: relative;
+  display: flex;
+  /* Logo and DOWNLOAD RESUME sit where they are in the first fold's nav
+     (top of the row, text centred on the 20px logo); the row keeps its
+     --wk-lh height so the cards below don't move. */
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  min-height: var(--wk-lh);
+}
+
+.work-logo {
+  display: flex;
+  align-items: center;
+  height: 20px;
+}
+
+.work-logo img {
+  width: clamp(32px, 2.5vw, 45px);
+  height: auto;
+}
+
+.work-links,
+.work-label {
+  font-family: "AF Neue Berlin";
+  font-weight: 600;
+  font-size: 16px;
+  line-height: var(--wk-lh);
+  color: var(--red-accent);
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.work-links {
+  display: flex;
+  align-items: center;
+  height: 20px;
+  gap: clamp(16px, 5.4vw, 97px);
+  font-size: 14.6px; /* same as the first fold's nav (Figma 1:834) */
+}
+
+.work-links a {
+  transition: opacity 0.2s ease;
+}
+
+.work-links a:hover,
+.work-links a:focus-visible {
+  opacity: 0.2;
+}
+
+.work-label {
+  position: relative;
+  z-index: 2; /* stays above a grown (hovered) card */
+  margin: var(--wk-gap-label) 0 var(--wk-gap-cards);
+}
+
+/* A row of tiles wider than the page. Without JS it scrolls natively; with
+   JS the page's vertical scroll moves it sideways (assets/js/main.js), so it
+   just runs off the right edge, clipped by .work. */
+.work-cards {
+  position: relative;
+  display: flex;
+  gap: var(--wk-gap);
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.work-cards::-webkit-scrollbar {
+  display: none;
+}
+
+html.js .work-cards {
+  overflow: visible;
+}
+
+.wk-card {
+  display: flex;
+  flex: none;
+  flex-direction: column;
+  width: var(--wk-cw);
+  padding: var(--wk-pad-y) var(--wk-pad-x);
+  border: 1px solid;
+  position: relative;
+}
+
+/* The hovered (grown) card sits above its neighbours. */
+.wk-card.is-hovered {
+  z-index: 1;
+}
+
+.wk-card--share {
+  border-color: #ece2cc;
+  background: #fcf7ec;
+}
+
+.wk-card--drag {
+  border-color: #e5e5ec;
+  background: #f7f7f8;
+}
+
+/* The later tiles have no outline in Figma; a border in the fill colour keeps
+   their stage the same size as the outlined ones. */
+.wk-card--search {
+  border-color: #fbf5f4;
+  background: #fbf5f4;
+}
+
+.wk-card--people {
+  border-color: #edf3f9;
+  background: #edf3f9;
+}
+
+.wk-card--connected {
+  border-color: #fef7f2;
+  background: #fef7f2;
+}
+
+.wk-title {
+  display: flex;
+  align-items: center;
+  height: var(--wk-title-h);
+  margin: 0;
+  font-family: "GT America Compressed", "Helvetica Neue", Arial, sans-serif;
+  font-weight: 700;
+  font-size: var(--wk-title-fs);
+  letter-spacing: -0.052em; /* -1.768 / 34 */
+  color: #333638;
+  text-transform: uppercase;
+  white-space: pre;
+}
+
+/* The later tiles set their titles a touch larger (36 vs 34px) and lighter. */
+.wk-card--search .wk-title,
+.wk-card--people .wk-title,
+.wk-card--connected .wk-title {
+  font-size: calc(var(--wk-title-fs) * 36 / 34);
+  color: #414244;
+}
+
+.wk-title-sep {
+  font-weight: 300;
+}
+
+/* A card with its own page: the title link covers the whole card. */
+.wk-link::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+}
+
+.wk-caption {
+  margin: 4px 0 0;
+  font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+  font-weight: 500;
+  font-size: var(--wk-cap-fs);
+  line-height: var(--wk-cap-lh);
+  letter-spacing: -0.6px;
+  color: #5a6268;
+  text-wrap: pretty;
+}
+
+.wk-stage {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 736 / 436;
+  margin-top: var(--wk-gap-stage);
+  overflow: hidden;
+}
+
+/* The stage's contents at Figma's 736 x 436, scaled by --k (assets/js/main.js). */
+.wk-scene {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 736px;
+  height: 436px;
+  transform: scale(var(--k, 1));
+  transform-origin: 0 0;
+  font-family: "Segoe UI Variable Text", "Segoe UI", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.9);
+  letter-spacing: 0;
+}
+
+/* Background images are portrait and turned a quarter in Figma; the box is
+   the rotated (landscape) bounds, the image sits centred in it, then turns. */
+.wk-bg {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wk-bg img {
+  flex: none;
+  object-fit: cover;
+}
+
+.wk-bg--share {
+  left: -7px;
+  top: -13px;
+  width: 747px;
+  height: 560px;
+}
+
+.wk-bg--share img {
+  width: 560px;
+  height: 747px;
+  transform: rotate(-90deg);
+}
+
+.wk-bg--drag {
+  left: -14px;
+  top: -2px;
+  width: 785px;
+  height: 442px;
+}
+
+.wk-bg--drag img {
+  width: 442px;
+  height: 785px;
+  transform: rotate(90deg);
+  opacity: 0.375;
+}
+
+/* Drag and drop tile: the drop tray (Figma 798:121588), centred on the stage. */
+.dd-tray {
+  position: absolute;
+  left: 42px;
+  top: 149.06px;
+  width: 651.219px;
+  height: 138.877px;
+  /* power3.out, like the card grow. The box grows rather than the tray being
+     scaled: a transform would isolate the shell's luminosity blend and turn
+     the tray grey. Only the contents (no blend) are scaled. */
+  transition-property: left, top, width, height;
+  transition-duration: 0.5s;
+  transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+/* Hovering the Drag and drop card grows the tray 8% about its centre. */
+@media (hover: hover) and (pointer: fine) {
+  .wk-card--drag:hover .dd-tray {
+    left: 15.951px;
+    top: 143.505px;
+    width: 703.317px;
+    height: 149.987px;
+  }
+
+  .wk-card--drag:hover .dd-content {
+    transform: scale(1.08);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dd-tray,
+  .dd-content {
+    transition: none;
+  }
+}
+
+.dd-shell,
+.dd-shadow,
+.dd-stroke {
+  position: absolute;
+  inset: 0.938px;
+  border-radius: 7px;
+}
+
+.dd-shell {
+  background: rgba(243, 243, 243, 0.9);
+  /* Acrylic: takes the wallpaper's colour, keeps the grey's lightness. */
+  mix-blend-mode: luminosity;
+  -webkit-backdrop-filter: blur(28.151px);
+  backdrop-filter: blur(28.151px);
+}
+
+.dd-shadow {
+  background: #fff;
+  mix-blend-mode: multiply;
+  opacity: 0.4;
+  box-shadow: 0 30.027px 60.055px rgba(0, 0, 0, 0.19), 0 1.877px 19.705px rgba(0, 0, 0, 0.15);
+}
+
+.dd-stroke {
+  border: 0.938px solid rgba(117, 117, 117, 0.4);
+}
+
+.dd-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 13.137px;
+  padding: 13.137px;
+  transform-origin: 0 0;
+  transition: transform 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.dd-targets {
+  display: flex;
+  align-items: center;
+  gap: 3.753px;
+  height: 80.699px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.dd-target {
+  display: flex;
+  flex: none;
+  flex-direction: column;
+  align-items: center;
+  gap: 3.753px;
+  width: 84.452px;
+  height: 80.699px;
+  padding: 11.26px 5.63px 3.753px;
+  font-size: 11.26px;
+  line-height: 15.014px;
+  text-align: center;
+}
+
+.dd-icon {
+  position: relative;
+  flex: none;
+  width: 30.027px;
+  height: 30.027px;
+  overflow: hidden;
+}
+
+.dd-icon img {
+  position: absolute;
+  max-width: none;
+}
+
+.dd-divider {
+  position: relative;
+  flex: none;
+  width: 0;
+  height: 65.685px;
+}
+
+.dd-divider img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  max-width: none;
+  transform: translate(-50%, -50%) rotate(90deg);
+}
+
+.dd-hint {
+  display: flex;
+  align-items: center;
+  gap: 5.63px;
+  height: 19.705px;
+  margin: 0;
+  font-size: 13.137px;
+  line-height: 18.767px;
+  color: rgba(0, 0, 0, 0.61);
+  white-space: nowrap;
+}
+
+.dd-hint img {
+  flex: none;
+}
+
+/* AI Search, People and Connected: 2x (3x) exports of Figma's visible stage, so they fill
+   the stage as a plain image, outside the scaled scene. */
+.wk-stage-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Figma shows the drag and drop wallpaper faded over a light cyan; the
+   exported image doesn't carry that, so the stage supplies it (matched
+   against Figma's render). */
+.wk-card--drag .wk-stage {
+  background: #b3e9ff;
+}
+
+.wk-stats {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  gap: 32px;
+  margin-top: var(--wk-gap-stats);
+  font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+  text-align: right;
+}
+
+.wk-stats dl {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin: 0;
+}
+
+.wk-stats dt {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 15.6px;
+  letter-spacing: -0.48px;
+  color: #979fb1;
+}
+
+.wk-stats dd {
+  margin: 0;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 22px;
+  letter-spacing: -0.4px;
+  color: #6a7984;
+}
+
+/* The first two tiles set their figures lighter and darker. */
+.wk-card--share .wk-stats dd,
+.wk-card--drag .wk-stats dd {
+  font-weight: 500;
+  color: #495d6c;
+}
+
+.wk-stats-divider {
+  flex: none;
+  width: 0.6px;
+  height: 39.5px;
+}
+
+/* Work page "SCROLL" pill (Figma 174:45829): red on pale pink, bottom right,
+   on the right grid line. */
+.work-scroll {
+  right: var(--side-pad);
+  bottom: clamp(12px, 2.62dvh, 29px); /* 29 / 1107 */
+  z-index: 2;
+  background: #f7e7e7;
+  color: var(--red-wordmark);
+}
+
+/* Narrower cards: the caption takes two lines. */
+@media (max-width: 1320px) {
+  .work {
+    --wk-cap-lines: 2;
+  }
+}
+
+/* Two narrow cards: the impact line wraps too. */
+@media (max-width: 1000px) {
+  .work {
+    --wk-stats-h: 63.6px;
+  }
+}
+
+/* Phones: one card at a time, with the next one peeking in. */
+@media (max-width: 640px) {
+  .work {
+    --wk-pad-y: 16px;
+    --wk-pad-x: 16px;
+    --wk-title-fs: 26px;
+    --wk-title-h: 38px;
+    --wk-cap-fs: 14px;
+    --wk-cap-lh: 22px;
+    --wk-gap-stage: 14px;
+    --wk-gap-stats: 20px;
+    --wk-stats-h: 55.6px; /* impact wraps to two lines */
+    --wk-gap: 12px;
+    --wk-col: calc(100cqw - 28px);
+  }
+  .work-links {
+    font-size: 14px;
+  }
+  .wk-stats {
+    gap: 16px;
+  }
+  .wk-stats dd {
+    font-size: 13px;
+    line-height: 18px;
+  }
+}
+
+/* Short screens (landscape phones): tighter card, no caption, so the stage
+   keeps what little height there is. */
+@media (max-height: 560px) {
+  .work {
+    --wk-pad-y: 12px;
+    --wk-pad-x: 16px;
+    --wk-title-fs: 24px;
+    --wk-title-h: 32px;
+    --wk-cap-lines: 0;
+    --wk-gap-stage: 10px;
+    --wk-gap-stats: 10px;
+    --wk-stats-h: 44px; /* 14 + 2 + 2 x 14 */
+    --wk-gap-label: 4dvh;
+    --wk-gap-cards: 8px;
+    --wk-gap-bottom: var(--v-pad);
+  }
+  .work-links,
+  .work-label {
+    font-size: 13px;
+  }
+  .wk-caption {
+    display: none;
+  }
+  .wk-stats {
+    gap: 16px;
+  }
+  .wk-stats dl {
+    gap: 2px;
+  }
+  .wk-stats dt {
+    font-size: 11px;
+    line-height: 14px;
+  }
+  .wk-stats dd {
+    font-size: 12px;
+    line-height: 14px;
+  }
+  .wk-stats-divider {
+    height: 30px;
+  }
+}
+
+/* Share sheet (in the Share card's stage): every value is Figma's. */
+.wk-scene img {
+  max-width: none;
+}
+
+.wk-scene ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ss-sheet {
+  position: absolute;
+  left: 116.5px;
+  top: 145px;
+  width: 503px;
+  height: 485px;
+  /* power3.out, like the card grow. Animates top, not transform: a transform
+     would isolate the shell's luminosity blend and turn the sheet grey. */
+  transition: top 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+/* Hovering the Share card lifts the sheet up out of the wallpaper. */
+@media (hover: hover) and (pointer: fine) {
+  .wk-card--share:hover .ss-sheet {
+    top: 97px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ss-sheet {
+    transition: none;
+  }
+}
+
+.ss-shell {
+  position: absolute;
+  inset: 0.953px;
+  overflow: hidden;
+  border: 0.953px solid rgba(117, 117, 117, 0.2);
+  border-radius: 6.671px;
+  background: rgba(243, 243, 243, 0.9);
+  /* Acrylic: takes the wallpaper's colour, keeps the grey's lightness. */
+  mix-blend-mode: luminosity;
+  -webkit-backdrop-filter: blur(28.588px);
+  backdrop-filter: blur(28.588px);
+}
+
+.ss-layer {
+  position: absolute;
+  left: 0.953px;
+  top: 45.74px;
+  width: 501.247px;
+  height: 439.306px;
+  border: 0.953px solid rgba(0, 0, 0, 0.08);
+  border-radius: 0 0 6.671px 6.671px;
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.ss-glyph {
+  display: block;
+  flex: none;
+  color: rgba(0, 0, 0, 0.9);
+}
+
+.ss-titlebar {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 502px;
+  padding-left: 7.624px;
+}
+
+.ss-titlebar-title {
+  display: flex;
+  align-items: center;
+  gap: 15.247px;
+  height: 45.741px;
+  padding-left: 15.247px;
+  font-size: 12.71px;
+  line-height: 18.162px;
+}
+
+.ss-titlebar-actions {
+  display: flex;
+  padding: 4.765px;
+}
+
+.ss-caption-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36.212px;
+  height: 36.212px;
+}
+
+.ss-caption-btn img {
+  width: 22.871px;
+  height: 22.871px;
+}
+
+.ss-body {
+  position: absolute;
+  left: 0;
+  top: 57px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 502px;
+}
+
+.ss-card {
+  position: relative;
+  flex: none;
+  width: 457.412px;
+  height: 53.365px;
+  border: 0.75px solid rgba(0, 0, 0, 0.06);
+  border-radius: 3.812px;
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 1.501px 3.002px 0 rgba(0, 0, 0, 0.04);
+}
+
+.ss-file {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: flex;
+  align-items: center;
+  gap: 7.624px;
+  padding: 5.718px 0 5.718px 5.718px;
+}
+
+.ss-folder {
+  position: relative;
+  width: 41.929px;
+  height: 41.929px;
+}
+
+.ss-folder > * {
+  position: absolute;
+  border: 0.476px solid #edebeb;
+  border-radius: 2.096px;
+}
+
+.ss-folder-back {
+  inset: 0 0 13.64% 13.64%;
+  background: #c3c6c9;
+}
+
+.ss-folder-mid {
+  inset: 6.82%;
+  background: #d9dcdd;
+  opacity: 0.9;
+}
+
+.ss-folder .ss-folder-photo {
+  left: 0;
+  top: 13.64%;
+  width: 86.36%;
+  height: 86.36%;
+  border-color: rgba(243, 243, 243, 0.76);
+  border-radius: 1.845px;
+  object-fit: cover;
+}
+
+.ss-file-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1.9px;
+  width: 158.188px;
+  font-size: 11.435px;
+  line-height: 15.247px;
+}
+
+.ss-file-name {
+  font-weight: 600;
+  color: #323130;
+}
+
+.ss-file-size {
+  color: rgba(0, 0, 0, 0.61);
+}
+
+.ss-edit {
+  position: absolute;
+  left: 334.49px;
+  top: 11.44px;
+  display: flex;
+  width: 70.518px;
+  height: 30.494px;
+  padding: 0.953px;
+}
+
+.ss-edit-base {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  gap: 7.624px;
+  border: 0.953px solid rgba(0, 0, 0, 0.06);
+  border-radius: 3px;
+  background: rgba(255, 255, 255, 0.7);
+  font-size: 13.34px;
+  line-height: 19.059px;
+}
+
+.ss-copy {
+  position: absolute;
+  left: 411.67px;
+  top: 11.44px;
+  width: 30.494px;
+  height: 30.494px;
+}
+
+.ss-copy img {
+  position: absolute;
+}
+
+.ss-copy-base {
+  left: 0;
+  top: 0;
+}
+
+.ss-copy-icon {
+  left: 25%;
+  top: 25%;
+}
+
+.ss-row {
+  display: flex;
+  justify-content: space-between;
+  width: 457.412px;
+}
+
+.wk-scene .ss-contacts {
+  margin-top: 15.247px;
+}
+
+.ss-tile {
+  position: relative;
+  flex: none;
+  width: 91.482px;
+  height: 93.388px;
+}
+
+.ss-avatar {
+  position: absolute;
+  left: 22.87px;
+  top: 13.34px;
+  width: 45.741px;
+  height: 45.741px;
+  object-fit: cover;
+}
+
+.ss-avatar--round {
+  border-radius: 50%;
+}
+
+.ss-phone {
+  width: 45.393px;
+  height: 45.393px;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.ss-phone-art {
+  position: absolute;
+  left: 7.395px;
+  top: 7.08px;
+  width: 30.49px;
+  height: 30.49px;
+  overflow: hidden;
+}
+
+.ss-phone-art img {
+  position: absolute;
+}
+
+.ss-label {
+  position: absolute;
+  left: 50%;
+  top: 62.89px;
+  width: 85.765px;
+  transform: translateX(-50%);
+  font-size: 11.435px;
+  line-height: 15.247px;
+  text-align: center;
+}
+
+.ss-badge-ring {
+  position: absolute;
+  left: 53.36px;
+  top: 34.3px;
+}
+
+.ss-badge {
+  position: absolute;
+  left: 57.18px;
+  top: 38.12px;
+  width: 15.247px;
+  height: 15.247px;
+  object-fit: cover;
+}
+
+.ss-badge--teams {
+  left: 58.13px;
+  top: 39.07px;
+  width: 13.341px;
+  height: 13.341px;
+}
+
+.ss-divider {
+  display: block;
+  margin-top: 14.294px; /* 3.812 + 11.435 gap, less the line's 0.953 */
+}
+
+.ss-share-with {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 457.412px;
+  height: 34.306px;
+  margin-top: 7.624px;
+  font-weight: 600;
+  font-size: 13.341px;
+  line-height: 19.059px;
+  color: rgba(0, 0, 0, 0.61);
+}
+
+.ss-all-apps {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7.624px;
+  width: 82.906px;
+  height: 20.966px; /* 38.118 less 2 x 8.576 padding */
+  border: 0.953px solid rgba(0, 0, 0, 0.06);
+  border-radius: 3px;
+  background: rgba(255, 255, 255, 0.7);
+  font-weight: 400;
+  font-size: 12.71px;
+  line-height: 18.162px;
+  color: rgba(0, 0, 0, 0.9);
+}
+
+.ss-all-apps .ss-glyph {
+  color: rgba(0, 0, 0, 0.61);
+}
+
+.ss-app {
+  position: absolute;
+  left: 30.49px;
+  top: 24.78px;
+  width: 30.494px;
+  height: 30.494px;
+  object-fit: cover;
+}
+
+.ss-app--teams {
+  left: 29.54px;
+  top: 25.73px;
+}
+
+.ss-app--twitter {
+  width: 29.688px;
+  height: 30.344px;
+}
+
+.ss-nearby {
+  overflow: hidden;
+}
+
+.ss-nearby > *,
+.ss-nearby span img {
+  position: absolute;
+}
+
+.ss-outlook > img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.ss-outlook .ss-outlook-tile {
+  top: 6.25%;
+  height: 87.5%;
+  object-fit: contain;
+  box-shadow: 0 0.762px 1.715px 0 rgba(0, 0, 0, 0.13), 0 0.143px 0.429px 0 rgba(0, 0, 0, 0.11);
+}
+
+.ss-linkedin {
+  background: linear-gradient(#fff, #fff) center / 87.5% 87.5% no-repeat;
+}
+
+.ss-linkedin img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ---------- Footer / contact ---------- */
+
+.contact {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  align-items: center;
+  padding-bottom: var(--v-pad);
+  font-family: "AF Neue Berlin";
+  font-weight: 500;
+  font-size: clamp(12px, 0.9vw, 16px);
+  color: var(--ink);
+  text-align: left;
+}
+
+/* Align each link to the background grid lines (0% / 25% / 50%, Figma 1:845), offset 2px clear of the line */
+.contact a:nth-child(1) {
+  grid-column: 1 / 2;
+  justify-self: start;
+  margin-left: 2px;
+}
+
+.contact a:nth-child(2) {
+  grid-column: 2 / 3;
+  justify-self: start;
+  margin-left: 2px;
+}
+
+.contact a:nth-child(3) {
+  grid-column: 3 / 4;
+  justify-self: start;
+  margin-left: 2px;
+}
+
+.contact a:hover {
+  color: var(--red-accent);
+}
+
+/* ---------- Site footer (Figma "Footer_homepage", 709:94216) ---------- */
+
+/* Laid out on the 1792 x 843 Figma frame: --fu is one Figma pixel scaled to the
+   viewport width, so the footer keeps its proportions on any screen. */
+.site-footer {
+  --fu: calc(100vw / 1792);
+  --sf-line: #303030;
+  position: relative;
+  z-index: 6;
+  height: max(calc(843 * var(--fu)), 420px);
+  margin-inline: calc(var(--side-pad) * -1);
+  overflow: hidden;
+  background: #222;
+  color: #fff;
+  font-family: "AF Neue Berlin";
+  font-size: clamp(12px, 16 * var(--fu), 16px);
+}
+
+/* With JS: pinned to the bottom of the page, just below it, until it rises in. */
+html.js .site-footer {
+  position: absolute;
+  inset: auto 0 0;
+  height: min(max(calc(843 * var(--fu)), 420px), 100%);
+  margin: 0;
+  transform: translateY(100%);
+}
+
+/* Four columns on the page grid, each with a soft lighter band that steps
+   down the footer from column to column. */
+.sf-cols {
+  position: absolute;
+  inset: 0 var(--side-pad);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  pointer-events: none;
+}
+
+.sf-cols span {
+  border-right: 1px solid var(--sf-line);
+}
+
+.sf-cols span:nth-child(1) { background: linear-gradient(#222 11.538%, #282a2c 28.365%, #222 41.346%); }
+.sf-cols span:nth-child(2),
+.sf-cols span:nth-child(3) { background: linear-gradient(#222 21.912%, #282a2c 43.213%, #222 66.86%); }
+.sf-cols span:nth-child(4) { background: linear-gradient(#222 48.081%, #282a2c 65.41%, #222 80.754%); }
+
+/* Logo and contact links, one per column. */
+.sf-top {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  align-items: center;
+  padding: var(--v-pad) var(--side-pad) 0;
+  font-weight: 500;
+  line-height: 32px;
+}
+
+.sf-top a,
+.sf-links a {
+  justify-self: start;
+  transition: opacity 0.2s ease;
+}
+
+.sf-top a:hover,
+.sf-top a:focus-visible,
+.sf-links a:hover,
+.sf-links a:focus-visible {
+  opacity: 0.5;
+}
+
+.sf-logo img {
+  display: block;
+  width: clamp(32px, 45 * var(--fu), 45px);
+  height: auto;
+}
+
+/* Page links, stacked in the first column. */
+.sf-links {
+  position: absolute;
+  left: calc(99 * var(--fu));
+  top: max(calc(211 * var(--fu)), 96px);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: clamp(8px, 32 * var(--fu), 32px);
+  font-size: 15.8px;
+  font-weight: 600;
+  line-height: clamp(28px, 42.842 * var(--fu), 42.842px);
+}
+
+/* Pixel art, at the right edge of the last column. */
+.sf-mark {
+  position: absolute;
+  right: calc(101 * var(--fu));
+  top: max(calc(211 * var(--fu)), 96px);
+  width: clamp(48px, 84 * var(--fu), 84px);
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
+
+.sf-mark svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Only the current illustration shows. */
+.sf-mark g[data-s] {
+  display: none;
+}
+
+.sf-mark[data-state="0"] g[data-s="0"],
+.sf-mark[data-state="1"] g[data-s="1"],
+.sf-mark[data-state="2"] g[data-s="2"] {
+  display: inline;
+}
+
+.sf-mark:focus-visible {
+  outline: 1px solid #fff;
+  outline-offset: 4px;
+}
+
+/* The name, spanning the footer along its bottom edge and cropped by it. */
+.sf-name {
+  position: absolute;
+  left: calc(6 * var(--fu));
+  right: calc(22 * var(--fu)); /* last A's glyph runs 22px past its box (tracking) */
+  bottom: -0.179em; /* baseline 19px below the bottom edge, as in Figma */
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  font-family: "GT America Compressed Black";
+  font-size: calc(384.955 * var(--fu));
+  line-height: 1;
+  letter-spacing: -0.0545em; /* -20.9975 / 384.955 */
+  white-space: nowrap;
+  text-transform: uppercase;
+  color: #131314;
+  opacity: 0.46;
+  pointer-events: none;
+  user-select: none;
+}
+
+.sf-name i {
+  font-style: italic;
+}
+
+.sf-t {
+  letter-spacing: -0.0864em; /* -33.2461 / 384.955: T tucks closer to E */
+}
+
+@media (max-width: 640px) {
+  /* Logo on its own row; the three links share the row below. */
+  .site-footer .sf-top {
+    grid-template-columns: repeat(3, auto);
+    justify-content: space-between;
+    row-gap: 12px;
+    padding-inline: var(--side-pad);
+  }
+
+  .sf-logo {
+    grid-column: 1 / -1;
+  }
+
+  .site-footer .sf-cols {
+    inset: 0 var(--side-pad);
+  }
+
+  .site-footer .sf-links {
+    left: var(--side-pad);
+    top: 120px;
+  }
+
+  .site-footer .sf-mark {
+    right: var(--side-pad);
+    top: 120px;
+  }
+}
+
+/* ---------- Case study page (share.html, Figma "Share", 548:11349) ---------- */
+
+/* Everything sits in the 1272px column between the page's outer grid lines
+   (260px margins at 1792). --u is one Figma pixel at the current width, never
+   more than 1px, and drives the vertical rhythm. */
+.cs-page {
+  --u: min(1px, 100vw / 1792);
+  --cs-col: min(1272px, 100vw - 2 * max(16px, 260 * var(--u)));
+  --cs-ink: #212635;
+  --cs-text: #2c3644;
+  --cs-tint: #f0f9ff;
+  font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+  color: var(--cs-text);
+}
+
+/* Header: logo left, links right, on a translucent bar that hides while
+   scrolling down (assets/js/case.js). */
+.cs-nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 6px var(--side-pad);
+  background: rgba(255, 255, 255, 0.6);
+  transition: transform 0.3s ease;
+}
+
+.cs-nav.is-hidden {
+  transform: translateY(-100%);
+}
+
+.cs-logo img {
+  display: block;
+  width: 33px;
+  height: auto;
+}
+
+.cs-nav-links {
+  display: flex;
+  gap: clamp(20px, 64 * var(--u), 64px);
+  font-family: "AF Neue Berlin";
+  font-weight: 600;
+  font-size: 13.6px; /* Figma 1342:118933 */
+  line-height: 42.842px;
+  color: var(--cs-ink);
+  white-space: nowrap;
+}
+
+.cs-nav-links a {
+  transition: opacity 0.2s ease;
+}
+
+.cs-nav-links a:hover,
+.cs-nav-links a:focus-visible {
+  opacity: 0.5;
+}
+
+.cs-nav-links a.is-active {
+  font-style: italic;
+  text-decoration: underline;
+  text-decoration-thickness: from-font;
+  text-underline-position: from-font;
+}
+
+.cs {
+  position: relative;
+  isolation: isolate; /* keeps the grid lines behind the content only */
+  width: var(--cs-col);
+  margin-inline: auto;
+}
+
+/* Five grid lines: the column's edges and quarters. */
+.cs-grid {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.cs-grid span {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: #f0f0f0;
+}
+
+.cs-grid span:nth-child(1) { left: -0.5px; }
+.cs-grid span:nth-child(2) { left: calc(25% - 0.5px); }
+.cs-grid span:nth-child(3) { left: calc(50% - 0.5px); }
+.cs-grid span:nth-child(4) { left: calc(75% - 0.5px); }
+.cs-grid span:nth-child(5) { left: calc(100% - 0.5px); }
+
+.cs img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Short silent autoplay loops (replacing a still image). */
+.cs-loop {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: var(--cs-tint);
+}
+
+.cs-loop--round { border-radius: 8px; }
+
+.cs figure {
+  margin: 0;
+}
+
+/* ---- Type ---- */
+
+.cs-title {
+  margin: calc(140 * var(--u)) 0 0;
+  font-family: "GT America Compressed";
+  font-weight: 700;
+  font-size: max(48px, 78 * var(--u));
+  line-height: 0.967; /* 87 / 90 */
+  letter-spacing: -0.052em;
+  text-transform: uppercase;
+  color: var(--cs-ink);
+}
+
+.cs-title-sep {
+  font-weight: 300;
+}
+
+.cs-label {
+  margin: 0;
+  font-family: "AF Neue Berlin";
+  font-weight: 600;
+  font-size: 14.2px;
+  line-height: 42.842px;
+  color: #7c7d7e;
+}
+
+.cs-h2,
+.cs-h3 {
+  margin: 0;
+  font-family: "GT America Compressed";
+  font-weight: 500;
+  line-height: normal;
+  text-transform: uppercase;
+  color: var(--cs-ink);
+  text-box: trim-both cap alphabetic;
+}
+
+.cs-h2 {
+  font-size: max(32px, 46 * var(--u));
+  letter-spacing: -0.034em; /* -1.632 / 48 */
+}
+
+.cs-h2 i {
+  font-style: italic;
+}
+
+.cs-h2--sm {
+  font-size: max(28px, 42 * var(--u));
+  padding-block: 4.5px; /* centred in Figma's 41px box */
+}
+
+.cs-h3 {
+  display: flex;
+  align-items: center;
+  height: 41px;
+  font-size: 26px;
+  letter-spacing: -0.018em; /* -0.468 / 26 */
+}
+
+.cs-h3--short {
+  height: 23px;
+}
+
+.cs-intro,
+.cs-body {
+  margin: 0;
+  font-weight: 400;
+  font-size: 16.6px;
+  line-height: 1.84;
+  letter-spacing: -0.014em; /* -0.2324 / 16.6 */
+}
+
+.cs-body i,
+.cs-insight-text i {
+  font-weight: 500;
+  font-style: italic;
+}
+
+.cs-caption {
+  margin: 0;
+  font-weight: 500;
+  font-style: italic;
+  font-size: 15.2px;
+  line-height: 1.7;
+  letter-spacing: -0.026em; /* -0.3952 / 15.2 */
+  color: #7d8087;
+}
+
+.cs-caption b {
+  font-weight: 600;
+  color: #212121;
+}
+
+.cs-caption a {
+  color: #2369c4;
+  text-decoration: underline;
+  text-decoration-thickness: from-font;
+  text-underline-position: from-font;
+}
+
+/* Figma text-box widths, so lines break where the design breaks them. */
+.cs-w142 { max-width: 142px; }
+.cs-w250 { max-width: 250px; }
+.cs-w273 { max-width: 273px; }
+.cs-w279 { max-width: 279px; }
+.cs-w291 { max-width: 291px; }
+.cs-w321 { max-width: 321px; }
+.cs-w334 { max-width: 334px; }
+.cs-w359 { max-width: 359px; }
+.cs-w353 { max-width: 353px; }
+.cs-w361 { max-width: 361px; }
+.cs-w364 { max-width: 364px; }
+.cs-w370 { max-width: 370px; }
+.cs-w388 { max-width: 388px; }
+.cs-w394 { max-width: 394px; }
+.cs-w478 { max-width: 478px; }
+.cs-w508 { max-width: 508px; }
+.cs-w514 { max-width: 514px; }
+.cs-w555 { max-width: 555px; }
+
+/* ---- Title, facts, hero ---- */
+
+.cs-facts {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin: calc(48 * var(--u)) 0 0;
+  font-weight: 500;
+}
+
+.cs-facts > div {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding-right: 16px;
+}
+
+.cs-facts dt {
+  font-size: 13.6px;
+  line-height: 15.6px;
+  letter-spacing: -0.48px;
+  color: #55617d;
+}
+
+.cs-facts dd {
+  margin: 0;
+  font-size: 16px;
+  line-height: 26px;
+  letter-spacing: -0.6px;
+  color: #3d3d3d;
+}
+
+.cs-facts .cs-facts-short {
+  line-height: 21px;
+}
+
+.cs-hero {
+  margin-top: calc(42 * var(--u));
+  aspect-ratio: 1272 / 650;
+  background: var(--cs-tint);
+}
+
+/* Vimeo video with our own play/pause button. Markup comes from
+   tools/videotreatment/vimeo-embed.js; --ar is the video's own aspect ratio. */
+.cs-video {
+  position: relative;
+  aspect-ratio: var(--ar, 16 / 9);
+  background: var(--cs-tint);
+}
+
+.cs-video iframe,
+.cs-video video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.cs-video video {
+  display: block;
+  object-fit: cover;
+}
+
+/* Cropped videos (.cs-video--crop): the Vimeo file is 16:9 but the recording
+   inside is narrower (--ar, e.g. 16/10), so Vimeo pillarboxes it. The slot
+   takes the recording's ratio and the player is widened past it so the black
+   bars fall outside (clipped). Used by people.html's Compete study video. */
+.cs-video--crop {
+  --src-ar: calc(16 / 9);
+  overflow: hidden;
+}
+
+.cs-video--crop iframe {
+  width: calc(100% * var(--src-ar) / (var(--ar)));
+  left: 50%;
+  right: auto;
+  transform: translateX(-50%);
+}
+
+/* "Video" pill in the top-left corner; fades out once the video has played. */
+.cs-video-pill {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 0 8px;
+  border-radius: 80px;
+  background: #1f3241;
+  color: #e2fcff;
+  font: 500 16px/1.7 "Inter", sans-serif;
+  letter-spacing: -0.026em;
+  white-space: nowrap;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.cs-video-pill img {
+  width: 10px;
+  height: 10px;
+}
+
+.has-played .cs-video-pill { opacity: 0; }
+
+/* Ambient videos have no button and can't be clicked: they just loop on screen.
+   Rounded so the clip's own small black corners never show (isolation makes
+   Safari clip the iframe to the radius). */
+.cs-video--ambient,
+.cs-feature .cs-video {
+  border-radius: 8px;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.cs-video--ambient iframe { pointer-events: none; }
+
+.cs-video-toggle {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
+
+.cs-video-icon {
+  display: grid;
+  transition: opacity 0.2s ease;
+}
+
+.cs-video-icon img {
+  display: block;
+  width: 83px;
+  height: 55px;
+}
+
+.cs-video-icon .cs-video-pause,
+.is-playing .cs-video-icon .cs-video-play { display: none; }
+.is-playing .cs-video-icon .cs-video-pause { display: block; }
+
+/* While playing, the pause icon only shows on hover or keyboard focus. */
+.is-playing .cs-video-icon { opacity: 0; }
+.is-playing .cs-video-toggle:hover .cs-video-icon,
+.is-playing .cs-video-toggle:focus-visible .cs-video-icon { opacity: 1; }
+
+/* Center-hover videos (.cs-video--center): a click anywhere on the tile still
+   plays/pauses, but while playing the pause icon only shows when the pointer
+   is over the central area (40% x 40% of the tile). */
+.cs-video-hot {
+  display: grid;
+  place-items: center;
+  width: 40%;
+  height: 40%;
+}
+
+.cs-video--center.is-playing .cs-video-toggle:hover .cs-video-icon { opacity: 0; }
+.cs-video--center.is-playing .cs-video-hot:hover .cs-video-icon,
+.cs-video--center.is-playing .cs-video-toggle:focus-visible .cs-video-icon { opacity: 1; }
+
+.cs-placeholder {
+  background: var(--cs-tint);
+}
+
+/* ---- Sections: gaps between them, from the Figma frame ---- */
+
+.cs-section { margin-top: calc(240 * var(--u)); }
+.cs-context { margin-top: calc(160 * var(--u)); }
+.cs-enquiry { margin-top: calc(160 * var(--u)); }
+/* share.html's main sections sit 260px apart. */
+.cs-research,
+.cs-gap,
+.cs-insights,
+.cs-reimagine,
+.cs-validate,
+.cs-solution,
+.cs-impact,
+.cs-features,
+.cs-next-steps { margin-top: calc(260 * var(--u)); }
+/* Re-imagining video to "VALIDATING USER INTENT": 280px. */
+.cs-validate { margin-top: calc(280 * var(--u)); }
+.cs-improved { margin-top: calc(140 * var(--u)); }
+.cs-next { margin-top: calc(120 * var(--u)); }
+
+/* Section header: label, then the title with an optional intro beside it. */
+.cs-head {
+  margin-bottom: calc(24 * var(--u));
+}
+
+.cs-head--context,
+.cs-reimagine .cs-head,
+.cs-next-steps .cs-head {
+  margin-bottom: calc(36 * var(--u));
+}
+
+/* Validating user intent: 40px from the text to the images. */
+.cs-head--validate { margin-bottom: calc(40 * var(--u)); }
+
+.cs-features .cs-head {
+  margin-bottom: calc(64 * var(--u));
+}
+
+.cs-head-row {
+  display: grid;
+  grid-template-columns: calc(637 / 1272 * 100%) 1fr;
+  align-items: start;
+}
+
+.cs-head--context .cs-intro { max-width: 420px; } /* 5 lines */
+.cs-head--validate .cs-intro { max-width: 503px; }
+
+.cs-head--lg .cs-intro {
+  max-width: 433px;
+}
+
+.cs-enquiry .cs-h3 {
+  margin-bottom: 4px;
+}
+
+/* ---- User research ---- */
+
+.cs-research-grid {
+  display: grid;
+  grid-template-columns: 637fr 631fr;
+  gap: calc(4 / 1272 * 100%);
+}
+
+.cs-research-grid figure {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* The customer video (16:9) fills Figma's 637 x 416 tile so both captions
+   line up: it is scaled to the tile's height and its sides trimmed equally. */
+.cs-research-grid .cs-video {
+  aspect-ratio: 637 / 416;
+  overflow: hidden;
+}
+
+.cs-research-grid .cs-video iframe {
+  left: 50%;
+  right: auto;
+  width: calc(100% * (16 / 9) / (637 / 416));
+  transform: translateX(-50%);
+}
+
+.cs-research-grid .cs-caption {
+  min-height: 65px; /* Figma's caption box */
+}
+
+/* ---- The current gap ---- */
+
+.cs-gap-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  row-gap: calc(46 * var(--u));
+  margin-bottom: calc(80 * var(--u));
+}
+
+.cs-gap-grid article > img {
+  margin-bottom: 12px;
+}
+
+/* Figma's fixed rows: 411 and 453 tall. */
+.cs-gap-grid article {
+  min-height: 411px;
+}
+
+.cs-gap-grid article:nth-child(n + 3) {
+  min-height: 453px;
+}
+
+/* Left-column illustrations are 626 wide in their 636 column. */
+.cs-gap-grid article:nth-child(odd) > img {
+  width: calc(626 / 636 * 100%);
+}
+
+.cs-quote {
+  max-width: 353px;
+  margin: 0;
+  font-weight: 600;
+  font-style: italic;
+  font-size: 18.4px;
+  line-height: 1.66;
+  letter-spacing: -0.024em; /* -0.4416 / 18.4 */
+  color: var(--cs-text);
+}
+
+/* ---- User insights ---- */
+
+.cs-insight {
+  display: grid;
+  grid-template-columns: calc(605 / 1272 * 100%) 1fr;
+  column-gap: calc(32 / 1272 * 100%);
+  align-items: start;
+}
+
+/* Figma 1398:91604: the insight rows sit 32px apart. */
+.cs-insight + .cs-insight {
+  margin-top: calc(32 * var(--u));
+}
+
+.cs-insight-text {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.cs-insight-text--tight {
+  gap: 6px;
+}
+
+.cs-insight-title {
+  min-height: 62px;
+  margin: 0 0 2px; /* 10px to the first paragraph */
+  font-weight: 600;
+  font-size: 18.4px;
+  line-height: 1.6;
+  letter-spacing: -0.02em; /* -0.368 / 18.4 */
+}
+
+/* ---- Re-imagining share ---- */
+
+.cs-reimagine .cs-intro { max-width: 408px; }
+
+.cs-reimagine-img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* ---- Validating / what improved: 2 x 2 figures with captions ---- */
+
+.cs-pairs {
+  display: grid;
+  grid-template-columns: 648fr 624fr;
+  row-gap: 20px;
+}
+
+.cs-pairs figure {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* The left figure is 638 wide with 10px to the right one. */
+.cs-pairs figure:nth-child(odd) > :first-child {
+  width: calc(638 / 648 * 100%);
+}
+
+.cs-validate .cs-pairs {
+  margin-bottom: calc(40 * var(--u));
+}
+
+/* Validating user intent: the share-sheet panels and the result panel are
+   single images (badges included). */
+.cs-validate .cs-pairs img,
+.cs-improved .cs-pairs img,
+.cs-validate-result {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.cs-validate-result {
+  width: 100%;
+}
+
+/* Desktop shot: wallpaper photo (responsive WebP) with the share sheet on top as
+   SVG. The sheet's acrylic surface is CSS so it blurs and tints with the real
+   wallpaper behind it: a backdrop blur plus a 90% #F3F3F3 layer in luminosity
+   blend, as in the Figma "Shell Surface". Figma px over the shot's width (--w). */
+.cs-shot {
+  --k: calc(100cqw / var(--w));
+  position: relative;
+  container-type: inline-size;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.cs-shot > img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.cs-shot-sheet {
+  position: absolute;
+  left: calc(var(--x) * var(--k));
+  top: calc(var(--y) * var(--k));
+  width: calc(var(--sw) * var(--k));
+}
+
+.cs-shot-sheet > img {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.cs-shot-blur,
+.cs-shot-tint {
+  position: absolute;
+  inset: calc(0.93 * var(--k));
+  border-radius: calc(6.496 * var(--k));
+}
+
+.cs-shot-blur {
+  -webkit-backdrop-filter: blur(calc(27.84 * var(--k)));
+  backdrop-filter: blur(calc(27.84 * var(--k)));
+}
+
+.cs-shot-tint {
+  background: rgba(243, 243, 243, 0.9);
+  mix-blend-mode: luminosity;
+  box-shadow: 0 0 0 calc(0.93 * var(--k)) rgba(117, 117, 117, 0.3);
+}
+
+.cs-improved .cs-h3 {
+  margin-bottom: 16px;
+}
+
+/* What improved: captions are 16px and darker than the shared caption
+   (Figma 1406:130815). */
+.cs-improved .cs-caption {
+  font-size: 16px;
+  color: #363f55;
+}
+
+/* ---- The impact ---- */
+
+.cs-impact-row {
+  display: grid;
+  grid-template-columns: calc(318 / 1272 * 100%) 1fr;
+  align-items: start;
+}
+
+/* ---- Features ---- */
+
+.cs-feature .cs-h3 {
+  margin-bottom: 4px;
+}
+
+.cs-feature + .cs-feature {
+  margin-top: 100px;
+}
+
+/* share.html's feature videos sit further apart. */
+.cs-features .cs-feature + .cs-feature {
+  margin-top: 154px;
+}
+
+/* ---- Next steps: slideshow, arrows at the centre left and right ---- */
+
+.cs-slides {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Slides are stacked in one cell; the script pushes the new slide in while
+   the current one is pushed out the other side. */
+.cs-slides-track { display: grid; }
+
+.cs-slides-track img {
+  grid-area: 1 / 1;
+  visibility: hidden;
+  will-change: transform;
+}
+
+.cs-slides-track img.is-active { visibility: visible; }
+
+.cs-arrow {
+  position: absolute;
+  top: 50%;
+  width: max(24px, calc(30 / 1272 * 100%));
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: none;
+  cursor: pointer;
+  transform: translateY(-50%);
+  transition: opacity 0.2s ease;
+}
+
+.cs-arrow:hover { opacity: 0.85; }
+
+.cs-arrow:focus-visible {
+  outline: 2px solid var(--cs-ink);
+  outline-offset: 2px;
+}
+
+.cs-arrow--left { left: calc(16 / 1272 * 100%); }
+.cs-arrow--right { right: calc(16 / 1272 * 100%); }
+
+/* ---- Next projects ---- */
+
+.cs-divider {
+  margin: calc(120 * var(--u)) 0 0;
+  border: 0;
+  border-top: 1px solid #d7d3ce;
+}
+
+.cs-next .cs-h2 {
+  margin-bottom: 42px;
+}
+
+.cs-next-cards {
+  display: grid;
+  grid-template-columns: 638fr 622fr;
+  gap: 12px;
+}
+
+.cs-card {
+  display: flex;
+  flex-direction: column;
+  padding: 23px 32px;
+}
+
+.cs-card--share { background: #fcf7ec; }
+.cs-card--drag { background: #f7f7f8; }
+.cs-card--connected { background: #fef7f2; }
+.cs-card--people,
+.cs-card--search { background: #fbf5f4; }
+
+/* share.html: Drag and drop (625) first, AI search in Windows (635) second;
+   the second card's 574px image runs 1.5px past the card padding on each side (Figma). */
+.cs-next-cards--drag-first { grid-template-columns: 625fr 635fr; }
+.cs-card--people img,
+.cs-card--share img,
+.cs-card--search img { width: calc(100% + 3px); max-width: none; margin: 0 -1.5px; }
+/* dragandrop.html: AI search (625) and People (635); both images fill the
+   card padding exactly (561 and 571px), so no bleed. */
+.cs-card.cs-card--fit img { width: 100%; max-width: 100%; margin: 0; }
+
+.cs-card-title {
+  display: flex;
+  align-items: center;
+  min-height: 54px;
+  margin: 0;
+  font-family: "GT America Compressed";
+  font-weight: 700;
+  font-size: 24px;
+  line-height: normal;
+  letter-spacing: -0.052em; /* -1.248 / 24 */
+  word-spacing: 0.12em; /* Figma sets the spaces in wider fonts */
+  text-transform: uppercase;
+  color: #333638;
+}
+
+.cs-card-text {
+  margin: 4px 0 20px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 26px;
+  letter-spacing: -0.6px;
+  color: #5a6268;
+}
+
+.cs-card img {
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+a.cs-card:hover img,
+a.cs-card:focus-visible img {
+  transform: scale(1.02);
+}
+
+/* The footer follows the page (no pinned page to rise over), 180px below
+   share.html's Next projects cards (dragandrop.html sets its own gap). */
+.cs-page .site-footer {
+  margin: calc(180 * var(--u)) 0 0;
+}
+
+/* ---- Live-text panels: Line of enquiry, the stats and the impact graphic ----
+   Built from the Figma layers so their text stays sharp. Each panel is a size
+   container laid out on its Figma artboard (1272 / 955 wide), so everything
+   scales with the column together. */
+
+.cs .cs-glow {
+  position: absolute;
+  max-width: none;
+  height: auto;
+  pointer-events: none;
+}
+
+/* Line of enquiry (Figma image1, 548:12468) */
+.cs-enq {
+  position: relative;
+  overflow: hidden;
+  container-type: inline-size;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 1272 / 300;
+  background: #eff8fe;
+}
+
+.cs .cs-enq-glow-1 { left: -37.11%; top: -18%; width: 73.51%; }
+.cs .cs-enq-glow-2 { left: 73.04%; top: -117.67%; width: 57.08%; }
+
+.cs-enq-text {
+  position: relative;
+  width: 65.64%; /* 835 / 1272 */
+  margin: 0;
+  font-family: "Late Serif", Georgia, serif;
+  font-size: calc(22.5 * 100cqw / 1272);
+  line-height: 1.77;
+  letter-spacing: -0.0365em; /* -0.822 / 22.5 */
+  text-align: center;
+  color: #323d50;
+}
+
+/* Sans-serif emphasis runs (Inter Medium 22 / 22.5). */
+.cs-enq-em {
+  font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+  font-weight: 500;
+  font-size: 0.978em;
+}
+
+/* Hand-drawn underlines just below the line, each at its Figma length
+   (300 / 320 / 200px at 22px text), so they can run a little past the words. */
+.cs-enq-ul {
+  position: relative;
+  padding-bottom: 0.42em;
+}
+
+.cs-enq-ul::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: var(--ulw);
+  height: 0.23em;
+  background: var(--ul) no-repeat left bottom / 100% 100%;
+}
+
+.cs-enq-ul-1 { --ulw: 13.636em; --ul: url("assets/images/cs-share/live/enquiry-underline-1.svg"); }
+.cs-enq-ul-2 { --ulw: 14.545em; --ul: url("assets/images/cs-share/live/enquiry-underline-2.svg"); }
+.cs-enq-ul-3 { --ulw: 9.091em; --ul: url("assets/images/cs-share/live/enquiry-underline-3.svg"); }
+
+/* The current share falls short (Figma image7, 577:13566) */
+.cs-stats {
+  position: relative;
+  overflow: hidden;
+  container-type: inline-size;
+  aspect-ratio: 1272 / 354;
+  background: linear-gradient(240.59deg, #fffbf7 1.23%, #f5eee9 98.14%);
+  font-family: "Hedvig Letters Serif", Georgia, serif;
+  color: #000;
+}
+
+.cs .cs-stats-glow-1 { left: -25%; top: 11.3%; width: 48.58%; }
+.cs .cs-stats-glow-2 { left: 59.98%; top: -94.35%; width: 67.53%; }
+
+.cs-stats-title {
+  position: absolute;
+  left: 5.97%; /* 76 / 1272 */
+  top: 15.82%; /* 56 / 354 */
+  width: calc(135 * 100cqw / 1272);
+  margin: 0;
+  font-size: calc(17.2 * 100cqw / 1272);
+  line-height: 1.52;
+  letter-spacing: -0.022em;
+  text-box: trim-both cap alphabetic;
+}
+
+.cs-stats-row {
+  display: contents;
+}
+
+/* Each stat is its own 160 x 260 artboard. */
+.cs-stat {
+  position: absolute;
+  top: 13.56%; /* 48 / 354 */
+  width: calc(160 * 100cqw / 1272);
+  aspect-ratio: 160 / 260;
+  container-type: inline-size;
+}
+
+.cs-stat-1 { left: 32.23%; }  /* 410 / 1272 */
+.cs-stat-2 { left: 53.5%; }   /* 680.54 / 1272 */
+.cs-stat-3 { left: 74.73%; }  /* 950.54 / 1272 */
+
+.cs-stat-in {
+  --a: calc(100cqw / 160);
+  position: absolute;
+  inset: 0;
+}
+
+.cs-stat-num,
+.cs-stat-cap {
+  position: absolute;
+  right: calc((160 - var(--capw)) * var(--a));
+  margin: 0;
+  text-align: right;
+}
+
+.cs-stat-num {
+  top: 0;
+  font-size: calc(42 * var(--a));
+  line-height: 1.22;
+  letter-spacing: -0.032em;
+  white-space: nowrap;
+}
+
+.cs-stat-num span {
+  margin-left: calc(6 * var(--a));
+  font-size: calc(24 * var(--a));
+}
+
+.cs-stat-cap {
+  top: calc(57.6 * var(--a));
+  width: calc(var(--capw) * var(--a));
+  font-size: calc(13.2 * var(--a));
+  line-height: 1.52;
+  letter-spacing: -0.022em;
+  text-box: trim-both cap alphabetic;
+}
+
+.cs .cs-stat-line {
+  position: absolute;
+  left: calc(var(--line) * var(--a));
+  top: calc(9.94 * var(--a));
+  width: 1px;
+  height: calc(189.33 * var(--a));
+}
+
+.cs-stat-pie {
+  position: absolute;
+  left: calc(var(--pie) * var(--a));
+  top: calc(137.67 * var(--a));
+  width: calc(122.32 * var(--a));
+  aspect-ratio: 1;
+}
+
+.cs .cs-stat-pie img {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.cs .cs-stat-pie .cs-stat-slice { left: 50%; top: 50%; width: 50%; }
+.cs .cs-stat-2 .cs-stat-slice { left: 9.29%; width: 90.71%; }
+
+/* The impact (Figma image17, 706:39046) */
+.cs-impact-panel {
+  position: relative;
+  overflow: hidden;
+  container-type: inline-size;
+  aspect-ratio: 955 / 429;
+  background: linear-gradient(250.75deg, #fffbf7 1.23%, #f5eee9 98.14%);
+  font-family: "Hedvig Letters Serif", Georgia, serif;
+  color: #000;
+}
+
+.cs-impact-texture {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 40.49%; /* 386.67 / 955 */
+  aspect-ratio: 386.67 / 580;
+  transform: rotate(180deg);
+}
+
+.cs .cs-impact-texture img {
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.5;
+}
+
+.cs-impact-texture::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(269.2deg, #f9f4ef 25.39%, rgba(255, 255, 255, 0) 99.32%);
+}
+
+.cs .cs-impact-glow-1 { left: -36.54%; top: -16.32%; width: 64.71%; }
+.cs .cs-impact-glow-2 { left: 59.79%; top: -69.93%; width: 100.52%; }
+
+.cs-impact-text {
+  position: absolute;
+  left: 8.17%; /* 78 / 955 */
+  top: 13.05%; /* 56 / 429 */
+  width: calc(375 * 100cqw / 955);
+  margin: 0;
+  font-size: calc(18 * 100cqw / 955);
+  line-height: 1.72;
+  letter-spacing: -0.012em;
+}
+
+.cs-impact-text em {
+  font-style: normal;
+  color: #e24a2e;
+}
+
+/* The bars and their labels: an 812 x 135 artboard. */
+.cs-impact-bars {
+  position: absolute;
+  left: 8.17%;
+  top: 47.32%; /* 203 / 429 */
+  width: calc(812 * 100cqw / 955);
+  aspect-ratio: 812 / 135;
+  container-type: inline-size;
+}
+
+.cs-impact-bars-in {
+  --a: calc(100cqw / 812);
+  position: absolute;
+  inset: 0;
+}
+
+.cs-bar {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: calc(134.42 * var(--a));
+  overflow: hidden;
+}
+
+.cs-bar--112 {
+  width: calc(704 * var(--a));
+  background: linear-gradient(to right, #b97f7f, #e93823);
+}
+
+.cs-bar--18 {
+  width: calc(234.99 * var(--a));
+  background: linear-gradient(to right, #ffc4a4, #ff684d);
+}
+
+/* Fine grain over the bars, as in the design. */
+.cs-bar::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.5 0 0 0 0 0.5 0 0 0 0 0.5 0 0 0 0.9 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+  mix-blend-mode: overlay;
+  opacity: 0.55;
+}
+
+.cs-bar-num,
+.cs-bar-users,
+.cs-bar-growth {
+  position: absolute;
+  margin: 0;
+  white-space: nowrap;
+  text-box: trim-both cap alphabetic;
+}
+
+.cs-bar-num {
+  top: calc(44.48 * var(--a));
+  font-size: calc(105.06 * var(--a));
+  line-height: 1.22;
+  letter-spacing: -0.032em;
+  color: #fff;
+}
+
+.cs-bar-num span {
+  margin-left: calc(2.55 * var(--a));
+  font-size: calc(24.17 * var(--a));
+}
+
+.cs-bar-num--18 { left: calc(105.41 * var(--a)); opacity: 0.4; }
+.cs-bar-num--112 { left: calc(456.22 * var(--a)); }
+
+.cs-bar-users,
+.cs-bar-growth {
+  font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+  font-weight: 500;
+  line-height: 1.22;
+  letter-spacing: -0.032em;
+}
+
+.cs-bar-users {
+  left: calc(651.62 * var(--a));
+  top: calc(35.64 * var(--a));
+  font-size: calc(11.63 * var(--a));
+  color: #fff;
+}
+
+.cs-bar-growth {
+  left: calc(720 * var(--a));
+  top: calc(110 * var(--a));
+  font-size: calc(30 * var(--a));
+  color: #fe803d;
+}
+
+.cs-bar-growth span {
+  margin-left: calc(8 * var(--a));
+  font-size: calc(12.6 * var(--a));
+}
+
+/* ---- Narrow screens: one column ---- */
+
+@media (max-width: 800px) {
+  .cs-head-row,
+  .cs-research-grid,
+  .cs-gap-grid,
+  .cs-insight,
+  .cs-pairs,
+  .cs-impact-row,
+  .cs-next-cards {
+    grid-template-columns: 1fr;
+    row-gap: 24px;
+  }
+
+  .cs-head-row {
+    row-gap: 16px;
+  }
+
+
+  .cs-facts {
+    grid-template-columns: 1fr 1fr;
+    row-gap: 20px;
+  }
+
+  .cs-gap-grid article:nth-child(odd) > img,
+  .cs-pairs figure:nth-child(odd) > :first-child {
+    width: 100%;
+  }
+
+  .cs-insight-title,
+  .cs-gap-grid article,
+  .cs-research-grid .cs-caption {
+    min-height: 0;
+  }
+
+  /* Stacked rows keep their wider gap so each image stays with its text. */
+  .cs-insight + .cs-insight {
+    margin-top: calc(72 * var(--u));
+  }
+
+  .cs-section,
+  .cs-context,
+  .cs-enquiry,
+  .cs-solution,
+  .cs-impact,
+  .cs-features,
+  .cs-next-steps,
+  .cs-validate {
+    margin-top: 80px;
+  }
+
+  .cs-improved,
+  .cs-next {
+    margin-top: 56px;
+  }
+
+  .cs-feature + .cs-feature,
+  .cs-features .cs-feature + .cs-feature {
+    margin-top: 48px;
+  }
+
+  .cs-card {
+    padding: 20px;
+  }
+
+  .cs-page .site-footer {
+    margin-top: 80px;
+  }
+
+  /* Live panels reflow so their text keeps a readable size. */
+  .cs-enq,
+  .cs-stats,
+  .cs-impact-panel {
+    aspect-ratio: auto;
+  }
+
+  .cs-enq {
+    padding: 44px 20px;
+  }
+
+  .cs-enq-text {
+    width: 100%;
+    font-size: 17px;
+  }
+
+  .cs-enq-br { display: none; }
+
+  /* Phrases wrap on phones: underline each line of a phrase instead. */
+  .cs-enq-ul {
+    background: var(--ul) no-repeat left bottom / 100% 0.23em;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+  }
+
+  .cs-enq-ul::after { display: none; }
+
+  .cs-stats,
+  .cs-impact-panel {
+    padding: 32px 20px 40px;
+  }
+
+  .cs-stats-title,
+  .cs-impact-text {
+    position: relative;
+    left: auto;
+    top: auto;
+    width: auto;
+    max-width: 340px;
+    font-size: 17px;
+  }
+
+  .cs-stats-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 32px;
+    margin-top: 28px;
+  }
+
+  .cs-stat {
+    position: relative;
+    left: auto;
+    top: auto;
+    width: 160px;
+  }
+
+  .cs-impact-bars {
+    position: relative;
+    left: auto;
+    top: auto;
+    width: 100%;
+    margin-top: 28px;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Four links don't fit on one line next to the logo: let them wrap,
+     right-aligned, onto two shorter lines. */
+  .cs-nav-links {
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 0 16px;
+    font-size: 12px;
+    line-height: 28px;
+  }
+}
+
+/* ---------- Drag and drop case study (dragandrop.html, Figma "Draganddrop", 731:110071) ----------
+   Built on the case study styles above; only what differs is here. */
+
+/* 56px of visible space between the title's letters and "Impact". */
+.dd-facts {
+  margin-top: calc(46 * var(--u));
+}
+
+.dd-hero {
+  margin-top: calc(43 * var(--u));
+}
+
+/* Gaps between sections, from the Figma frame (Draganddrop, 1060:78101), so
+   each section starts where it does there (others use .cs-section's 240). */
+/* 160px of visible space between the hero image and the "CONTEXT" letters. */
+.dd-evolve { margin-top: calc(145 * var(--u)); }
+/* Context and the second Evolving block have 23px / 44px of empty frame below
+   their text in Figma; their gaps add it so the next section lands in place. */
+/* 220px of visible space between the Context text and the "STATISTICS" letters. */
+.dd-usage { margin-top: calc(200 * var(--u)); }
+.dd-hypothesis { margin-top: calc(180 * var(--u)); }
+.dd-explorations { margin-top: calc(240 * var(--u)); } /* 240px below the Design direction panel */
+/* 240px of visible space between the Hypothesis panel and the "DESIGN DIRECTION"
+   letters (the label's capitals sit 16px into its 42.8px line). */
+.dd-direction { margin-top: calc(224 * var(--u)); }
+.dd-demo { margin-top: calc(220 * var(--u)); }
+.dd-problems,
+.dd-impact,
+.dd-media,
+.dd-evolve--2,
+.dd-demo--2 { margin-top: calc(230 * var(--u)); }
+/* 240px of visible space between the last Explorations note and "SOLUTION". */
+.dd-solution { margin-top: calc(216 * var(--u)); }
+/* 190px of visible space between the Evolving text and the "EVOLVING DRAG AND DROP" label
+   (the label is trimmed to its capitals, so the margin is the visible gap). */
+.dd-composer { margin-top: calc(190 * var(--u)); }
+.dd-demo--2 + .cs-divider { margin-top: calc(120 * var(--u)); }
+.dd-page .site-footer { margin-top: calc(180 * var(--u)); }
+
+/* Headers followed by an image: 24px of visible space between the heading's letters and the image. */
+.dd-usage .cs-head,
+.dd-problems .cs-head { margin-bottom: calc(25 * var(--u)); }
+/* The Impact and What people said: a fixed 22px between the heading and the image at every width. */
+.dd-impact .cs-head,
+.dd-media .cs-head { margin-bottom: 22px; }
+
+.dd-hypothesis .cs-h3 { margin-bottom: 4px; }
+
+/* Headers whose content starts further down. */
+.dd-explorations .cs-head { margin-bottom: calc(64 * var(--u)); }
+/* Solution: 56px between the intro text box and the image (Figma 1060:79051). */
+.dd-head-far { margin-bottom: calc(56 * var(--u)); }
+
+/* Figma text-box widths. */
+.dd-w243 { max-width: 243px; }
+.dd-w398 { max-width: 398px; }
+.dd-w405 { max-width: 405px; }
+.dd-w401 { max-width: 401px; }
+.dd-w294 { max-width: 294px; }
+.dd-w481 { max-width: 481px; }
+.dd-w431 { max-width: 431px; line-height: 1.94; }
+
+.dd-intro-lg {
+  max-width: 433px;
+  font-size: 17.8px;
+  letter-spacing: -0.014em; /* -0.2492 / 17.8 */
+}
+
+/* Placeholder boxes at their Figma height (--h) on the 1272 column. */
+.dd-ph {
+  aspect-ratio: 1272 / var(--h);
+}
+
+/* ---- Evolving drag and drop: title left, the story in the right column ---- */
+
+.dd-evolve .cs-head {
+  margin-bottom: 0;
+}
+
+.dd-evolve .cs-head-row {
+  margin-top: 7px;
+}
+
+.dd-story {
+  max-width: 421px;
+}
+
+.dd-story .cs-insight-title {
+  min-height: 0;
+  margin: 24px 0 8px;
+}
+
+.dd-story .dd-story-title--tight {
+  line-height: 1.31;
+}
+
+/* ---- User challenges: image left, text beside it ---- */
+
+.dd-problem {
+  display: grid;
+  grid-template-columns: calc(638 / 1272 * 100%) 1fr;
+  column-gap: 16px;
+  align-items: start;
+}
+
+.dd-problem + .dd-problem {
+  margin-top: 20px;
+}
+
+.dd-problem .cs-insight-title {
+  min-height: 0;
+  margin: 0 0 7px;
+}
+
+/* ---- Hypothesis / impact statement (Figma image1, 742:117850 and 767:118155) ---- */
+
+.dd-belief {
+  position: relative;
+  overflow: hidden;
+  container-type: inline-size;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 1272 / 232;
+  background: #f6fff7;
+}
+
+
+/* Both glows sit at the same place on either panel. */
+.cs .dd-belief-glow-1 { left: -37.11%; top: calc(-54 * 100cqw / 1272); width: 73.51%; }
+.cs .dd-belief-glow-2 { left: 73.03%; top: calc(-353 * 100cqw / 1272); width: 57.08%; }
+
+.dd-belief-text {
+  position: relative;
+  left: calc(-18.5 * 100cqw / 1272);
+  width: 62.81%; /* 799 / 1272 */
+  margin: 0;
+  font-family: "Late Serif", Georgia, serif;
+  font-size: calc(22.5 * 100cqw / 1272);
+  line-height: 1.77;
+  letter-spacing: -0.0365em; /* -0.822 / 22.5 */
+  text-align: center;
+  color: #323d50;
+}
+
+.dd-belief-ul {
+  padding-bottom: 0.42em; /* the hand-drawn underline sits just below the line */
+  font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+  font-weight: 500;
+  font-size: 0.978em; /* 22 / 22.5 */
+  background: url("assets/images/cs-dragdrop/live/hyp-underline.svg") no-repeat left bottom / 100% 0.18em;
+}
+
+/* ---- Design direction: header, then the principles image (Figma 1136:22158) ---- */
+
+.dd-direction .cs-head { margin-bottom: calc(54 * var(--u)); }
+
+/* ---- Explorations: four ideas, each a title, a 1272 x 638 tile and four
+   short notes in two columns (Figma 1069:82745) ---- */
+
+/* Exploration videos: play/pause button (.cs-video), rounded like the loops were. */
+.dd-explore .cs-video {
+  border-radius: 8px;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.dd-explore + .dd-explore {
+  margin-top: 200px;
+}
+
+.cs-h3.dd-explore-title {
+  height: 17px; /* the capitals' height, as in Figma */
+  margin-bottom: 14px;
+  font-size: 24px;
+  letter-spacing: -0.018em; /* -0.432 / 24 */
+}
+
+.dd-explore-notes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-rows: minmax(110px, auto);
+  row-gap: 18px;
+  margin: 30px 0 0;
+  opacity: 0.8;
+}
+
+.dd-explore-notes div {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.dd-explore-notes dt {
+  font-weight: 600;
+  font-size: 15.6px;
+  line-height: 1.6;
+  letter-spacing: -0.02em; /* -0.312 / 15.6 */
+  color: #2c3644;
+}
+
+.dd-explore-notes dd {
+  max-width: calc(var(--w) * 1px);
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.76;
+  letter-spacing: -0.014em; /* -0.21 / 15 */
+  color: #3e4958;
+}
+
+
+.dd-head-wide {
+  display: grid;
+  grid-template-columns: calc(318 / 1272 * 100%) 1fr;
+  align-items: start;
+}
+
+/* Introducing Drop to hold: title in a 316 column, the intro beside it, 54px to the
+   placeholder (Figma 1060:80030). */
+.dd-hold-head {
+  grid-template-columns: calc(316 / 1272 * 100%) 1fr;
+  margin-bottom: calc(54 * var(--u));
+}
+
+/* Its title now sits centred in a 41px box (was 20px), so the letters are 10.5px
+   lower: 220 keeps the same visible gap above as before. */
+.dd-demo.dd-demo--2 { margin-top: calc(220 * var(--u)); }
+@media (max-width: 800px) {
+  .dd-demo.dd-demo--2 { margin-top: 80px; }
+}
+
+/* ---- Universal Composer ---- */
+
+/* Label trimmed to its capitals, 12px to the title, 24px to the video (Figma 1060:79497). */
+.dd-composer-label {
+  margin-bottom: 12px;
+  text-box: trim-both cap alphabetic;
+}
+
+.dd-composer .dd-composer-title {
+  margin-bottom: 24px;
+}
+
+.dd-demo-title {
+  height: 20px;
+  margin-bottom: 12px;
+  letter-spacing: -0.034em; /* -0.884 / 26 */
+}
+
+@media (max-width: 800px) {
+  .dd-problem,
+  .dd-head-wide,
+  .dd-explore-notes {
+    grid-template-columns: 1fr;
+    row-gap: 16px;
+  }
+
+  .dd-explore-notes {
+    grid-auto-rows: auto;
+  }
+
+  .dd-explore + .dd-explore {
+    margin-top: 48px;
+  }
+
+  .dd-evolve,
+  .dd-evolve--2,
+  .dd-impact,
+  .dd-usage,
+  .dd-media,
+  .dd-hypothesis,
+  .dd-direction,
+  .dd-problems,
+  .dd-explorations,
+  .dd-solution,
+  .dd-demo,
+  .dd-demo--2 {
+    margin-top: 80px;
+  }
+
+  .dd-demo--2 + .cs-divider {
+    margin-top: 80px;
+  }
+
+  .dd-page .site-footer {
+    margin-top: 80px;
+  }
+
+  .dd-composer {
+    margin-top: 56px;
+  }
+
+  .dd-evolve .cs-head-row {
+    margin-top: 0;
+  }
+
+  .dd-story .cs-insight-title {
+    margin-top: 24px;
+  }
+
+  .dd-problem + .dd-problem {
+    margin-top: 40px;
+  }
+
+  /* The statement reflows so its text keeps a readable size. */
+  .dd-belief {
+    aspect-ratio: auto;
+    padding: 44px 20px;
+  }
+
+  .dd-belief-text {
+    left: auto;
+    width: 100%;
+    font-size: 17px;
+  }
+
+  .dd-demo-title {
+    height: auto;
+  }
+}
+
+/* ---------- Responsive adjustments ---------- */
+
+/* Too narrow to line PROTOTYPED WITH AI up with the grid: let the row take
+   the space it needs, with a small fixed gap. */
+@media (max-width: 1279px) {
+  .nav-links {
+    width: auto;
+    column-gap: clamp(16px, 2vw, 24px);
+  }
+}
+
+@media (max-width: 900px) {
+  .hero-photo {
+    width: 60%;
+  }
+
+  .nav-links {
+    width: auto;
+    justify-content: flex-end;
+    gap: clamp(16px, 4vw, 40px);
+  }
+}
+
+@media (max-width: 640px) {
+  .nav {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .nav-links {
+    justify-content: center;
+    gap: clamp(14px, 6vw, 28px);
+  }
+
+  .hero-title {
+    gap: 0 clamp(6px, 3vw, 16px);
+  }
+
+  .hero-photo {
+    width: 72%;
+  }
+
+  .contact {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    text-align: center;
+    gap: 10px;
+  }
+
+  .contact a:nth-child(1),
+  .contact a:nth-child(2),
+  .contact a:nth-child(3) {
+    grid-column: 1 / 2;
+    justify-self: center;
+  }
+}
+
+@media (max-height: 560px) {
+  .hero {
+    padding: clamp(24px, 6vh, 60px) 0;
+  }
+
+  .hero-stack {
+    gap: clamp(10px, 2vh, 20px);
+  }
+}
+
+/* ==========================================================================
+   AI Search in Windows case study (search.html, Figma 1151:22289).
+   Built on the shared .cs-* / .dd-* case study styles; gaps are the Figma
+   frame's, box to box, on the 1792 artboard.
+   ========================================================================== */
+
+.sr-facts .sr-facts-wide { grid-column: span 2; }
+.sr-facts .sr-facts-wide dd { max-width: 539px; }
+
+/* Placeholder boxes in the design, at their Figma height (--h) on the 1272 column. */
+.sr-ph {
+  aspect-ratio: 1272 / var(--h);
+  background: #f6fbff;
+}
+
+.sr-hero {
+  margin-top: calc(42 * var(--u));
+  background: #f3fbff;
+}
+
+img.sr-hero {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: none;
+}
+
+.sr-w416 { max-width: 416px; }
+.sr-w466 { max-width: 466px; }
+.sr-w484 { max-width: 484px; }
+
+/* Section gaps */
+.sr-current,
+.sr-pain,
+.sr-deep,
+.sr-people { margin-top: calc(260 * var(--u)); }
+.sr-enable { margin-top: calc(267 * var(--u)); }
+.sr-related { margin-top: calc(296 * var(--u)); }
+
+.sr-current .cs-head-row,
+.sr-enable .cs-head-row { margin-top: 7px; }
+.sr-current .cs-head { margin-bottom: calc(46 * var(--u)); }
+.sr-head-far { margin-bottom: calc(54 * var(--u)); }
+
+/* Current experience: four screenshots in two columns, captions below. */
+.sr-shots {
+  display: grid;
+  grid-template-columns: 648fr 624fr;
+  row-gap: calc(36 * var(--u));
+}
+
+.sr-shots figure {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.sr-shots figure:nth-child(odd) img { width: calc(638 / 648 * 100%); }
+
+/* Pain points */
+.sr-pain-title { margin-bottom: calc(24 * var(--u)); }
+
+/* Feature sections: title in the 318 column, the story beside it. */
+.sr-h3 {
+  font-size: max(24px, 32 * var(--u));
+  letter-spacing: -0.034em; /* -1.088 / 32 */
+}
+
+.sr-feature-head { margin-bottom: calc(52 * var(--u)); }
+
+.sr-text { line-height: 1.94; }
+.sr-text p { margin: 0; }
+.sr-text p + p { margin-top: 1.94em; }
+
+/* Captioned panels below each feature mockup. */
+.sr-panel,
+.sr-panels { margin-top: calc(140 * var(--u)); }
+.sr-panels > .sr-panel:first-child { margin-top: 0; }
+.sr-panels > :is(.sr-panel, .sr-ph) + :is(.sr-panel, .sr-ph) { margin-top: calc(110 * var(--u)); }
+
+.sr-cap {
+  min-height: 0;
+  margin: 0 0 6px;
+  font-size: 16px;
+  color: #2c3644;
+}
+
+.sr-cap--sm {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.6;
+  letter-spacing: -0.02em;
+}
+
+@media (max-width: 800px) {
+  .sr-current,
+  .sr-pain,
+  .sr-enable,
+  .sr-related,
+  .sr-deep,
+  .sr-people { margin-top: 80px; }
+
+  .sr-shots { grid-template-columns: 1fr; row-gap: 24px; }
+  .sr-shots figure:nth-child(odd) img { width: 100%; }
+  .sr-facts .sr-facts-wide { grid-column: auto; }
+
+  .sr-panel,
+  .sr-panels { margin-top: 48px; }
+  .sr-panels > :is(.sr-panel, .sr-ph) + :is(.sr-panel, .sr-ph) { margin-top: 40px; }
+}
+
+/* Vimeo clips whose own frame has rounded corners on black, plus a hairline
+   black strip on the right and bottom: the box takes the clip's corner radius
+   (about 1.05% of its width) and the player is enlarged 2.5% from its centre so
+   the hairlines on every edge fall outside it. isolation makes Safari clip the iframe too. */
+.sr-panel { container-type: inline-size; }
+
+.sr-video {
+  border-radius: 1.05cqw;
+  overflow: hidden;
+  isolation: isolate;
+  background: #e9f0f9;
+}
+
+.sr-video iframe {
+  transform: scale(1.025);
+  transform-origin: 50% 50%;
+}
+
+/* ---- AI Search tile (Figma 165:31645): search panel over the gradient ----
+   Positions are Figma's, on the 736 x 436 stage, as % so they scale with it. */
+.wk-card--search .wk-stage { container-type: inline-size; }
+
+.sa-panel {
+  position: absolute;
+  left: calc(72 / 736 * 100%);
+  top: calc(119.05 * 100cqw / 736);
+  width: calc(580 / 736 * 100%);
+  aspect-ratio: 580 / 353;
+  border: 0.635px solid #cedde9;
+  border-bottom: 0;
+  border-radius: calc(12.698 * 100cqw / 736) calc(12.698 * 100cqw / 736) 0 0;
+  /* Rectangle 2 (40% white) over Rectangle 1 (white gradient, 5.4px backdrop blur). */
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)),
+    linear-gradient(128.74deg, rgba(255, 255, 255, 0.6) 10.917%, rgba(255, 255, 255, 0.4) 96.397%);
+  -webkit-backdrop-filter: blur(calc(5.418 * 100cqw / 736));
+  backdrop-filter: blur(calc(5.418 * 100cqw / 736));
+  overflow: hidden;
+  /* power3.out, like the card grow and the Share tile's sheet. */
+  transition: top 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.sa-panel img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Hovering the card pans the panel up until its bottom sits on the stage's
+   bottom edge (436 - 353 = 83), bringing its last row into view. */
+@media (hover: hover) and (pointer: fine) {
+  .wk-card--search:hover .sa-panel {
+    top: calc(83 * 100cqw / 736);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sa-panel { transition: none; }
+}
+
+/* ==========================================================================
+   People in Universal Composer case study (people.html, Figma 1246:158445).
+   Built on the shared .cs-* / .sr-* case study styles; gaps are the Figma
+   frame's, box to box, on the 1792 artboard.
+   ========================================================================== */
+
+.cs-title i { font-style: italic; }
+
+/* Section gaps */
+.pp-context,
+.pp-research,
+.pp-problem,
+.pp-opp { margin-top: calc(260 * var(--u)); }
+.pp-quote { margin-top: calc(140 * var(--u)); }
+.pp-surface { margin-top: calc(180 * var(--u)); }
+.pp-surface.pp-surface--first { margin-top: calc(230 * var(--u)); }
+.pp-uc { margin-top: calc(280 * var(--u)); }
+.pp-feature { margin-top: calc(240 * var(--u)); }
+
+/* Label 7px above the title row (Figma 43px label box). */
+.pp-head .cs-head-row { margin-top: 7px; }
+
+/* Context: the story beside the title, with small subheads. */
+.pp-story {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  max-width: 424px;
+  color: var(--cs-text);
+}
+
+.pp-story p { margin: 0; }
+
+.pp-story h3 {
+  margin: 0 0 4px;
+  font-weight: 600;
+  font-size: 17.8px;
+  line-height: 1.6;
+  letter-spacing: -0.02em; /* -0.356 / 17.8 */
+}
+
+/* Research: small title, then stacked panels. */
+.pp-h3-sm {
+  height: 17px; /* Figma's text box; the letters sit centred in it */
+  font-size: 24px;
+  letter-spacing: -0.018em; /* -0.432 / 24 */
+  margin-bottom: 24px;
+}
+
+.pp-stack > * + * { margin-top: calc(42 * var(--u)); }
+
+.pp-cap {
+  margin: 0 0 6px;
+  font-weight: 600;
+  font-size: 16.4px;
+  line-height: 1.6;
+  letter-spacing: -0.02em;
+  color: var(--cs-text);
+}
+
+/* Problem and the three Windows surfaces: title, then text in the
+   319 column beside a 953 image. */
+.pp-h3 {
+  height: 41px;
+  font-size: 28px;
+  letter-spacing: -0.034em; /* -0.952 / 28 */
+}
+
+.pp-problem .pp-h3 { margin-bottom: 24px; }
+.pp-surface .pp-h3 { margin-bottom: 16px; }
+
+.pp-split {
+  display: grid;
+  grid-template-columns: calc(319 / 1272 * 100%) 1fr;
+  align-items: start;
+}
+
+.pp-split .cs-body {
+  max-width: 253px;
+  line-height: 1.66;
+  color: var(--cs-text);
+}
+
+.pp-split .cs-body p { margin: 0; }
+.pp-split .cs-body p + p { margin-top: 1.66em; }
+
+/* Opportunity sections: panels 32px below the title. */
+.pp-opp .cs-head { margin-bottom: 32px; }
+.pp-opp .cs-body { max-width: 416px; color: var(--cs-text); }
+.pp-uc .cs-h2 {
+  padding-block: 3.5px; /* centred in Figma's 41px box */
+  margin-bottom: 32px;
+}
+.pp-uc img + img { margin-top: 32px; }
+
+/* Feature rows: title in a 316 column, the line beside it, 42px to the box. */
+.pp-feature-head {
+  display: grid;
+  grid-template-columns: calc(316 / 1272 * 100%) 1fr;
+  align-items: start;
+  margin-bottom: 42px;
+}
+
+.pp-feature-head .cs-h3 { letter-spacing: -0.034em; } /* -0.884 / 26 */
+
+.pp-feature-head .cs-body {
+  max-width: 352px;
+  line-height: 1.94;
+  color: var(--cs-text);
+}
+
+@media (max-width: 800px) {
+  .pp-context,
+  .pp-research,
+  .pp-problem,
+  .pp-opp,
+  .pp-surface,
+  .pp-surface.pp-surface--first,
+  .pp-uc,
+  .pp-feature { margin-top: 80px; }
+  .pp-quote { margin-top: 48px; }
+
+  .pp-split,
+  .pp-feature-head {
+    grid-template-columns: 1fr;
+    row-gap: 16px;
+  }
+
+  .pp-split .cs-body,
+  .pp-feature-head .cs-body { max-width: none; }
+
+  .pp-feature-head .cs-h3,
+  .pp-h3 { height: auto; }
+
+  .pp-feature-head { margin-bottom: 24px; }
+  .pp-stack > * + * { margin-top: 24px; }
+  .pp-uc img + img { margin-top: 16px; }
+}
+
+/* ==========================================================================
+   Work (work.html, Figma 1342:118999) and Prototyped with AI
+   (prototyped-with-ai.html, Figma 1342:111990): a red page title, then
+   rows of project cards (the case studies' .cs-card) or prototype
+   placeholders. Gaps are Figma's on the 1792 artboard.
+   ========================================================================== */
+
+/* Keep the title's top margin inside the page, so the grid lines start right
+   under the header as in Figma instead of at the title. */
+.pg-page .cs {
+  display: flow-root;
+}
+
+.pg-title {
+  /* Figma 1342:119051 / 1342:112041 (102px on request), cap top 141px below the nav.
+     The box is trimmed to the capitals so the gaps below are Figma's. */
+  margin-top: calc(141 * var(--u));
+  font-size: max(48px, 102 * var(--u));
+  line-height: 1;
+  letter-spacing: -0.042em; /* -5.04 / 120 in Figma */
+  text-box: trim-both cap alphabetic;
+  color: #ff3e12;
+}
+
+.pg-list {
+  display: flex;
+  flex-direction: column;
+  gap: calc(82 * var(--u));
+  margin-top: calc(72 * var(--u));
+}
+
+.pg-row {
+  min-height: calc(440 * var(--u));
+}
+
+.pg-list--ai {
+  gap: calc(42 * var(--u));
+}
+
+.pg-ph {
+  aspect-ratio: 1272 / 670;
+  background: #f0f9ff;
+}
+
+.pg-work .site-footer { margin-top: calc(260 * var(--u)); }
+.pg-ai .site-footer { margin-top: calc(290 * var(--u)); }
+
+@media (max-width: 800px) {
+  .pg-list {
+    gap: 24px;
+    margin-top: 32px;
+  }
+
+  .pg-row {
+    min-height: 0;
+  }
+
+  .pg-work .site-footer,
+  .pg-ai .site-footer {
+    margin-top: 120px;
+  }
+}
+
+/* ---- connected.html (Connected Intelligence, Figma 1445:111886) ---- */
+
+/* Confidential-work panel: 1272x700 image 120px below the hero; the note is
+   centred and straddles the panel's bottom edge (top at 689 of 700). */
+.ci-locked { margin-top: calc(120 * var(--u)); }
+.ci-locked img { display: block; width: 100%; height: auto; }
+.ci-locked-note {
+  position: relative;
+  max-width: 1008px;
+  margin: -11px auto 0;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1.84;
+  letter-spacing: -0.014em; /* -0.252 / 18 */
+  color: #2c3644;
+  text-align: center;
+}
+/* The line sits 320px under the note. */
+.ci-page .ci-locked + .cs-divider { margin-top: calc(320 * var(--u)); }
+
+/* Next projects: Share (622, image fills its 558 padding) then Drag and drop
+   (635, its 574px image runs 1.5px past the padding on each side). */
+.cs-next-cards--share-first { grid-template-columns: 622fr 635fr; }
+.cs-card.cs-card--bleed img { width: calc(100% + 3px); max-width: none; margin: 0 -1.5px; }
+
+@media (max-width: 800px) {
+  .ci-locked { margin-top: 40px; }
+  .ci-locked-note { margin-top: 16px; font-size: 16px; }
+  .ci-page .ci-locked + .cs-divider { margin-top: 80px; }
+  .cs-next-cards--share-first { grid-template-columns: 1fr; }
+}
+
+/* ---- work.html cards (Figma 1342:118999) ---- */
+/* People's card is blue on the Work page (#edf3f9); elsewhere it is pink. */
+.pg-work .pg-card--people { background: #edf3f9; }
+/* First row: the impact line, 20px under the image (Figma 1451:125976/125980). */
+.pg-card-impact {
+  margin: 20px 0 0;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 26px;
+  letter-spacing: -0.6px;
+  color: #495d6c;
+}
+.pg-card-impact span {
+  margin-right: 1px; /* 4px gap with the space */
+  letter-spacing: -0.48px;
+  color: #979fb1;
+}
+/* Title caps at 200-275; the first cards sit 92px under the caps (on request). */
+.pg-work .pg-title { margin-top: calc(147 * var(--u)); }
+.pg-work .pg-list { margin-top: calc(92 * var(--u)); }
+@media (max-width: 800px) {
+  .pg-work .pg-list { margin-top: 32px; }
+}
+
+/* ---- ai-prototype.html cards (Figma 1342:111990) ---- */
+/* Title as on the Work page; first card at 366 (91 under the caps), cards
+   120px apart, footer 230px below. */
+.pg-ai .pg-title { margin-top: calc(147 * var(--u)); }
+.pg-ai .pg-list { margin-top: calc(91 * var(--u)); }
+.pg-ai .pg-list--ai { gap: calc(120 * var(--u)); }
+.pg-ai .site-footer { margin-top: calc(230 * var(--u)); }
+
+.pg-proto {
+  display: flex;
+  flex-direction: column;
+  padding: 23px 32px;
+  background: #f5fbff;
+}
+/* Each card takes its project's colour (Figma fills). */
+.pg-proto--share { background: #fcf7ec; }
+.pg-proto--composer { background: #fef7f2; }
+.pg-proto .pg-proto-title { font-size: 30px; }
+.pg-proto .cs-card-text a {
+  color: #326cff;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.pg-proto .cs-card-text a:hover { text-decoration-thickness: 2px; }
+.pg-proto img { display: block; width: 100%; height: auto; }
+/* Hover: the same motion as the Work page tiles (a.cs-card:hover img) - the
+   image grows 2% when the pointer is anywhere on the tile. The image itself
+   links to the tile's prototype, like its "Click here". */
+.pg-proto-shot { display: block; }
+.pg-proto img { transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1); }
+.pg-proto:hover img,
+.pg-proto:focus-within img { transform: scale(1.02); }
+.pg-proto-shot:focus-visible { outline: 2px solid #326cff; outline-offset: 4px; }
+@media (prefers-reduced-motion: reduce) {
+  .pg-proto img { transition: none; }
+}
+.pg-proto-product {
+  margin: 20px 0 0;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 26px;
+  letter-spacing: -0.6px;
+  color: #000;
+}
+
+@media (max-width: 800px) {
+  .pg-ai .pg-list { margin-top: 32px; }
+  .pg-ai .pg-list--ai { gap: 24px; }
+  .pg-ai .site-footer { margin-top: 120px; }
+  .pg-proto { padding: 20px; }
+  .pg-proto .pg-proto-title { font-size: 24px; }
+}

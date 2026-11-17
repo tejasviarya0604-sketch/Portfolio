@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="icon" type="image/png" sizes="22x22" href="assets/icons/favicon.png?v=2" />
+<link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg?v=3" />
+<title>People in Windows — Tejasvi Arya</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;1,500;1,600&family=Hedvig+Letters+Serif:opsz@12..24&display=swap" />
+<link rel="stylesheet" href="styles.css" />
+<script>
+  // Always start at the first fold on reload (no restored scroll position,
+  // and no jump to a #section left in the address bar).
+  if ("scrollRestoration" in history) history.scrollRestoration = "manual";
+  (function () {
+    var nav = performance.getEntriesByType && performance.getEntriesByType("navigation")[0];
+    if (nav && nav.type === "reload" && location.hash) history.replaceState(null, "", location.pathname + location.search);
+  })();
+  window.scrollTo(0, 0);
+</script>
+</head>
+<body class="cs-page dd-page sr-page pp-page">
+
+<!-- Case study: People in Universal Composer (Figma 1246:158445). Built on the
+     shared case study styles (.cs-*, .sr-*); page-specific pieces are .pp-*.
+     Images: assets/images/cs-people (imagetreatment, 2x + 3x exports). -->
+<header class="cs-nav">
+  <a class="cs-logo" href="index.html" aria-label="Tejasvi Arya — home">
+    <img src="assets/icons/logo-red.svg" alt="" width="33" height="14.67" />
+  </a>
+  <nav class="cs-nav-links" aria-label="Primary">
+    <a href="index.html#about">ABOUT ME</a>
+    <a href="work.html" class="is-active" aria-current="page">WORK</a>
+    <a href="ai-prototype.html">PROTOTYPED WITH AI</a>
+    <a href="Tejasvi_Resume.pdf" class="js-resume-link" target="_blank" rel="noopener">DOWNLOAD RESUME</a>
+  </nav>
+</header>
+
+<main class="cs" id="top">
+  <div class="cs-grid" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div>
+
+  <!-- Title and project facts -->
+  <section class="cs-top">
+    <h1 class="cs-title">PEOPLE <i>IN WINDOWS</i></h1>
+    <dl class="cs-facts sr-facts">
+      <div><dt>Product</dt><dd class="cs-facts-short">Windows - Microsoft</dd></div>
+      <div class="sr-facts-wide"><dt>Goal</dt><dd>Bringing people you connect with most right into Windows</dd></div>
+    </dl>
+    <!-- Hero (Figma 1246:158504) -->
+    <img class="sr-hero" src="assets/images/cs-people/hero.webp" srcset="assets/images/cs-people/hero-1272.webp 1272w, assets/images/cs-people/hero-1590.webp 1590w, assets/images/cs-people/hero-1908.webp 1908w, assets/images/cs-people/hero-2099.webp 2099w, assets/images/cs-people/hero-2290.webp 2290w, assets/images/cs-people/hero-2544.webp 2544w, assets/images/cs-people/hero-2798.webp 2798w, assets/images/cs-people/hero-3116.webp 3116w, assets/images/cs-people/hero-3434.webp 3434w, assets/images/cs-people/hero-3816.webp 3816w" sizes="(min-width: 1792px) 1272px, 70.9vw" alt="People in Windows: typing &ldquo;Sarah&rdquo; in Windows search shows Sarah Whitman&rsquo;s contact card with message, video and call actions, her latest group message with trip photos, and related results like her resume" width="1272" height="620" decoding="async" fetchpriority="high" />
+  </section>
+
+  <!-- Context -->
+  <section class="cs-section pp-context">
+    <header class="cs-head pp-head">
+      <p class="cs-label">CONTEXT</p>
+      <div class="cs-head-row">
+        <h2 class="cs-h2"><i>PEOPLE</i> IN WINDOWS</h2>
+        <div class="cs-body pp-story">
+          <p>People in Windows brings the people you talk to into Windows itself. Contacts from apps like WhatsApp and Phone Link come into the OS. In Universal Composer, you type a name, find the right person, and call or message them without opening another app.</p>
+          <div>
+            <h3>My Role</h3>
+            <p>I owned the design for People in Universal Composer. I defined the end-to-end people experience in UC, from interaction to visual design. I worked closely with my PM and engineering partners and aligned the work with the Universal Composer team.</p>
+          </div>
+          <div>
+            <h3>Why it matters</h3>
+            <p>A disconnected ecosystem is the second-biggest reason people leave Windows, and communication is at the center of it. People in Windows closes that gap by bringing the apps people already use into the OS, so reaching someone starts on your PC, not your phone.</p>
+          </div>
+        </div>
+      </div>
+    </header>
+  </section>
+
+  <!-- Quote -->
+  <section class="pp-quote">
+    <img src="assets/images/cs-people/quote.webp" srcset="assets/images/cs-people/quote-1268.webp 1268w, assets/images/cs-people/quote-1272.webp 1272w, assets/images/cs-people/quote-1590.webp 1590w, assets/images/cs-people/quote-1908.webp 1908w, assets/images/cs-people/quote-2099.webp 2099w, assets/images/cs-people/quote-2290.webp 2290w, assets/images/cs-people/quote-2540.webp 2540w, assets/images/cs-people/quote-2544.webp 2544w, assets/images/cs-people/quote-2798.webp 2798w, assets/images/cs-people/quote-3116.webp 3116w, assets/images/cs-people/quote-3434.webp 3434w, assets/images/cs-people/quote-3812.webp 3812w, assets/images/cs-people/quote-3816.webp 3816w" sizes="(min-width: 1792px) 1272px, 70.9vw" alt="Reaching someone shouldn’t begin with finding the right app. People in Windows lets users start with the person and connect directly through the apps they already use." width="1272" height="232" loading="lazy" decoding="async" />
+  </section>
+
+  <!-- Research -->
+  <section class="cs-section pp-research">
+    <h2 class="cs-h3 pp-h3-sm">STATS</h2>
+    <div class="pp-stack">
+      <img src="assets/images/cs-people/ecosystem.webp" srcset="assets/images/cs-people/ecosystem-1268.webp 1268w, assets/images/cs-people/ecosystem-1272.webp 1272w, assets/images/cs-people/ecosystem-1590.webp 1590w, assets/images/cs-people/ecosystem-1908.webp 1908w, assets/images/cs-people/ecosystem-2099.webp 2099w, assets/images/cs-people/ecosystem-2290.webp 2290w, assets/images/cs-people/ecosystem-2540.webp 2540w, assets/images/cs-people/ecosystem-2544.webp 2544w, assets/images/cs-people/ecosystem-2798.webp 2798w, assets/images/cs-people/ecosystem-3116.webp 3116w, assets/images/cs-people/ecosystem-3434.webp 3434w, assets/images/cs-people/ecosystem-3812.webp 3812w, assets/images/cs-people/ecosystem-3816.webp 3816w" sizes="(min-width: 1792px) 1272px, 70.9vw" alt="Connected ecosystem: lack of a seamless ecosystem is the 2nd highest reason for Windows churn. Ecosystem impact 23%, prior device experience 27%, parent brand perception 14%, with smaller factors of 11%, 8%, 7% and 7%. Source: Apple compete topline summary (2025)." width="1272" height="526" loading="lazy" decoding="async" />
+      <img src="assets/images/cs-people/apple-data.webp" srcset="assets/images/cs-people/apple-data-1268.webp 1268w, assets/images/cs-people/apple-data-1272.webp 1272w, assets/images/cs-people/apple-data-1590.webp 1590w, assets/images/cs-people/apple-data-1908.webp 1908w, assets/images/cs-people/apple-data-2099.webp 2099w, assets/images/cs-people/apple-data-2290.webp 2290w, assets/images/cs-people/apple-data-2540.webp 2540w, assets/images/cs-people/apple-data-2544.webp 2544w, assets/images/cs-people/apple-data-2798.webp 2798w, assets/images/cs-people/apple-data-3116.webp 3116w, assets/images/cs-people/apple-data-3434.webp 3434w, assets/images/cs-people/apple-data-3812.webp 3812w, assets/images/cs-people/apple-data-3816.webp 3816w" sizes="(min-width: 1792px) 1272px, 70.9vw" alt="Apple data: connected ecosystem is heavily used by Apple users. Communications 75%, content sharing 60%, continuity 40%, control 30%. Study with 200+ Apple users." width="1272" height="526" loading="lazy" decoding="async" />
+      <div>
+        <h3 class="pp-cap">Compete study</h3>
+        <!-- Compete study video (Vimeo 1247338250), slot Figma 1276:82197 -->
+        <div class="cs-video cs-video--crop" style="--ar: 16 / 10">
+          <iframe src="https://player.vimeo.com/video/1247338250?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;loop=1&amp;controls=0&amp;quality=1080p" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" title="Compete study" allowfullscreen></iframe>
+          <button class="cs-video-toggle" type="button" aria-label="Play video">
+            <span class="cs-video-icon" aria-hidden="true">
+              <img class="cs-video-play" src="assets/images/video/play.svg" width="83" height="55" alt="" />
+              <img class="cs-video-pause" src="assets/images/video/pause.svg" width="83" height="55" alt="" />
+            </span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- The problem -->
+  <section class="cs-section pp-problem">
+    <h2 class="cs-h3 pp-h3">THE PROBLEM</h2>
+    <div class="pp-split">
+      <div class="cs-body"><p>People are central to how Windows is used and how its users communicate. Their habits, workflows and needs shape how they interact with the system, from the apps they rely on to how they collaborate.</p></div>
+      <img src="assets/images/cs-people/problem.webp?v=2" srcset="assets/images/cs-people/problem-949.webp?v=2 949w, assets/images/cs-people/problem-953.webp?v=2 953w, assets/images/cs-people/problem-1191.webp?v=2 1191w, assets/images/cs-people/problem-1430.webp?v=2 1430w, assets/images/cs-people/problem-1572.webp?v=2 1572w, assets/images/cs-people/problem-1715.webp?v=2 1715w, assets/images/cs-people/problem-1902.webp?v=2 1902w, assets/images/cs-people/problem-1906.webp?v=2 1906w, assets/images/cs-people/problem-2097.webp?v=2 2097w, assets/images/cs-people/problem-2335.webp?v=2 2335w, assets/images/cs-people/problem-2573.webp?v=2 2573w, assets/images/cs-people/problem-2855.webp?v=2 2855w, assets/images/cs-people/problem-2859.webp?v=2 2859w" sizes="(max-width: 800px) 70.9vw, (min-width: 1792px) 953px, 53.1vw" alt="People in Windows are largely siloed with individual apps" width="953" height="232" loading="lazy" decoding="async" />
+    </div>
+  </section>
+
+  <!-- Opportunity for Windows -->
+  <section class="cs-section pp-opp">
+    <header class="cs-head pp-head">
+      <div class="cs-head-row">
+        <h2 class="cs-h2">OPPORTUNITY FOR <i>WINDOWS</i></h2>
+        <p class="cs-body">Windows can make connecting and collaborating faster and more natural, by turning each person into a context-rich entity, built from their communication and activity, and bringing it natively into the system.</p>
+      </div>
+    </header>
+    <img src="assets/images/cs-people/opportunity.webp" srcset="assets/images/cs-people/opportunity-1268.webp 1268w, assets/images/cs-people/opportunity-1272.webp 1272w, assets/images/cs-people/opportunity-1590.webp 1590w, assets/images/cs-people/opportunity-1908.webp 1908w, assets/images/cs-people/opportunity-2099.webp 2099w, assets/images/cs-people/opportunity-2290.webp 2290w, assets/images/cs-people/opportunity-2540.webp 2540w, assets/images/cs-people/opportunity-2544.webp 2544w, assets/images/cs-people/opportunity-2798.webp 2798w, assets/images/cs-people/opportunity-3116.webp 3116w, assets/images/cs-people/opportunity-3434.webp 3434w, assets/images/cs-people/opportunity-3812.webp 3812w, assets/images/cs-people/opportunity-3816.webp 3816w" sizes="(min-width: 1792px) 1272px, 70.9vw" alt="Three opportunities. Hydrate contacts from 1P/3P communication apps natively into shell. Improve ranking: bring contact activity to improve ranking and enrich native shell canvases. Enable actions: trigger instant communication and productivity workflows natively in Windows." width="1272" height="280" loading="lazy" decoding="async" />
+  </section>
+
+  <!-- People in File Explorer -->
+  <section class="cs-section pp-surface pp-surface--first">
+    <h2 class="cs-h3 pp-h3">PEOPLE IN FILE EXPLORER</h2>
+    <div class="pp-split">
+      <div class="cs-body">
+        <p>WPC in File Explorer builds on users’ natural association between files and the people they collaborate with.</p>
+        <p>Users can instantly connect (call, message, or email) based on available contact details, without leaving File Explorer.</p>
+      </div>
+      <img src="assets/images/cs-people/file-explorer.webp" srcset="assets/images/cs-people/file-explorer-949.webp 949w, assets/images/cs-people/file-explorer-953.webp 953w, assets/images/cs-people/file-explorer-1191.webp 1191w, assets/images/cs-people/file-explorer-1430.webp 1430w, assets/images/cs-people/file-explorer-1572.webp 1572w, assets/images/cs-people/file-explorer-1715.webp 1715w, assets/images/cs-people/file-explorer-1902.webp 1902w, assets/images/cs-people/file-explorer-1906.webp 1906w, assets/images/cs-people/file-explorer-2097.webp 2097w, assets/images/cs-people/file-explorer-2335.webp 2335w, assets/images/cs-people/file-explorer-2573.webp 2573w, assets/images/cs-people/file-explorer-2855.webp 2855w, assets/images/cs-people/file-explorer-2859.webp 2859w" sizes="(max-width: 800px) 70.9vw, (min-width: 1792px) 953px, 53.1vw" alt="File Explorer home with recent files showing who edited them, and a contact card for Jenny Wilson with call, message and email actions" width="953" height="560" loading="lazy" decoding="async" />
+    </div>
+  </section>
+
+  <!-- People in Windows Search -->
+  <section class="cs-section pp-surface">
+    <h2 class="cs-h3 pp-h3">PEOPLE IN FILE WSB</h2>
+    <div class="pp-split">
+      <div class="cs-body">
+        <p>People in WSB allows users to search for their contacts and initiate communication actions, as well as view communication details, from the hub of Windows.</p>
+        <p>It will also surface activity, common groups, shared media and files, and related profiles.</p>
+      </div>
+      <img src="assets/images/cs-people/wsb.webp" srcset="assets/images/cs-people/wsb-950.webp 950w, assets/images/cs-people/wsb-954.webp 954w, assets/images/cs-people/wsb-1193.webp 1193w, assets/images/cs-people/wsb-1431.webp 1431w, assets/images/cs-people/wsb-1574.webp 1574w, assets/images/cs-people/wsb-1717.webp 1717w, assets/images/cs-people/wsb-1904.webp 1904w, assets/images/cs-people/wsb-1908.webp 1908w, assets/images/cs-people/wsb-2099.webp 2099w, assets/images/cs-people/wsb-2337.webp 2337w, assets/images/cs-people/wsb-2576.webp 2576w, assets/images/cs-people/wsb-2858.webp 2858w, assets/images/cs-people/wsb-2862.webp 2862w" sizes="(max-width: 800px) 70.9vw, (min-width: 1792px) 954px, 53.2vw" alt="The Windows search box with a People tab, showing results for “Mona” and her contact details beside them" width="954" height="560" loading="lazy" decoding="async" />
+    </div>
+  </section>
+
+  <!-- People on the widget board -->
+  <section class="cs-section pp-surface">
+    <h2 class="cs-h3 pp-h3">PEOPLE ON THE WIDGET BOARD</h2>
+    <div class="pp-split">
+      <div class="cs-body"><p>Quickly connect with your top contacts, directly from the desktop.</p></div>
+      <img src="assets/images/cs-people/widgets.webp" srcset="assets/images/cs-people/widgets-949.webp 949w, assets/images/cs-people/widgets-953.webp 953w, assets/images/cs-people/widgets-1191.webp 1191w, assets/images/cs-people/widgets-1430.webp 1430w, assets/images/cs-people/widgets-1572.webp 1572w, assets/images/cs-people/widgets-1715.webp 1715w, assets/images/cs-people/widgets-1902.webp 1902w, assets/images/cs-people/widgets-1906.webp 1906w, assets/images/cs-people/widgets-2097.webp 2097w, assets/images/cs-people/widgets-2335.webp 2335w, assets/images/cs-people/widgets-2573.webp 2573w, assets/images/cs-people/widgets-2855.webp 2855w, assets/images/cs-people/widgets-2859.webp 2859w" sizes="(max-width: 800px) 70.9vw, (min-width: 1792px) 953px, 53.1vw" alt="The Windows widget board with a People widget of top contacts next to weather, news and stocks widgets" width="953" height="560" loading="lazy" decoding="async" />
+    </div>
+  </section>
+
+  <!-- Opportunity for people in UC -->
+  <section class="cs-section pp-uc">
+    <h2 class="cs-h2">OPPORTUNITY FOR <i>PEOPLE</i> IN UC</h2>
+    <img src="assets/images/cs-people/uc-prompts.webp?v=2" srcset="assets/images/cs-people/uc-prompts-1268.webp?v=2 1268w, assets/images/cs-people/uc-prompts-1272.webp?v=2 1272w, assets/images/cs-people/uc-prompts-1590.webp?v=2 1590w, assets/images/cs-people/uc-prompts-1908.webp?v=2 1908w, assets/images/cs-people/uc-prompts-2099.webp?v=2 2099w, assets/images/cs-people/uc-prompts-2290.webp?v=2 2290w, assets/images/cs-people/uc-prompts-2540.webp?v=2 2540w, assets/images/cs-people/uc-prompts-2544.webp?v=2 2544w, assets/images/cs-people/uc-prompts-2798.webp?v=2 2798w, assets/images/cs-people/uc-prompts-3116.webp?v=2 3116w, assets/images/cs-people/uc-prompts-3434.webp?v=2 3434w, assets/images/cs-people/uc-prompts-3812.webp?v=2 3812w, assets/images/cs-people/uc-prompts-3816.webp?v=2 3816w" sizes="(min-width: 1792px) 1272px, 70.9vw" alt="Things people ask about others: “Did Sarah respond to my message about the proposal”, “Call mom”, “Show me the documents Kenny shared”, “Check if anyone from the team has replied to my update”, “Share these images with the design team”, “Find the files Kenny shared with me last week”." width="1272" height="384" loading="lazy" decoding="async" />
+    <img src="assets/images/cs-people/uc-pillars.webp" srcset="assets/images/cs-people/uc-pillars-1268.webp 1268w, assets/images/cs-people/uc-pillars-1272.webp 1272w, assets/images/cs-people/uc-pillars-1590.webp 1590w, assets/images/cs-people/uc-pillars-1908.webp 1908w, assets/images/cs-people/uc-pillars-2099.webp 2099w, assets/images/cs-people/uc-pillars-2290.webp 2290w, assets/images/cs-people/uc-pillars-2540.webp 2540w, assets/images/cs-people/uc-pillars-2544.webp 2544w, assets/images/cs-people/uc-pillars-2798.webp 2798w, assets/images/cs-people/uc-pillars-3116.webp 3116w, assets/images/cs-people/uc-pillars-3434.webp 3434w, assets/images/cs-people/uc-pillars-3812.webp 3812w, assets/images/cs-people/uc-pillars-3816.webp 3816w" sizes="(min-width: 1792px) 1272px, 70.9vw" alt="Three pillars. Find people and their context: quickly locate the right person and access everything connected to them across apps, files, and conversations. Act instantly: share, communicate, and take action with the right people in the moment, without friction or app switching. Stay updated on what matters: keep track of important people and their latest activity without needing to check multiple apps." width="1272" height="280" loading="lazy" decoding="async" />
+  </section>
+
+  <!-- Feature rows (Vimeo videos, Figma 1441:108947) -->
+  <section class="cs-section pp-feature">
+    <header class="pp-feature-head">
+      <h3 class="cs-h3">FIND PEOPLE AND THEIR CONTEXT</h3>
+      <p class="cs-body">Finding someone is really about reconnecting with context. UC brings the right person forward so you can act instantly.</p>
+    </header>
+    <div class="cs-video" style="--ar: 384 / 240">
+      <iframe src="https://player.vimeo.com/video/1247354312?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;loop=1&amp;controls=0&amp;quality=1080p" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" title="Find people and their context" allowfullscreen></iframe>
+      <button class="cs-video-toggle" type="button" aria-label="Play video">
+        <span class="cs-video-icon" aria-hidden="true">
+          <img class="cs-video-play" src="assets/images/video/play.svg" width="83" height="55" alt="" />
+          <img class="cs-video-pause" src="assets/images/video/pause.svg" width="83" height="55" alt="" />
+        </span>
+      </button>
+    </div>
+  </section>
+
+  <section class="cs-section pp-feature">
+    <header class="pp-feature-head">
+      <h3 class="cs-h3">FIND PEOPLE AND THEIR CONTEXT</h3>
+      <p class="cs-body">You remember the file or the person, not where it lives. With just a few keywords, UC brings the right files instantly.</p>
+    </header>
+    <div class="cs-video" style="--ar: 384 / 240">
+      <iframe src="https://player.vimeo.com/video/1247354311?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;loop=1&amp;controls=0&amp;quality=1080p" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" title="Find files by people" allowfullscreen></iframe>
+      <button class="cs-video-toggle" type="button" aria-label="Play video">
+        <span class="cs-video-icon" aria-hidden="true">
+          <img class="cs-video-play" src="assets/images/video/play.svg" width="83" height="55" alt="" />
+          <img class="cs-video-pause" src="assets/images/video/pause.svg" width="83" height="55" alt="" />
+        </span>
+      </button>
+    </div>
+  </section>
+
+  <section class="cs-section pp-feature">
+    <header class="pp-feature-head">
+      <h3 class="cs-h3">ACT INSTANTLY</h3>
+      <p class="cs-body">Sharing is about getting content to the right person. UC brings everything together so you can act instantly.</p>
+    </header>
+    <div class="cs-video" style="--ar: 384 / 240">
+      <iframe src="https://player.vimeo.com/video/1247354318?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;loop=1&amp;controls=0&amp;quality=1080p" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" title="Act instantly" allowfullscreen></iframe>
+      <button class="cs-video-toggle" type="button" aria-label="Play video">
+        <span class="cs-video-icon" aria-hidden="true">
+          <img class="cs-video-play" src="assets/images/video/play.svg" width="83" height="55" alt="" />
+          <img class="cs-video-pause" src="assets/images/video/pause.svg" width="83" height="55" alt="" />
+        </span>
+      </button>
+    </div>
+  </section>
+
+  <section class="cs-section pp-feature">
+    <header class="pp-feature-head">
+      <h3 class="cs-h3">STAY UPDATED ON WHAT MATTERS</h3>
+      <p class="cs-body">While you were away, things happened. UC brings important updates to the top so you can quickly respond.</p>
+    </header>
+    <div class="cs-video" style="--ar: 384 / 240">
+      <iframe src="https://player.vimeo.com/video/1247354314?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;loop=1&amp;controls=0&amp;quality=1080p" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" title="Stay updated on what matters" allowfullscreen></iframe>
+      <button class="cs-video-toggle" type="button" aria-label="Play video">
+        <span class="cs-video-icon" aria-hidden="true">
+          <img class="cs-video-play" src="assets/images/video/play.svg" width="83" height="55" alt="" />
+          <img class="cs-video-pause" src="assets/images/video/pause.svg" width="83" height="55" alt="" />
+        </span>
+      </button>
+    </div>
+  </section>
+
+    <hr class="cs-divider" />
+
+  <!-- Next projects -->
+  <section class="cs-section cs-next">
+    <h2 class="cs-h2 cs-h2--sm">NEXT PROJECTS</h2>
+    <div class="cs-next-cards cs-next-cards--drag-first">
+      <a class="cs-card cs-card--connected cs-card--fit" href="connected.html">
+        <h3 class="cs-card-title">CONNECTED INTELLIGENCE</h3>
+        <p class="cs-card-text">Bring your devices together and unlock new ways with AI</p>
+        <img src="assets/images/cs-people/next-connected-pp.webp" srcset="assets/images/cs-people/next-connected-pp-561.webp 561w, assets/images/cs-people/next-connected-pp-701.webp 701w, assets/images/cs-people/next-connected-pp-842.webp 842w, assets/images/cs-people/next-connected-pp-926.webp 926w, assets/images/cs-people/next-connected-pp-1010.webp 1010w, assets/images/cs-people/next-connected-pp-1122.webp 1122w, assets/images/cs-people/next-connected-pp-1234.webp 1234w, assets/images/cs-people/next-connected-pp-1374.webp 1374w, assets/images/cs-people/next-connected-pp-1515.webp 1515w, assets/images/cs-people/next-connected-pp-1683.webp 1683w" sizes="(max-width: 800px) 70.9vw, (min-width: 1792px) 561px, 31.3vw" alt="" width="561" height="290" loading="lazy" decoding="async" />
+      </a>
+      <a class="cs-card cs-card--share" href="share.html">
+        <h3 class="cs-card-title">SHARE <span class="cs-title-sep">\</span> WINDOWS os</h3>
+        <p class="cs-card-text">Share seamlessly with people, devices, and apps, right from your PC</p>
+        <img src="assets/images/cs-people/next-share-pp.webp" srcset="assets/images/cs-people/next-share-pp-574.webp 574w, assets/images/cs-people/next-share-pp-718.webp 718w, assets/images/cs-people/next-share-pp-861.webp 861w, assets/images/cs-people/next-share-pp-947.webp 947w, assets/images/cs-people/next-share-pp-1033.webp 1033w, assets/images/cs-people/next-share-pp-1148.webp 1148w, assets/images/cs-people/next-share-pp-1263.webp 1263w, assets/images/cs-people/next-share-pp-1406.webp 1406w, assets/images/cs-people/next-share-pp-1550.webp 1550w, assets/images/cs-people/next-share-pp-1722.webp 1722w" sizes="(max-width: 800px) 70.9vw, (min-width: 1792px) 574px, 32vw" alt="" width="574" height="290" loading="lazy" decoding="async" />
+      </a>
+    </div>
+  </section>
+</main>
+
+<!-- Site footer: the same as the homepage (Figma "Footer_homepage", 709:94216). -->
+<footer class="site-footer" id="contact" aria-label="Site footer">
+    <div class="sf-cols" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+
+    <div class="sf-top">
+      <a class="sf-logo" href="index.html" aria-label="Tejasvi Arya — home">
+        <img src="assets/icons/footer-logo.svg" alt="" width="45.0008" height="20" />
+      </a>
+      <a href="mailto:tejasviarya0604@gmail.com">tejasviarya0604@gmail.com</a>
+      <a href="https://www.linkedin.com/in/tejasviarya/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://www.behance.net/tejasviary475e" target="_blank" rel="noopener">Behance</a>
+    </div>
+
+    <nav class="sf-links" aria-label="Footer">
+      <a href="index.html#about">ABOUT ME</a>
+      <a href="work.html">WORK</a>
+      <a href="ai-prototype.html">PROTOTYPED WITH AI</a>
+      <a href="Tejasvi_Resume.pdf" class="js-resume-link" target="_blank" rel="noopener">DOWNLOAD RESUME</a>
+    </nav>
+
+    <!-- Pixel art (Figma frames "27", "11", "28"): each click shows the next, in a loop. -->
+    <button class="sf-mark" type="button" data-state="0" aria-label="Change the pixel art">
+      <svg width="84" height="84" viewBox="0 0 84 84" aria-hidden="true">
+        <g data-s="0"><g fill="#f95b4b"><rect x="34" y="2" width="16" height="16"/><rect x="34" y="66" width="16" height="16"/><rect x="2" y="34" width="16" height="16"/><rect x="66" y="34" width="16" height="16"/></g><g fill="#ff9b64"><rect x="18" y="18" width="16" height="16"/><rect x="18" y="50" width="16" height="16"/><rect x="50" y="18" width="16" height="16"/><rect x="50" y="50" width="16" height="16"/></g></g>
+        <g data-s="1"><g fill="#f95b4b"><rect x="18" y="18" width="16" height="16"/><rect x="18" y="50" width="16" height="16"/><rect x="50" y="18" width="16" height="16"/><rect x="50" y="50" width="16" height="16"/></g><g fill="#ff9b64"><rect x="34" y="34" width="16" height="16"/></g></g>
+        <g data-s="2"><g fill="#ff9b64"><rect x="34" y="18" width="16" height="16"/><rect x="34" y="50" width="16" height="16"/></g><g fill="#f95b4b"><rect x="18" y="34" width="16" height="16"/><rect x="50" y="34" width="16" height="16"/></g></g>
+      </svg>
+    </button>
+
+    <p class="sf-name" aria-hidden="true"><span><span class="sf-t">T</span><i>E</i>JASVI</span><span><i>A</i>RYA</span></p>
+  </footer>
+
+<script src="https://player.vimeo.com/api/player.js"></script>
+<script src="assets/js/case.js"></script>
+</body>
+</html>

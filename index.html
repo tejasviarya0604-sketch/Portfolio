@@ -1,0 +1,435 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="icon" type="image/png" sizes="22x22" href="assets/icons/favicon.png?v=2" />
+<link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg?v=3" />
+<title>Tejasvi Arya — Product Designer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600&display=swap" />
+<link rel="stylesheet" href="styles.css" />
+<script>
+  document.documentElement.classList.add("js");
+  // Always start at the top on reload so the scroll split begins from zero.
+  if ("scrollRestoration" in history) history.scrollRestoration = "manual";
+  window.scrollTo(0, 0);
+  // No scrolling until "TEJASVI ARYA" has animated in; assets/js/main.js calls
+  // unlockScroll() then. The timeout is a safety net if the script never runs.
+  (function () {
+    var root = document.documentElement;
+    var blockTouch = function (e) { e.preventDefault(); };
+    root.classList.add("scroll-locked");
+    document.addEventListener("touchmove", blockTouch, { passive: false });
+    window.unlockScroll = function () {
+      root.classList.remove("scroll-locked");
+      document.removeEventListener("touchmove", blockTouch);
+    };
+    setTimeout(window.unlockScroll, 8000);
+  })();
+</script>
+</head>
+<body>
+<div class="page">
+
+  <div class="grid-lines" aria-hidden="true">
+    <span></span><span></span><span></span><span></span><span></span>
+  </div>
+
+  <header class="nav">
+    <a class="logo" href="#top" aria-label="Tejasvi Arya — home">
+      <img src="assets/icons/logo.svg" alt="" width="45" height="20" />
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#about" class="is-active" aria-current="page">
+        <span class="nav-label">ABOUT ME</span>
+        <span class="nav-hover nav-hover--tejasvi" aria-hidden="true"><img src="assets/icons/nav-hover-tejasvi.png" alt="" /></span>
+      </a>
+      <a href="work.html">
+        <span class="nav-label">WORK</span>
+        <span class="nav-hover nav-hover--work" aria-hidden="true"><img src="assets/icons/nav-hover-work.svg" alt="" width="50.7487" height="47.2098" /></span>
+      </a>
+      <a href="ai-prototype.html">
+        <span class="nav-label">PROTOTYPED WITH AI</span>
+        <span class="nav-hover nav-hover--ai" aria-hidden="true"><img src="assets/icons/nav-hover-ai.svg" alt="" width="42.2751" height="42.2753" /></span>
+      </a>
+      <a href="Tejasvi_Resume.pdf" class="js-resume-link" target="_blank" rel="noopener">
+        <span class="nav-label">DOWNLOAD RESUME</span>
+        <span class="nav-hover nav-hover--resume" aria-hidden="true"><img src="assets/icons/nav-hover-resume.svg" alt="" width="54" height="69" /></span>
+      </a>
+    </nav>
+  </header>
+
+  <main class="hero" id="top">
+    <div class="hero-stack">
+      <div class="hero-visual">
+        <div class="hero-photo">
+          <img src="assets/images/hero/hero-1.webp" srcset="assets/images/hero/hero-1-1398.webp 1398w, assets/images/hero/hero-1-1748.webp 1748w, assets/images/hero/hero-1-2097.webp 2097w, assets/images/hero/hero-1-2307.webp 2307w, assets/images/hero/hero-1-2516.webp 2516w" sizes="100vw" alt="Tejasvi doing acro yoga on a beach — photo 1 of 5" width="1398" height="843" decoding="async" class="hero-photo-frame" />
+          <img src="assets/images/hero/hero-2.webp" srcset="assets/images/hero/hero-2-1398.webp 1398w, assets/images/hero/hero-2-1748.webp 1748w, assets/images/hero/hero-2-2097.webp 2097w, assets/images/hero/hero-2-2307.webp 2307w, assets/images/hero/hero-2-2516.webp 2516w" sizes="100vw" alt="Tejasvi on the battle ropes — photo 2 of 5" width="1398" height="843" decoding="async" class="hero-photo-frame" />
+          <img src="assets/images/hero/hero-3.webp" srcset="assets/images/hero/hero-3-1398.webp 1398w, assets/images/hero/hero-3-1748.webp 1748w, assets/images/hero/hero-3-2097.webp 2097w, assets/images/hero/hero-3-2307.webp 2307w, assets/images/hero/hero-3-2516.webp 2516w" sizes="100vw" alt="Tejasvi walking a slackline — photo 3 of 5" width="1398" height="843" decoding="async" class="hero-photo-frame" />
+          <img src="assets/images/hero/hero-4.webp" srcset="assets/images/hero/hero-4-1398.webp 1398w, assets/images/hero/hero-4-1748.webp 1748w, assets/images/hero/hero-4-2097.webp 2097w, assets/images/hero/hero-4-2307.webp 2307w, assets/images/hero/hero-4-2516.webp 2516w" sizes="100vw" alt="Tejasvi running down an empty road — photo 4 of 5" width="1398" height="843" decoding="async" class="hero-photo-frame" />
+          <img src="assets/images/hero/hero-5.webp" srcset="assets/images/hero/hero-5-1385.webp 1385w, assets/images/hero/hero-5-1731.webp 1731w, assets/images/hero/hero-5-2078.webp 2078w, assets/images/hero/hero-5-2285.webp 2285w, assets/images/hero/hero-5-2493.webp 2493w, assets/images/hero/hero-5-2770.webp 2770w" sizes="100vw" alt="Tejasvi doing a split — photo 5 of 5" width="1385" height="843" decoding="async" class="hero-photo-frame" />
+        </div>
+        <h1 class="hero-title">
+          <span class="word">T<span class="italic">E</span>JASVI</span>
+          <span class="word"><span class="italic">A</span>RYA</span>
+        </h1>
+      </div>
+      <p class="hero-sub">
+        <span class="hero-sub-inner">
+          Product Designer <span class="italic-conj">@</span>
+          <a class="link" href="https://microsoft.com" target="_blank" rel="noopener">Microsoft</a>
+        </span>
+      </p>
+    </div>
+  </main>
+
+  <!-- Second fold (Figma "secondfold"). With JS it sits over the pinned hero and
+       appears once the red frame has filled the page; without JS it's a normal
+       red section below the hero. -->
+  <section class="about-intro" id="about" aria-label="About Tejasvi">
+    <!-- Shown in place of the red background while "Microsoft" is hovered
+         (Figma "secondfold3", a Windows 95 desktop). -->
+    <div class="win95" aria-hidden="true">
+      <ul class="win95-icons">
+        <li class="win95-item"><span class="win95-icon"><img src="assets/images/win95/my-computer.png" alt="" width="32" height="32" /></span><span class="win95-label">My Computer</span></li>
+        <li class="win95-item"><span class="win95-icon"><img src="assets/images/win95/recycle-bin.png" alt="" width="32" height="32" /></span><span class="win95-label">Recycle Bin</span></li>
+        <li class="win95-item"><span class="win95-icon win95-icon--folder"><img src="assets/images/win95/my-folder.png" alt="" width="32" height="32" /></span><span class="win95-label">My Folder</span></li>
+        <li class="win95-item"><span class="win95-icon win95-icon--network"><img src="assets/images/win95/network.png" alt="" width="48" height="48" /></span><span class="win95-label">Network Neighborhood</span></li>
+      </ul>
+      <div class="win95-taskbar">
+        <span class="win95-start"><img src="assets/images/win95/windows-logo.png" alt="" width="32" height="32" />Start</span>
+        <span class="win95-clock"><img src="assets/images/win95/volume.png" alt="" width="16" height="16" /><span class="win95-time">10:32AM</span></span>
+      </div>
+    </div>
+    <!-- Shown on the red background while "buildings" is hovered (Figma "secondfold3", 1:1188). -->
+    <div class="about-building" aria-hidden="true"><img src="assets/images/about/buildings-hover.webp" alt="" width="1264" height="848" /></div>
+    <!-- Shown at the bottom right while "running" is hovered (Figma "secondfold3", 716:94465). -->
+    <div class="about-running" aria-hidden="true"><img src="assets/images/about/running-hover.webp" alt="" width="768" height="1376" /></div>
+    <div class="about-text">
+      <p class="about-line">I used to design <img class="about-icon about-icon--buildings" src="assets/icons/about-buildings.svg" alt="" width="48.886" height="52" /> <em class="about-bld u">buildings</em><em>,</em> Now I design <em>interactions</em>.</p>
+      <p class="about-line">Five years into crafting Windows experiences at <em class="about-ms u">Microsoft</em><em>,</em></p>
+      <p class="about-line">now building with <em>AI.</em> I traded blueprints for <img class="about-icon about-icon--interfaces" src="assets/icons/about-interfaces.svg" alt="" width="35.174" height="49.7388" /> interfaces</p>
+      <p class="about-line">and haven&rsquo;t looked back. When I&rsquo;m not designing, I&rsquo;m usually</p>
+      <p class="about-line"><em class="about-run u">running</em> <img class="about-icon about-icon--running" src="assets/icons/about-running.svg" alt="" width="54" height="50" /> or probably vaulting a wall.</p>
+    </div>
+    <div class="scroll-pill about-scroll" aria-hidden="true">
+      <span class="scroll-pill-arrow"><img src="assets/icons/scroll-arrow-about.svg" alt="" width="12.4" height="10.4" /></span>
+      <span>SCROLL</span>
+    </div>
+  </section>
+
+  <!-- Work page (Figma "Work", 153:24356). With JS it waits off to the right of
+       the pinned page and slides in with one scroll once the about text has
+       turned white; without JS it's a normal section below the about text. -->
+  <section class="work" id="work" aria-labelledby="work-label">
+    <div class="grid-lines work-grid" aria-hidden="true">
+      <span></span><span></span><span></span><span></span><span></span>
+    </div>
+    <header class="work-nav">
+      <a class="work-logo" href="#top" aria-label="Tejasvi Arya — home">
+        <img src="assets/icons/logo.svg" alt="" width="45" height="20" />
+      </a>
+      <nav class="work-links" aria-label="Work">
+        <a href="Tejasvi_Resume.pdf" class="js-resume-link" target="_blank" rel="noopener">DOWNLOAD RESUME</a>
+      </nav>
+    </header>
+
+    <h2 class="work-label" id="work-label">FEATURED PROJECTS</h2>
+
+    <!-- Project tiles (Figma 165:33831), in a row wider than the page: with JS
+         the vertical scroll moves the row sideways once the page is in (see
+         assets/js/main.js); without JS the row scrolls natively. -->
+    <div class="work-cards">
+      <article class="wk-card wk-card--share">
+        <h3 class="wk-title"><a class="wk-link" href="share.html">SHARE <span class="wk-title-sep">\</span> WINDOWS os</a></h3>
+        <p class="wk-caption">Share seamlessly with people, devices, and apps, right from your PC</p>
+        <!-- Built at Figma's 736 x 436 and scaled to the stage width (--k, set
+             in assets/js/main.js). -->
+        <div class="wk-stage">
+          <div class="wk-scene" aria-hidden="true">
+            <span class="wk-bg wk-bg--share"><img src="assets/images/work/share-bg.webp" alt="" width="560" height="747" loading="lazy" decoding="async" /></span>
+            <div class="ss-sheet">
+              <div class="ss-shell"></div>
+              <div class="ss-layer"></div>
+
+              <div class="ss-titlebar">
+                <div class="ss-titlebar-title">
+                  <svg class="ss-glyph" width="15.247" height="15.247" viewBox="0 0 16 16"><path d="M6 3.5H4A1.5 1.5 0 0 0 2.5 5v7A1.5 1.5 0 0 0 4 13.5h7a1.5 1.5 0 0 0 1.5-1.5v-1" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round"/><path d="M5.5 10c.4-3 2.6-4.5 6.5-4.5M9.5 3 12 5.5 9.5 8" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  <span>Share</span>
+                </div>
+                <div class="ss-titlebar-actions">
+                  <span class="ss-caption-btn"><img src="assets/images/share/title-person.png" alt="" width="22.871" height="22.871" /></span>
+                  <span class="ss-caption-btn"><svg class="ss-glyph" width="15.247" height="15.247" viewBox="0 0 16 16"><circle cx="3" cy="8" r="1" fill="currentColor"/><circle cx="8" cy="8" r="1" fill="currentColor"/><circle cx="13" cy="8" r="1" fill="currentColor"/></svg></span>
+                  <span class="ss-caption-btn"><svg class="ss-glyph" width="9.08" height="9.08" viewBox="0 0 10 10"><path d="M1 1l8 8M9 1 1 9" stroke="currentColor" stroke-width="1" stroke-linecap="round"/></svg></span>
+                </div>
+              </div>
+
+              <div class="ss-body">
+                <div class="ss-card">
+                  <div class="ss-file">
+                    <span class="ss-folder">
+                      <span class="ss-folder-back"></span>
+                      <span class="ss-folder-mid"></span>
+                      <img class="ss-folder-photo" src="assets/images/share/folder-photo.jpg" alt="" />
+                    </span>
+                    <span class="ss-file-text">
+                      <span class="ss-file-name">Beachtrip.jpeg + 9 items</span>
+                      <span class="ss-file-size">90 KB</span>
+                    </span>
+                  </div>
+                  <span class="ss-edit">
+                    <span class="ss-edit-base">
+                      <svg class="ss-glyph" width="14.53" height="14.53" viewBox="0 0 16 16"><path d="M10.5 2.5a1.4 1.4 0 0 1 2 2L5 12l-2.6.6L3 10z" fill="none" stroke="currentColor" stroke-width="1" stroke-linejoin="round"/></svg>
+                      Edit
+                    </span>
+                  </span>
+                  <span class="ss-copy">
+                    <img class="ss-copy-base" src="assets/images/share/copy-base.svg" alt="" width="30.4941" height="30.4941" />
+                    <img class="ss-copy-icon" src="assets/images/share/copy-icon.svg" alt="" width="15.2471" height="15.2471" />
+                  </span>
+                </div>
+
+                <ul class="ss-row ss-contacts">
+                  <li class="ss-tile">
+                    <span class="ss-avatar ss-phone">
+                      <span class="ss-phone-art">
+                        <img style="left:6.67px;top:0" src="assets/images/share/phone-border.svg" alt="" width="17.1529" height="30.4941" />
+                        <img style="left:6.67px;top:0" src="assets/images/share/phone-subtract.svg" alt="" width="17.1533" height="1.74414" />
+                        <img style="left:6.67px;top:28.75px;transform:scaleY(-1)" src="assets/images/share/phone-subtract-2.svg" alt="" width="17.1533" height="1.74414" />
+                        <img style="left:7.62px;top:0.95px" src="assets/images/share/phone-screen.svg" alt="" width="15.2471" height="28.5882" />
+                        <img style="left:7.62px;top:0.95px" src="assets/images/share/phone-inner-border.svg" alt="" width="15.2471" height="28.5882" />
+                        <img style="left:6.43px;top:6.67px" src="assets/images/share/phone-tab-1.svg" alt="" width="0.238235" height="2.85882" />
+                        <img style="left:6.43px;top:10.48px" src="assets/images/share/phone-tab-2.svg" alt="" width="0.238235" height="2.85882" />
+                        <img style="left:23.82px;top:6.67px" src="assets/images/share/phone-tab-3.svg" alt="" width="0.238235" height="3.81176" />
+                      </span>
+                    </span>
+                    <span class="ss-label">My phone<br />(You)</span>
+                  </li>
+                  <li class="ss-tile">
+                    <img class="ss-avatar" src="assets/images/share/silly-squad.png" alt="" />
+                    <span class="ss-label">Silly Squad</span>
+                    <img class="ss-badge-ring" src="assets/images/share/badge-ring.svg" alt="" width="22.8706" height="22.8706" />
+                    <img class="ss-badge" src="assets/images/share/whatsapp.png" alt="" />
+                  </li>
+                  <li class="ss-tile">
+                    <img class="ss-avatar" src="assets/images/share/miguel-silva.png" alt="" />
+                    <span class="ss-label">Miguel Silva</span>
+                    <img class="ss-badge-ring" src="assets/images/share/badge-ring.svg" alt="" width="22.8706" height="22.8706" />
+                    <img class="ss-badge" src="assets/images/share/whatsapp.png" alt="" />
+                  </li>
+                  <li class="ss-tile">
+                    <img class="ss-avatar" src="assets/images/share/carlos-k.png" alt="" />
+                    <span class="ss-label">Carlos K</span>
+                    <img class="ss-badge-ring" src="assets/images/share/badge-ring.svg" alt="" width="22.8706" height="22.8706" />
+                    <img class="ss-badge" src="assets/images/share/whatsapp.png" alt="" />
+                  </li>
+                  <li class="ss-tile">
+                    <img class="ss-avatar ss-avatar--round" src="assets/images/share/mona-kane.png" alt="" />
+                    <span class="ss-label">Mona Kane</span>
+                    <img class="ss-badge-ring" src="assets/images/share/badge-ring.svg" alt="" width="22.8706" height="22.8706" />
+                    <img class="ss-badge ss-badge--teams" src="assets/images/share/teams-badge.svg" alt="" width="13.3412" height="13.3412" />
+                  </li>
+                </ul>
+
+                <img class="ss-divider" src="assets/images/share/divider.svg" alt="" width="457.412" height="0.952941" />
+
+                <div class="ss-share-with">
+                  <span>Share with</span>
+                  <span class="ss-all-apps">All apps
+                    <svg class="ss-glyph" width="10.9" height="10.9" viewBox="0 0 12 12"><path d="M4.5 2.5 8 6l-3.5 3.5" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </span>
+                </div>
+
+                <ul class="ss-row">
+                  <li class="ss-tile">
+                    <span class="ss-app ss-nearby">
+                      <span style="left:9.38%;top:15.63%;width:75%;height:75%"><img style="left:-4.17%;top:-4.17%;width:108.34%;height:108.34%" src="assets/images/share/nearby-1.svg" alt="" width="24.7765" height="24.7765" /></span>
+                      <img style="left:25.94%;top:9.38%;width:68.5%;height:56.25%" src="assets/images/share/nearby-2.svg" alt="" width="20.8883" height="17.1529" />
+                      <img style="left:22.66%;top:6.27%;width:74.98%;height:62.46%" src="assets/images/share/nearby-3.svg" alt="" width="22.8657" height="19.0467" />
+                    </span>
+                    <span class="ss-label">Nearby Share</span>
+                  </li>
+                  <li class="ss-tile"><img class="ss-app" src="assets/images/share/whatsapp.png" alt="" /><span class="ss-label">WhatsApp</span></li>
+                  <li class="ss-tile"><img class="ss-app" src="assets/images/share/gmail.png" alt="" /><span class="ss-label">Gmail</span></li>
+                  <li class="ss-tile"><img class="ss-app ss-app--teams" src="assets/images/share/teams.svg" alt="" width="30.4941" height="30.4941" /><span class="ss-label">Teams</span></li>
+                  <li class="ss-tile">
+                    <span class="ss-app ss-outlook"><img class="ss-outlook-tile" src="assets/images/share/outlook.png" alt="" /></span>
+                    <span class="ss-label">Outlook</span>
+                  </li>
+                </ul>
+
+                <ul class="ss-row">
+                  <li class="ss-tile"><img class="ss-app ss-app--twitter" src="assets/images/share/twitter.png" alt="" /><span class="ss-label">Twitter</span></li>
+                  <li class="ss-tile">
+                    <span class="ss-app ss-outlook"><img class="ss-outlook-tile" src="assets/images/share/outlook.png" alt="" /></span>
+                    <span class="ss-label">Outlook</span>
+                  </li>
+                  <li class="ss-tile"><img class="ss-app" src="assets/images/share/gmail.png" alt="" /><span class="ss-label">Gmail</span></li>
+                  <li class="ss-tile"><span class="ss-app ss-linkedin"><img src="assets/images/share/linkedin.png" alt="" /></span><span class="ss-label">LinkedIn</span></li>
+                  <li class="ss-tile"><img class="ss-app" src="assets/images/share/snapchat.png" alt="" /><span class="ss-label">Snapchat</span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="wk-stats">
+          <dl><dt>Impact</dt><dd>6.3X Growth,&nbsp; 18 Million to 112.9 Million users</dd></dl>
+          <img class="wk-stats-divider" src="assets/images/work/stat-divider.svg" alt="" width="0.6" height="40.1" />
+          <dl><dt>Product</dt><dd>Windows</dd></dl>
+        </div>
+      </article>
+
+      <article class="wk-card wk-card--drag">
+        <h3 class="wk-title"><a class="wk-link" href="dragandrop.html">DRAG&nbsp; AND DROP</a></h3>
+        <p class="wk-caption">Redesigning drag and drop in Windows into a fluid, context-aware experience</p>
+        <!-- Figma 798:121586: the drop tray over the wallpaper. -->
+        <div class="wk-stage">
+          <div class="wk-scene" aria-hidden="true">
+            <span class="wk-bg wk-bg--drag"><img src="assets/images/work/connected-bg.webp" alt="" width="442" height="785" loading="lazy" decoding="async" /></span>
+            <div class="dd-tray">
+              <div class="dd-shell"></div>
+              <div class="dd-shadow"></div>
+              <div class="dd-stroke"></div>
+              <div class="dd-content">
+                <ul class="dd-targets">
+                  <li class="dd-target">
+                    <span class="dd-icon"><img style="left:6.33px;top:0" src="assets/images/dragdrop/phone.svg" alt="" width="17.3577" height="30.0278" /></span>
+                    <span class="dd-label">My Phone<br />(You)</span>
+                  </li>
+                  <li class="dd-divider"><img src="assets/images/dragdrop/divider.svg" alt="" width="65.6849" height="0.938356" /></li>
+                  <li class="dd-target">
+                    <span class="dd-icon"><img style="left:-6.33%;top:-5.46%;width:111.79%;height:111.79%" src="assets/images/dragdrop/whatsapp.png" alt="" /></span>
+                    <span class="dd-label">WhatsApp</span>
+                  </li>
+                  <li class="dd-target">
+                    <span class="dd-icon"><img style="left:0;top:0;width:100%;height:100%" src="assets/images/dragdrop/instagram.png" alt="" /></span>
+                    <span class="dd-label">Instagram</span>
+                  </li>
+                  <li class="dd-target">
+                    <span class="dd-icon"><img style="left:0;top:0.94px" src="assets/images/dragdrop/outlook.svg" alt="" width="30.0277" height="27.2978" /></span>
+                    <span class="dd-label">Outlook</span>
+                  </li>
+                  <li class="dd-divider"><img src="assets/images/dragdrop/divider.svg" alt="" width="65.6849" height="0.938356" /></li>
+                  <li class="dd-target">
+                    <span class="dd-icon"><img style="left:0;top:0" src="assets/images/dragdrop/file-explorer.svg" alt="" width="30.0274" height="30.0274" /></span>
+                    <span class="dd-label">Move to folder</span>
+                  </li>
+                  <li class="dd-target">
+                    <span class="dd-icon"><img style="left:0;top:0" src="assets/images/dragdrop/folder.svg" alt="" width="30.0274" height="30.0274" /></span>
+                    <span class="dd-label">Wedding decor</span>
+                  </li>
+                  <li class="dd-divider"><img src="assets/images/dragdrop/divider.svg" alt="" width="65.6849" height="0.938356" /></li>
+                  <li class="dd-target">
+                    <span class="dd-icon"><img style="left:0;top:0" src="assets/images/dragdrop/more.svg" alt="" width="30.0274" height="30.0274" /></span>
+                    <span class="dd-label">More options</span>
+                  </li>
+                </ul>
+                <p class="dd-hint"><img src="assets/images/dragdrop/drop-hint.svg" alt="" width="18.7671" height="18.7671" />Drop here to share, move, or do more</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="wk-stats">
+          <dl><dt>Impact</dt><dd>22.5X Growth in completion, 0.22 Million to 4.95 Million</dd></dl>
+          <img class="wk-stats-divider" src="assets/images/work/stat-divider.svg" alt="" width="0.6" height="40.1" />
+          <dl><dt>Product</dt><dd>Windows</dd></dl>
+        </div>
+      </article>
+
+      <!-- Figma 165:31645 -->
+      <article class="wk-card wk-card--search">
+        <h3 class="wk-title"><a class="wk-link" href="search.html">AI SEARCH IN WINDOWS</a></h3>
+        <p class="wk-caption">Find what you need faster with AI in Windows search</p>
+        <div class="wk-stage">
+          <img loading="lazy" class="wk-stage-img" src="assets/images/work/search-tile.webp" srcset="assets/images/work/search-tile-736.webp 736w, assets/images/work/search-tile-920.webp 920w, assets/images/work/search-tile-1104.webp 1104w, assets/images/work/search-tile-1214.webp 1214w, assets/images/work/search-tile-1325.webp 1325w, assets/images/work/search-tile-1472.webp 1472w" sizes="(max-width: 800px) 70.9vw, (min-width: 1792px) 736px, 41vw" alt="" width="736" height="436" decoding="async" />
+          <!-- Figma 1243:94292: the search panel, frosted glass over the
+               gradient; it rises on hover. Its contents are an SVG (sharp text),
+               the frosted surface is CSS so it blurs the real gradient. -->
+          <div class="sa-panel" aria-hidden="true">
+            <img src="assets/images/work/search-panel.svg" alt="" width="580" height="353" decoding="async" />
+          </div>
+        </div>
+        <div class="wk-stats">
+          <dl><dt>Product</dt><dd>Windows</dd></dl>
+        </div>
+      </article>
+
+      <!-- Figma 165:32828; the stage is the 2x/3x export of 1354:40450. -->
+      <article class="wk-card wk-card--people">
+        <h3 class="wk-title"><a class="wk-link" href="people.html">PEOPLE IN WINDOWS</a></h3>
+        <p class="wk-caption">Bringing people you connect with most right into Windows</p>
+        <div class="wk-stage">
+          <img class="wk-stage-img" src="assets/images/work/people-tile.webp" srcset="assets/images/work/people-tile-732.webp 732w, assets/images/work/people-tile-736.webp 736w, assets/images/work/people-tile-920.webp 920w, assets/images/work/people-tile-1104.webp 1104w, assets/images/work/people-tile-1214.webp 1214w, assets/images/work/people-tile-1325.webp 1325w, assets/images/work/people-tile-1468.webp 1468w, assets/images/work/people-tile-1472.webp 1472w, assets/images/work/people-tile-1619.webp 1619w, assets/images/work/people-tile-1803.webp 1803w, assets/images/work/people-tile-1987.webp 1987w, assets/images/work/people-tile-2204.webp 2204w, assets/images/work/people-tile-2208.webp 2208w" sizes="(max-width: 800px) 70.9vw, (min-width: 1792px) 736px, 41vw" alt="" width="736" height="436" loading="lazy" decoding="async" />
+        </div>
+        <div class="wk-stats">
+          <dl><dt>Product</dt><dd>Windows</dd></dl>
+        </div>
+      </article>
+
+      <!-- Figma 165:33338; the stage is the 2x export of 1360:41095. -->
+      <article class="wk-card wk-card--connected">
+        <h3 class="wk-title"><a class="wk-link" href="connected.html">CONNECTED INTELLIGENCE</a></h3>
+        <p class="wk-caption">Bring your devices together and unlock new ways with AI</p>
+        <div class="wk-stage">
+          <img class="wk-stage-img" src="assets/images/work/connected-tile.webp" srcset="assets/images/work/connected-tile-736.webp 736w, assets/images/work/connected-tile-920.webp 920w, assets/images/work/connected-tile-1104.webp 1104w, assets/images/work/connected-tile-1214.webp 1214w, assets/images/work/connected-tile-1325.webp 1325w, assets/images/work/connected-tile-1472.webp 1472w" sizes="(max-width: 800px) 70.9vw, (min-width: 1792px) 736px, 41vw" alt="" width="736" height="436" loading="lazy" decoding="async" />
+        </div>
+        <div class="wk-stats">
+          <dl><dt>Product</dt><dd>Windows</dd></dl>
+        </div>
+      </article>
+    </div>
+
+    <div class="scroll-pill work-scroll" aria-hidden="true">
+      <span class="scroll-pill-arrow"><img src="assets/icons/scroll-arrow-work.svg" alt="" width="12.4" height="10.4" /></span>
+      <span>SCROLL</span>
+    </div>
+  </section>
+
+  <!-- Site footer (Figma "Footer_homepage", 709:94216). With JS it waits below
+       the pinned page and rises over the work page once its tiles have
+       scrolled to the end. -->
+  <footer class="site-footer" id="contact" aria-label="Site footer">
+    <div class="sf-cols" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+
+    <div class="sf-top">
+      <a class="sf-logo" href="#top" aria-label="Tejasvi Arya — home">
+        <img src="assets/icons/footer-logo.svg" alt="" width="45.0008" height="20" />
+      </a>
+      <a href="mailto:tejasviarya0604@gmail.com">tejasviarya0604@gmail.com</a>
+      <a href="https://www.linkedin.com/in/tejasviarya/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://www.behance.net/tejasviary475e" target="_blank" rel="noopener">Behance</a>
+    </div>
+
+    <nav class="sf-links" aria-label="Footer">
+      <a href="#about">ABOUT ME</a>
+      <a href="work.html">WORK</a>
+      <a href="ai-prototype.html">PROTOTYPED WITH AI</a>
+      <a href="Tejasvi_Resume.pdf" class="js-resume-link" target="_blank" rel="noopener">DOWNLOAD RESUME</a>
+    </nav>
+
+    <!-- Pixel art (Figma frames "27", "11", "28"): each click shows the next, in a loop. -->
+    <button class="sf-mark" type="button" data-state="0" aria-label="Change the pixel art">
+      <svg width="84" height="84" viewBox="0 0 84 84" aria-hidden="true">
+        <g data-s="0"><g fill="#f95b4b"><rect x="34" y="2" width="16" height="16"/><rect x="34" y="66" width="16" height="16"/><rect x="2" y="34" width="16" height="16"/><rect x="66" y="34" width="16" height="16"/></g><g fill="#ff9b64"><rect x="18" y="18" width="16" height="16"/><rect x="18" y="50" width="16" height="16"/><rect x="50" y="18" width="16" height="16"/><rect x="50" y="50" width="16" height="16"/></g></g>
+        <g data-s="1"><g fill="#f95b4b"><rect x="18" y="18" width="16" height="16"/><rect x="18" y="50" width="16" height="16"/><rect x="50" y="18" width="16" height="16"/><rect x="50" y="50" width="16" height="16"/></g><g fill="#ff9b64"><rect x="34" y="34" width="16" height="16"/></g></g>
+        <g data-s="2"><g fill="#ff9b64"><rect x="34" y="18" width="16" height="16"/><rect x="34" y="50" width="16" height="16"/></g><g fill="#f95b4b"><rect x="18" y="34" width="16" height="16"/><rect x="50" y="34" width="16" height="16"/></g></g>
+      </svg>
+    </button>
+
+    <p class="sf-name" aria-hidden="true"><span><span class="sf-t">T</span><i>E</i>JASVI</span><span><i>A</i>RYA</span></p>
+  </footer>
+
+  <footer class="contact" aria-label="Contact links">
+    <a href="mailto:tejasviarya0604@gmail.com">tejasviarya0604@gmail.com</a>
+    <a href="https://www.linkedin.com/in/tejasviarya/" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="https://www.behance.net/tejasviary475e" target="_blank" rel="noopener">Behance</a>
+  </footer>
+
+</div>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

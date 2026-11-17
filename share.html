@@ -1,0 +1,420 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="icon" type="image/png" sizes="22x22" href="assets/icons/favicon.png?v=2" />
+<link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg?v=3" />
+<title>Share \ Windows OS — Tejasvi Arya</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;1,500;1,600&family=Hedvig+Letters+Serif:opsz@12..24&display=swap" />
+<link rel="stylesheet" href="styles.css" />
+<script>
+  // Always start at the first fold on reload (no restored scroll position,
+  // and no jump to a #section left in the address bar).
+  if ("scrollRestoration" in history) history.scrollRestoration = "manual";
+  (function () {
+    var nav = performance.getEntriesByType && performance.getEntriesByType("navigation")[0];
+    if (nav && nav.type === "reload" && location.hash) history.replaceState(null, "", location.pathname + location.search);
+  })();
+  window.scrollTo(0, 0);
+</script>
+</head>
+<body class="cs-page">
+
+<!-- Case study: Share \ Windows OS (Figma "Share", 548:11349). Content sits in
+     the 1272px column between the page's grid lines (260px margins at 1792). -->
+<header class="cs-nav">
+  <a class="cs-logo" href="index.html" aria-label="Tejasvi Arya — home">
+    <img src="assets/icons/logo-red.svg" alt="" width="33" height="14.67" />
+  </a>
+  <nav class="cs-nav-links" aria-label="Primary">
+    <a href="index.html#about">ABOUT ME</a>
+    <a href="work.html" class="is-active" aria-current="page">WORK</a>
+    <a href="ai-prototype.html">PROTOTYPED WITH AI</a>
+    <a href="Tejasvi_Resume.pdf" class="js-resume-link" target="_blank" rel="noopener">DOWNLOAD RESUME</a>
+  </nav>
+</header>
+
+<main class="cs" id="top">
+  <div class="cs-grid" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div>
+
+  <!-- Title and project facts -->
+  <section class="cs-top">
+    <h1 class="cs-title">SHARE <span class="cs-title-sep">\</span> WINDOWS os</h1>
+    <dl class="cs-facts">
+      <div><dt>Impact</dt><dd>6.3X Growth, from<br />18 Million to 112.9 Million users</dd></div>
+      <div><dt>Product</dt><dd class="cs-facts-short">Windows - Microsoft</dd></div>
+      <div><dt>Goal</dt><dd class="cs-w279">Share seamlessly with people, across devices and apps, right from your PC</dd></div>
+    </dl>
+    <div class="cs-hero cs-video cs-video--center">
+      <iframe src="https://player.vimeo.com/video/1240732783?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;loop=1&amp;controls=0&amp;quality=1080p" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" title="WindowsShare" allowfullscreen></iframe>
+      <button class="cs-video-toggle" type="button" aria-label="Play video">
+        <span class="cs-video-hot" aria-hidden="true"><span class="cs-video-icon">
+          <img class="cs-video-play" src="assets/images/video/play.svg" width="83" height="55" alt="" />
+          <img class="cs-video-pause" src="assets/images/video/pause.svg" width="83" height="55" alt="" />
+        </span></span>
+      </button>
+      <span class="cs-video-pill" aria-hidden="true"><img src="assets/images/video/pill-play.svg" width="10" height="10" alt="" />Video</span>
+    </div>
+  </section>
+
+  <!-- Context -->
+  <section class="cs-section cs-context">
+    <header class="cs-head cs-head--context">
+      <p class="cs-label">CONTEXT</p>
+      <div class="cs-head-row">
+        <h2 class="cs-h2">WHAT IS WINDOWS <i>SHARE</i></h2>
+        <p class="cs-intro">Share on Windows lets you send anything from your PC to anyone, including yourself, through the apps and devices you already use. With people, apps and devices in one place, sharing becomes a natural part of what you&rsquo;re already doing.</p>
+      </div>
+    </header>
+    <video class="cs-loop" autoplay muted loop playsinline preload="auto" poster="videos/share/ctx-hands-poster.webp" width="1272" height="548" aria-label="Two hands passing a folder between them">
+      <source src="videos/share/ctx-hands.mp4" type="video/mp4" media="(max-width: 800px)" />
+      <source src="videos/share/ctx-hands@2x.mp4" type="video/mp4" />
+    </video>
+  </section>
+
+  <!-- Line of enquiry -->
+  <section class="cs-section cs-enquiry">
+    <h3 class="cs-h3">LINE OF ENQUIRY</h3>
+    <div class="cs-enq">
+      <img class="cs-glow cs-enq-glow-1" src="assets/images/cs-share/live/enquiry-glow-1.svg" alt="" width="935" height="886" />
+      <img class="cs-glow cs-enq-glow-2" src="assets/images/cs-share/live/enquiry-glow-2.svg" alt="" width="726" height="697" />
+      <p class="cs-enq-text">What does it take to help me <b class="cs-enq-em">feel <span class="cs-enq-ul cs-enq-ul-1">productive and connected</span>,</b> by letting me<br class="cs-enq-br" /> <b class="cs-enq-em"><span class="cs-enq-ul cs-enq-ul-2">share seamlessly with my people</span>,</b> across apps and devices, <b class="cs-enq-em"><span class="cs-enq-ul cs-enq-ul-3">right from Windows?</span></b></p>
+    </div>
+  </section>
+
+  <!-- User research -->
+  <section class="cs-section cs-research">
+    <header class="cs-head">
+      <p class="cs-label">USER RESEARCH</p>
+      <div class="cs-head-row">
+        <h2 class="cs-h2">UNDERSTANDING HOW PEOPLE <i>SHARE</i></h2>
+      </div>
+    </header>
+    <div class="cs-research-grid">
+      <figure>
+        <div class="cs-video cs-video--center">
+          <iframe src="https://player.vimeo.com/video/1243168012?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;loop=1&amp;controls=0&amp;quality=1080p" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" title="Share Research" allowfullscreen></iframe>
+          <button class="cs-video-toggle" type="button" aria-label="Play video">
+            <span class="cs-video-hot" aria-hidden="true"><span class="cs-video-icon">
+              <img class="cs-video-play" src="assets/images/video/play.svg" width="83" height="55" alt="" />
+              <img class="cs-video-pause" src="assets/images/video/pause.svg" width="83" height="55" alt="" />
+            </span></span>
+          </button>
+        </div>
+        <figcaption class="cs-caption cs-w508"><b>Qualitative Research:</b> We did research to understand end user expectations and behavior about sharing content <a href="https://hits.microsoft.com/study/6001273/Table%20of%20Contents" target="_blank" rel="noopener">Research study</a></figcaption>
+      </figure>
+      <figure>
+        <img src="assets/images/cs-share/research-grid.webp" srcset="assets/images/cs-share/research-grid-631.webp 631w, assets/images/cs-share/research-grid-789.webp 789w, assets/images/cs-share/research-grid-947.webp 947w, assets/images/cs-share/research-grid-1041.webp 1041w, assets/images/cs-share/research-grid-1136.webp 1136w, assets/images/cs-share/research-grid-1262.webp 1262w" sizes="(max-width: 800px) 70.9vw, (min-width: 1792px) 631px, 35.2vw" alt="Video call grid of nine research participants" width="631" height="415" loading="lazy" decoding="async" />
+        <figcaption class="cs-caption cs-w555"><b>Research Approach:</b> Comparative Study between Mac and Windows ecosystem (288 Mac Users &amp; 926 Premium Windows Users, 18+ years)</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- Gaps in the experience -->
+  <section class="cs-section cs-gap">
+    <header class="cs-head">
+      <p class="cs-label">GAPS IN THE EXPERIENCE</p>
+      <div class="cs-head-row">
+        <h2 class="cs-h2">WHAT WAS MISSING</h2>
+      </div>
+    </header>
+    <div class="cs-gap-grid">
+      <article>
+        <img src="assets/images/cs-share/gap-1.webp" srcset="assets/images/cs-share/gap-1-622.webp 622w, assets/images/cs-share/gap-1-626.webp 626w, assets/images/cs-share/gap-1-783.webp 783w, assets/images/cs-share/gap-1-939.webp 939w, assets/images/cs-share/gap-1-1033.webp 1033w, assets/images/cs-share/gap-1-1127.webp 1127w, assets/images/cs-share/gap-1-1248.webp 1248w, assets/images/cs-share/gap-1-1252.webp 1252w, assets/images/cs-share/gap-1-1377.webp 1377w, assets/images/cs-share/gap-1-1534.webp 1534w, assets/images/cs-share/gap-1-1690.webp 1690w, assets/images/cs-share/gap-1-1874.webp 1874w, assets/images/cs-share/gap-1-1878.webp 1878w" sizes="(max-width: 800px) 70.9vw, (min-width: 1792px) 626px, 34.9vw" alt="The old share sheet asking to add an email address" width="626" height="264" loading="lazy" decoding="async" />
+        <h4 class="cs-quote">&ldquo;The people I talk to aren&rsquo;t here&rdquo;</h4>
+        <p class="cs-body cs-w478">Contacts relied on email through Mail and People apps that many hadn&rsquo;t set up. Searches often returned nothing, and selecting a contact opened a card instead of sharing.</p>
+      </article>
+      <article>
+        <img src="assets/images/cs-share/gap-2.webp" srcset="assets/images/cs-share/gap-2-632.webp 632w, assets/images/cs-share/gap-2-636.webp 636w, assets/images/cs-share/gap-2-795.webp 795w, assets/images/cs-share/gap-2-954.webp 954w, assets/images/cs-share/gap-2-1049.webp 1049w, assets/images/cs-share/gap-2-1145.webp 1145w, assets/images/cs-share/gap-2-1268.webp 1268w, assets/images/cs-share/gap-2-1272.webp 1272w, assets/images/cs-share/gap-2-1399.webp 1399w, assets/images/cs-share/gap-2-1558.webp 1558w, assets/images/cs-share/gap-2-1717.webp 1717w, assets/images/cs-share/gap-2-1904.webp 1904w, assets/images/cs-share/gap-2-1908.webp 1908w" sizes="(max-width: 800px) 70.9vw, (min-width: 1792px) 636px, 35.4vw" alt="A laptop and phone with no way to share between them" width="636" height="264" loading="lazy" decoding="async" />
+        <h4 class="cs-quote">&ldquo;I can&rsquo;t get content to my own phone.&rdquo;</h4>
+        <p class="cs-body cs-w394">No option available to share it with myself, 60% said they share between PC and phone weekly</p>
+      </article>
+      <article>
+        <img src="assets/images/cs-share/gap-3.webp" srcset="assets/images/cs-share/gap-3-622.webp 622w, assets/images/cs-share/gap-3-626.webp 626w, assets/images/cs-share/gap-3-783.webp 783w, assets/images/cs-share/gap-3-939.webp 939w, assets/images/cs-share/gap-3-1033.webp 1033w, assets/images/cs-share/gap-3-1127.webp 1127w, assets/images/cs-share/gap-3-1248.webp 1248w, assets/images/cs-share/gap-3-1252.webp 1252w, assets/images/cs-share/gap-3-1377.webp 1377w, assets/images/cs-share/gap-3-1534.webp 1534w, assets/images/cs-share/gap-3-1690.webp 1690w, assets/images/cs-share/gap-3-1874.webp 1874w, assets/images/cs-share/gap-3-1878.webp 1878w" sizes="(max-width: 800px) 70.9vw, (min-width: 1792px) 626px, 34.9vw" alt="A file surrounded by app icons that are not available as share targets" width="626" height="264" loading="lazy" decoding="async" />
+        <h4 class="cs-quote">&ldquo;My apps aren&rsquo;t here.&rdquo;</h4>
+        <p class="cs-body cs-w478">The apps didn&rsquo;t fit what was being shared (OneNote and Feedback Hub for a photo). WhatsApp and Instagram weren&rsquo;t available as share targets, despite 22% of users wanting to share through apps like WhatsApp.</p>
+      </article>
+      <article>
+        <img src="assets/images/cs-share/gap-4.webp" srcset="assets/images/cs-share/gap-4-632.webp 632w, assets/images/cs-share/gap-4-636.webp 636w, assets/images/cs-share/gap-4-795.webp 795w, assets/images/cs-share/gap-4-954.webp 954w, assets/images/cs-share/gap-4-1049.webp 1049w, assets/images/cs-share/gap-4-1145.webp 1145w, assets/images/cs-share/gap-4-1268.webp 1268w, assets/images/cs-share/gap-4-1272.webp 1272w, assets/images/cs-share/gap-4-1399.webp 1399w, assets/images/cs-share/gap-4-1558.webp 1558w, assets/images/cs-share/gap-4-1717.webp 1717w, assets/images/cs-share/gap-4-1904.webp 1904w, assets/images/cs-share/gap-4-1908.webp 1908w" sizes="(max-width: 800px) 70.9vw, (min-width: 1792px) 636px, 35.4vw" alt="The old share sheet with Nearby Share devices" width="636" height="264" loading="lazy" decoding="async" />
+        <h4 class="cs-quote">&ldquo;Nearby is there, but I never use it.&rdquo;</h4>
+        <p class="cs-body cs-w394">Even if Nearby Share was on, device names were hard to recognize, and it only worked between PCs. 36% of people opening the sheet had Nearby on, but device clicks were just 1.26% (May 2022).</p>
+      </article>
+    </div>
+    <div class="cs-stats">
+      <img class="cs-glow cs-stats-glow-1" src="assets/images/cs-share/live/stats-glow-1.svg" alt="" width="618" height="618" />
+      <img class="cs-glow cs-stats-glow-2" src="assets/images/cs-share/live/stats-glow-2.svg" alt="" width="859" height="778" />
+      <p class="cs-stats-title">The current share falls short of the needs</p>
+      <div class="cs-stats-row">
+        <div class="cs-stat cs-stat-1"><div class="cs-stat-in" style="--capw: 141; --line: 154; --pie: 32.22">
+          <p class="cs-stat-num">20<span>%</span></p>
+          <p class="cs-stat-cap">completion rate of sharing in Windows</p>
+          <img class="cs-stat-line" src="assets/images/cs-share/live/stats-line-1.svg" alt="" width="1" height="190" />
+          <div class="cs-stat-pie"><img src="assets/images/cs-share/live/stats-pie-1.webp" alt="" width="122" height="122" loading="lazy" /><img class="cs-stat-slice" src="assets/images/cs-share/live/stats-slice-1.svg" alt="" /></div>
+        </div></div>
+        <div class="cs-stat cs-stat-2"><div class="cs-stat-in" style="--capw: 141; --line: 154; --pie: 31.48">
+          <p class="cs-stat-num">41<span>%</span></p>
+          <p class="cs-stat-cap">People left before they found a way to share</p>
+          <img class="cs-stat-line" src="assets/images/cs-share/live/stats-line-2.svg" alt="" width="1" height="190" />
+          <div class="cs-stat-pie"><img src="assets/images/cs-share/live/stats-pie-2.webp" alt="" width="122" height="122" loading="lazy" /><img class="cs-stat-slice" src="assets/images/cs-share/live/stats-slice-2.svg" alt="" /></div>
+        </div></div>
+        <div class="cs-stat cs-stat-3"><div class="cs-stat-in" style="--capw: 133; --line: 150; --pie: 27.48">
+          <p class="cs-stat-num">11<span>%</span></p>
+          <p class="cs-stat-cap">of sheets opened with no apps</p>
+          <img class="cs-stat-line" src="assets/images/cs-share/live/stats-line-3.svg" alt="" width="1" height="190" />
+          <div class="cs-stat-pie"><img src="assets/images/cs-share/live/stats-pie-3.webp" alt="" width="122" height="122" loading="lazy" /><img class="cs-stat-slice" src="assets/images/cs-share/live/stats-slice-3.svg" alt="" /></div>
+        </div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- User insights -->
+  <section class="cs-section cs-insights">
+    <header class="cs-head">
+      <p class="cs-label">USER INSIGHTS</p>
+      <div class="cs-head-row">
+        <h2 class="cs-h2">WHAT WE <i>INFERRED</i></h2>
+      </div>
+    </header>
+    <div class="cs-insight">
+      <img src="assets/images/cs-share/insight-1.webp" srcset="assets/images/cs-share/insight-1-605.webp 605w, assets/images/cs-share/insight-1-756.webp 756w, assets/images/cs-share/insight-1-908.webp 908w, assets/images/cs-share/insight-1-998.webp 998w, assets/images/cs-share/insight-1-1089.webp 1089w, assets/images/cs-share/insight-1-1210.webp 1210w" sizes="(max-width: 800px) 70.9vw, (min-width: 1792px) 605px, 33.7vw" alt="A laptop and a phone linked across devices" width="605" height="300" loading="lazy" decoding="async" />
+      <div class="cs-insight-text">
+        <h4 class="cs-insight-title cs-w353">A great cross-device experience is a<br /> key purchase decision driver.</h4>
+        <p class="cs-body cs-w359"><i>Why people switch?</i>&nbsp; People switch from Windows to Apple for the full cross-device experience. It&rsquo;s one of their top reasons.</p>
+        <p class="cs-body cs-w364"><i>What it means for Windows?</i>&nbsp; Windows needs to invest in cross-device, cross-platform scenarios that support people across their Windows PC and their iOS or Android phone</p>
+      </div>
+    </div>
+    <div class="cs-insight">
+      <img src="assets/images/cs-share/insight-2.webp" srcset="assets/images/cs-share/insight-2-605.webp 605w, assets/images/cs-share/insight-2-756.webp 756w, assets/images/cs-share/insight-2-908.webp 908w, assets/images/cs-share/insight-2-998.webp 998w, assets/images/cs-share/insight-2-1089.webp 1089w, assets/images/cs-share/insight-2-1210.webp 1210w" sizes="(max-width: 800px) 70.9vw, (min-width: 1792px) 605px, 33.7vw" alt="Icons for fast, secure and seamless sharing" width="605" height="300" loading="lazy" decoding="async" />
+      <div class="cs-insight-text cs-insight-text--tight">
+        <h4 class="cs-insight-title cs-w321">People need fast, secure and seamless ways to share content.</h4>
+        <p class="cs-body cs-w334"><i>Fast:</i> Sharing should take as few steps as possible, to yourself or to others.</p>
+        <p class="cs-body cs-w273"><i>Secure:</i> People want to trust that their content is safe.</p>
+        <p class="cs-body cs-w370"><i>Seamless:</i> Content should move easily from device to device and from person to person.</p>
+      </div>
+    </div>
+    <div class="cs-insight">
+      <img src="assets/images/cs-share/insight-3.webp" srcset="assets/images/cs-share/insight-3-605.webp 605w, assets/images/cs-share/insight-3-756.webp 756w, assets/images/cs-share/insight-3-908.webp 908w, assets/images/cs-share/insight-3-998.webp 998w, assets/images/cs-share/insight-3-1089.webp 1089w, assets/images/cs-share/insight-3-1210.webp 1210w" sizes="(max-width: 800px) 70.9vw, (min-width: 1792px) 605px, 33.7vw" alt="Files moving between a laptop and a phone" width="605" height="300" loading="lazy" decoding="async" />
+      <div class="cs-insight-text">
+        <h4 class="cs-insight-title cs-w291">Sharing to yourself is a strongly felt, weakly met need</h4>
+        <p class="cs-body cs-w361">About <i>60% of people</i> share between their PC and phone every week, and almost every participant shared content with themselves</p>
+        <p class="cs-body cs-w364">To get a file onto their phone, people email it to themselves, open the email on the phone and download it. Others send it to a friend or make a dummy group chat.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Re-imagining share (Figma 1404:120052); the before/after panel is one
+       image, the 2x/3x export of 1404:120057. -->
+  <section class="cs-section cs-reimagine">
+    <header class="cs-head">
+      <div class="cs-head-row">
+        <h2 class="cs-h2">REIMAGINING SHARE</h2>
+        <p class="cs-intro">A redesigned Windows Share Sheet brings file previews, contact search, your devices, Nearby Share and third-party apps into one place.</p>
+      </div>
+    </header>
+    <img class="cs-reimagine-img" src="assets/images/cs-share/reimagine-sheets.webp" srcset="assets/images/cs-share/reimagine-sheets-1268.webp 1268w, assets/images/cs-share/reimagine-sheets-1272.webp 1272w, assets/images/cs-share/reimagine-sheets-1590.webp 1590w, assets/images/cs-share/reimagine-sheets-1908.webp 1908w, assets/images/cs-share/reimagine-sheets-2099.webp 2099w, assets/images/cs-share/reimagine-sheets-2290.webp 2290w, assets/images/cs-share/reimagine-sheets-2540.webp 2540w, assets/images/cs-share/reimagine-sheets-2544.webp 2544w, assets/images/cs-share/reimagine-sheets-2798.webp 2798w, assets/images/cs-share/reimagine-sheets-3116.webp 3116w, assets/images/cs-share/reimagine-sheets-3434.webp 3434w, assets/images/cs-share/reimagine-sheets-3812.webp 3812w, assets/images/cs-share/reimagine-sheets-3816.webp 3816w" sizes="(min-width: 1792px) 1272px, 70.9vw" alt="The previous Windows share sheet beside the redesigned one, which adds a file preview, contact search, people suggestions, Nearby Share devices and apps" width="1272" height="641" loading="lazy" decoding="async" />
+  </section>
+
+  <!-- Validating user intent (Figma 1398:91684): each panel is one image,
+       badges included (2x/3x exports of image11-15). -->
+  <section class="cs-section cs-validate">
+    <header class="cs-head cs-head--validate">
+      <div class="cs-head-row">
+        <h2 class="cs-h2">VALIDATING USER <i>INTENT</i></h2>
+        <p class="cs-intro">On the share sheet, 70% of clicks came from the Share using Apps section, and 80% of People Suggestions clicks went to the Me-contact. The sheet&rsquo;s layout didn&rsquo;t reflect this. We ran a UX experiment to check whether each section earned its space and position, to bring popular share targets forward, and to measure the effect on task completion, frequency of use and retention.</p>
+      </div>
+    </header>
+    <div class="cs-pairs">
+      <figure><img src="assets/images/cs-share/validate-1.webp" srcset="assets/images/cs-share/validate-1-634.webp 634w, assets/images/cs-share/validate-1-638.webp 638w, assets/images/cs-share/validate-1-798.webp 798w, assets/images/cs-share/validate-1-957.webp 957w, assets/images/cs-share/validate-1-1053.webp 1053w, assets/images/cs-share/validate-1-1148.webp 1148w, assets/images/cs-share/validate-1-1272.webp 1272w, assets/images/cs-share/validate-1-1276.webp 1276w, assets/images/cs-share/validate-1-1404.webp 1404w, assets/images/cs-share/validate-1-1563.webp 1563w, assets/images/cs-share/validate-1-1723.webp 1723w, assets/images/cs-share/validate-1-1910.webp 1910w, assets/images/cs-share/validate-1-1914.webp 1914w" sizes="(max-width: 800px) calc(100vw - 32px), (min-width: 1792px) 638px, 35.6vw" alt="Share sheet variant 01: people suggestions first, then Nearby Share, then Share with apps" width="638" height="480" loading="lazy" decoding="async" /><figcaption class="cs-caption">Click Rate: Apps 54%, Devices 0.7%, People 11%</figcaption></figure>
+      <figure><img src="assets/images/cs-share/validate-2.webp" srcset="assets/images/cs-share/validate-2-620.webp 620w, assets/images/cs-share/validate-2-624.webp 624w, assets/images/cs-share/validate-2-780.webp 780w, assets/images/cs-share/validate-2-936.webp 936w, assets/images/cs-share/validate-2-1030.webp 1030w, assets/images/cs-share/validate-2-1123.webp 1123w, assets/images/cs-share/validate-2-1244.webp 1244w, assets/images/cs-share/validate-2-1248.webp 1248w, assets/images/cs-share/validate-2-1373.webp 1373w, assets/images/cs-share/validate-2-1529.webp 1529w, assets/images/cs-share/validate-2-1685.webp 1685w, assets/images/cs-share/validate-2-1868.webp 1868w, assets/images/cs-share/validate-2-1872.webp 1872w" sizes="(max-width: 800px) calc(100vw - 32px), (min-width: 1792px) 624px, 34.8vw" alt="Share sheet variant 02: people suggestions first, then Share with apps, then Nearby Share" width="624" height="480" loading="lazy" decoding="async" /><figcaption class="cs-caption">Click Rate: Apps 57%, Devices: No change, People 9.6%</figcaption></figure>
+      <figure><img src="assets/images/cs-share/validate-3.webp" srcset="assets/images/cs-share/validate-3-634.webp 634w, assets/images/cs-share/validate-3-638.webp 638w, assets/images/cs-share/validate-3-798.webp 798w, assets/images/cs-share/validate-3-957.webp 957w, assets/images/cs-share/validate-3-1053.webp 1053w, assets/images/cs-share/validate-3-1148.webp 1148w, assets/images/cs-share/validate-3-1272.webp 1272w, assets/images/cs-share/validate-3-1276.webp 1276w, assets/images/cs-share/validate-3-1404.webp 1404w, assets/images/cs-share/validate-3-1563.webp 1563w, assets/images/cs-share/validate-3-1723.webp 1723w, assets/images/cs-share/validate-3-1910.webp 1910w, assets/images/cs-share/validate-3-1914.webp 1914w" sizes="(max-width: 800px) calc(100vw - 32px), (min-width: 1792px) 638px, 35.6vw" alt="Share sheet variant 03: one row of people, two rows of apps, then Nearby Share" width="638" height="480" loading="lazy" decoding="async" /><figcaption class="cs-caption">Click Rate: Apps 62%, Devices: No change, People 10.1%</figcaption></figure>
+      <figure><img src="assets/images/cs-share/validate-4.webp" srcset="assets/images/cs-share/validate-4-620.webp 620w, assets/images/cs-share/validate-4-624.webp 624w, assets/images/cs-share/validate-4-780.webp 780w, assets/images/cs-share/validate-4-936.webp 936w, assets/images/cs-share/validate-4-1030.webp 1030w, assets/images/cs-share/validate-4-1123.webp 1123w, assets/images/cs-share/validate-4-1244.webp 1244w, assets/images/cs-share/validate-4-1248.webp 1248w, assets/images/cs-share/validate-4-1373.webp 1373w, assets/images/cs-share/validate-4-1529.webp 1529w, assets/images/cs-share/validate-4-1685.webp 1685w, assets/images/cs-share/validate-4-1868.webp 1868w, assets/images/cs-share/validate-4-1872.webp 1872w" sizes="(max-width: 800px) calc(100vw - 32px), (min-width: 1792px) 624px, 34.8vw" alt="Share sheet variant 04, shipped: your phone and four people in one row, then two rows of apps with Nearby Share as an app" width="624" height="480" loading="lazy" decoding="async" /><figcaption class="cs-caption">Click Rate: Apps 62%, Devices 0.9%, People 10.6%</figcaption></figure>
+    </div>
+    <img class="cs-validate-result" src="assets/images/cs-share/validate-result.webp" srcset="assets/images/cs-share/validate-result-1269.webp 1269w, assets/images/cs-share/validate-result-1273.webp 1273w, assets/images/cs-share/validate-result-1591.webp 1591w, assets/images/cs-share/validate-result-1910.webp 1910w, assets/images/cs-share/validate-result-2100.webp 2100w, assets/images/cs-share/validate-result-2291.webp 2291w, assets/images/cs-share/validate-result-2542.webp 2542w, assets/images/cs-share/validate-result-2546.webp 2546w, assets/images/cs-share/validate-result-2801.webp 2801w, assets/images/cs-share/validate-result-3119.webp 3119w, assets/images/cs-share/validate-result-3437.webp 3437w, assets/images/cs-share/validate-result-3815.webp 3815w, assets/images/cs-share/validate-result-3819.webp 3819w" sizes="(max-width: 800px) calc(100vw - 32px), (min-width: 1792px) 1273px, 71vw" alt="Option 4 led to an 11% increase in app clicks, with engagement rising from 54% to 60%; its lighter visual design reduced the cognitive load" width="1273" height="291" loading="lazy" decoding="async" />
+  </section>
+
+  <!-- Solution -->
+  <section class="cs-section cs-solution">
+    <header class="cs-head">
+      <p class="cs-label">SOLUTION</p>
+      <div class="cs-head-row">
+        <h2 class="cs-h2">THE <i>NEW SHARE</i> EXPERIENCE</h2>
+      </div>
+    </header>
+    <img src="assets/images/cs-share/share-solution.webp" srcset="assets/images/cs-share/share-solution-1268.webp 1268w, assets/images/cs-share/share-solution-1272.webp 1272w, assets/images/cs-share/share-solution-1590.webp 1590w, assets/images/cs-share/share-solution-1908.webp 1908w, assets/images/cs-share/share-solution-2099.webp 2099w, assets/images/cs-share/share-solution-2290.webp 2290w, assets/images/cs-share/share-solution-2540.webp 2540w, assets/images/cs-share/share-solution-2544.webp 2544w, assets/images/cs-share/share-solution-2798.webp 2798w, assets/images/cs-share/share-solution-3116.webp 3116w, assets/images/cs-share/share-solution-3434.webp 3434w, assets/images/cs-share/share-solution-3812.webp 3812w, assets/images/cs-share/share-solution-3816.webp 3816w" sizes="(min-width: 1792px) 1272px, 70.9vw" alt="The new Windows share sheet on the desktop: the shared file at the top, frequent contacts and your phone in one row, then apps to share with, including WhatsApp, Instagram, Teams and Outlook" width="1272" height="640" loading="lazy" decoding="async" />
+  </section>
+
+  <!-- What improved (Figma 1398:93281): 2x/3x exports of image11-14. -->
+  <section class="cs-section cs-improved">
+    <h3 class="cs-h3 cs-h3--short">WHAT IMPROVED</h3>
+    <div class="cs-pairs">
+      <figure><img src="assets/images/cs-share/improved-1.webp" srcset="assets/images/cs-share/improved-1-634.webp 634w, assets/images/cs-share/improved-1-638.webp 638w, assets/images/cs-share/improved-1-798.webp 798w, assets/images/cs-share/improved-1-957.webp 957w, assets/images/cs-share/improved-1-1053.webp 1053w, assets/images/cs-share/improved-1-1148.webp 1148w, assets/images/cs-share/improved-1-1272.webp 1272w, assets/images/cs-share/improved-1-1276.webp 1276w, assets/images/cs-share/improved-1-1404.webp 1404w, assets/images/cs-share/improved-1-1563.webp 1563w, assets/images/cs-share/improved-1-1723.webp 1723w, assets/images/cs-share/improved-1-1910.webp 1910w, assets/images/cs-share/improved-1-1914.webp 1914w" sizes="(max-width: 800px) calc(100vw - 32px), (min-width: 1792px) 638px, 35.6vw" alt="The share sheet with your own phone, Susiee M, shown first among the people" width="638" height="340" loading="lazy" decoding="async" /><figcaption class="cs-caption">&lsquo;My Phone&rsquo; as part of people</figcaption></figure>
+      <figure><img src="assets/images/cs-share/improved-2.webp" srcset="assets/images/cs-share/improved-2-620.webp 620w, assets/images/cs-share/improved-2-624.webp 624w, assets/images/cs-share/improved-2-780.webp 780w, assets/images/cs-share/improved-2-936.webp 936w, assets/images/cs-share/improved-2-1030.webp 1030w, assets/images/cs-share/improved-2-1123.webp 1123w, assets/images/cs-share/improved-2-1244.webp 1244w, assets/images/cs-share/improved-2-1248.webp 1248w, assets/images/cs-share/improved-2-1373.webp 1373w, assets/images/cs-share/improved-2-1529.webp 1529w, assets/images/cs-share/improved-2-1685.webp 1685w, assets/images/cs-share/improved-2-1868.webp 1868w, assets/images/cs-share/improved-2-1872.webp 1872w" sizes="(max-width: 800px) calc(100vw - 32px), (min-width: 1792px) 624px, 34.8vw" alt="The share sheet without a search box: file preview, then people, then Share with" width="624" height="340" loading="lazy" decoding="async" /><figcaption class="cs-caption">Search Removal</figcaption></figure>
+      <figure><img src="assets/images/cs-share/improved-3.webp" srcset="assets/images/cs-share/improved-3-634.webp 634w, assets/images/cs-share/improved-3-638.webp 638w, assets/images/cs-share/improved-3-798.webp 798w, assets/images/cs-share/improved-3-957.webp 957w, assets/images/cs-share/improved-3-1053.webp 1053w, assets/images/cs-share/improved-3-1148.webp 1148w, assets/images/cs-share/improved-3-1272.webp 1272w, assets/images/cs-share/improved-3-1276.webp 1276w, assets/images/cs-share/improved-3-1404.webp 1404w, assets/images/cs-share/improved-3-1563.webp 1563w, assets/images/cs-share/improved-3-1723.webp 1723w, assets/images/cs-share/improved-3-1910.webp 1910w, assets/images/cs-share/improved-3-1914.webp 1914w" sizes="(max-width: 800px) calc(100vw - 32px), (min-width: 1792px) 638px, 35.6vw" alt="Nearby Share shown as the first app in the Share with grid" width="638" height="340" loading="lazy" decoding="async" /><figcaption class="cs-caption">&lsquo;Nearby share&rsquo; as part of apps</figcaption></figure>
+      <figure><img src="assets/images/cs-share/improved-4.webp" srcset="assets/images/cs-share/improved-4-620.webp 620w, assets/images/cs-share/improved-4-624.webp 624w, assets/images/cs-share/improved-4-780.webp 780w, assets/images/cs-share/improved-4-936.webp 936w, assets/images/cs-share/improved-4-1030.webp 1030w, assets/images/cs-share/improved-4-1123.webp 1123w, assets/images/cs-share/improved-4-1244.webp 1244w, assets/images/cs-share/improved-4-1248.webp 1248w, assets/images/cs-share/improved-4-1373.webp 1373w, assets/images/cs-share/improved-4-1529.webp 1529w, assets/images/cs-share/improved-4-1685.webp 1685w, assets/images/cs-share/improved-4-1868.webp 1868w, assets/images/cs-share/improved-4-1872.webp 1872w" sizes="(max-width: 800px) calc(100vw - 32px), (min-width: 1792px) 624px, 34.8vw" alt="The share sheet with two full rows of apps under Share with" width="624" height="340" loading="lazy" decoding="async" /><figcaption class="cs-caption">More real estate for apps</figcaption></figure>
+    </div>
+  </section>
+
+  <!-- The impact -->
+  <section class="cs-section cs-impact">
+    <header class="cs-head">
+      <div class="cs-head-row">
+        <h2 class="cs-h2">THE IMPACT</h2>
+      </div>
+    </header>
+    <div class="cs-impact-row">
+      <p class="cs-body cs-w250">The redesigned share sheet helped people follow through on their intent to share, turning an experience where most attempts were abandoned into one where the majority were completed.</p>
+      <div class="cs-impact-panel">
+        <div class="cs-impact-texture" aria-hidden="true"><img src="assets/images/cs-share/live/impact-texture.webp" alt="" width="387" height="580" loading="lazy" /></div>
+        <img class="cs-glow cs-impact-glow-1" src="assets/images/cs-share/live/impact-glow-1.svg" alt="" width="618" height="618" />
+        <img class="cs-glow cs-impact-glow-2" src="assets/images/cs-share/live/impact-glow-2.svg" alt="" width="960" height="778" />
+        <p class="cs-impact-text">Completed sharing sessions grew <em>6.3x,</em><br />from <em>18 million to 112.9 million</em> while completion rate tripled from <em>20% to 60%</em></p>
+        <div class="cs-impact-bars"><div class="cs-impact-bars-in">
+          <div class="cs-bar cs-bar--112"></div>
+          <div class="cs-bar cs-bar--18"></div>
+          <p class="cs-bar-num cs-bar-num--18">18<span>M</span></p>
+          <p class="cs-bar-num cs-bar-num--112">112.9<span>M</span></p>
+          <p class="cs-bar-users">USERS</p>
+          <p class="cs-bar-growth">3X<span>Growth</span></p>
+        </div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="cs-section cs-features">
+    <header class="cs-head cs-head--lg">
+      <p class="cs-label">FEATURES</p>
+      <div class="cs-head-row">
+        <h2 class="cs-h2">ONE PLACE, MORE WAYS TO SHARE</h2>
+      </div>
+    </header>
+    <div class="cs-feature"><h3 class="cs-h3"><span>SHARE WITH <i>WHO MATTER</i> THE MOST</span></h3><div class="cs-video cs-video--center" style="--ar: 2560 / 1600">
+      <video muted loop playsinline preload="none" poster="videos/share/share1-poster.webp" width="2560" height="1600" aria-label="Selecting photos on the desktop and sharing them with a person suggested in the share sheet">
+        <source src="videos/share/share1.webm" type="video/webm" />
+        <source src="videos/share/share1.mp4" type="video/mp4" />
+      </video>
+      <button class="cs-video-toggle" type="button" aria-label="Play video">
+        <span class="cs-video-hot" aria-hidden="true"><span class="cs-video-icon">
+          <img class="cs-video-play" src="assets/images/video/play.svg" width="83" height="55" alt="" />
+          <img class="cs-video-pause" src="assets/images/video/pause.svg" width="83" height="55" alt="" />
+        </span></span>
+      </button>
+    </div></div>
+    <div class="cs-feature"><h3 class="cs-h3"><span><i>SHARE</i> WITH THE <i>APP YOU USE</i> THE MOST</span></h3><div class="cs-video cs-video--center" style="--ar: 2560 / 1600">
+      <video muted loop playsinline preload="none" poster="videos/share/share2-poster.webp" width="2560" height="1600" aria-label="Sharing PDF tickets to a contact through the Teams share dialog">
+        <source src="videos/share/share2.webm" type="video/webm" />
+        <source src="videos/share/share2.mp4" type="video/mp4" />
+      </video>
+      <button class="cs-video-toggle" type="button" aria-label="Play video">
+        <span class="cs-video-hot" aria-hidden="true"><span class="cs-video-icon">
+          <img class="cs-video-play" src="assets/images/video/play.svg" width="83" height="55" alt="" />
+          <img class="cs-video-pause" src="assets/images/video/pause.svg" width="83" height="55" alt="" />
+        </span></span>
+      </button>
+    </div></div>
+    <div class="cs-feature"><h3 class="cs-h3"><span><i>SHARE WITH YOURSELF</i> MADE EASY</span></h3><div class="cs-video cs-video--center" style="--ar: 2560 / 1600">
+      <video muted loop playsinline preload="none" poster="videos/share/share3-poster.webp" width="2560" height="1600" aria-label="Sending photos from the PC to your own phone, with a progress notification">
+        <source src="videos/share/share3.webm" type="video/webm" />
+        <source src="videos/share/share3.mp4" type="video/mp4" />
+      </video>
+      <button class="cs-video-toggle" type="button" aria-label="Play video">
+        <span class="cs-video-hot" aria-hidden="true"><span class="cs-video-icon">
+          <img class="cs-video-play" src="assets/images/video/play.svg" width="83" height="55" alt="" />
+          <img class="cs-video-pause" src="assets/images/video/pause.svg" width="83" height="55" alt="" />
+        </span></span>
+      </button>
+    </div></div>
+    <div class="cs-feature"><h3 class="cs-h3"><span>SHARE IN <i>CONTEXT</i> MENU</span></h3><div class="cs-video cs-video--center" style="--ar: 2560 / 1600">
+      <video muted loop playsinline preload="none" poster="videos/share/share4-poster.webp" width="2560" height="1600" aria-label="Opening Share from the right-click context menu on selected photos">
+        <source src="videos/share/share4.webm" type="video/webm" />
+        <source src="videos/share/share4.mp4" type="video/mp4" />
+      </video>
+      <button class="cs-video-toggle" type="button" aria-label="Play video">
+        <span class="cs-video-hot" aria-hidden="true"><span class="cs-video-icon">
+          <img class="cs-video-play" src="assets/images/video/play.svg" width="83" height="55" alt="" />
+          <img class="cs-video-pause" src="assets/images/video/pause.svg" width="83" height="55" alt="" />
+        </span></span>
+      </button>
+    </div></div>
+  </section>
+
+  <!-- Next steps -->
+  <section class="cs-section cs-next-steps">
+    <header class="cs-head cs-head--lg">
+      <p class="cs-label">NEXT STEPS</p>
+      <div class="cs-head-row">
+        <h2 class="cs-h2">ENABLING AI IN SHARE</h2>
+        <p class="cs-intro">Every share starts with an intent, whether it&rsquo;s to collaborate, share knowledge or express a feeling. Our next step is to explore how AI can help people prepare and adapt their content to suit that intent.</p>
+      </div>
+    </header>
+    <div class="cs-slides" aria-roledescription="carousel" aria-label="AI in Share examples">
+      <div class="cs-slides-track">
+        <img src="assets/images/cs-share/next-steps.webp" srcset="assets/images/cs-share/next-steps-1268.webp 1268w, assets/images/cs-share/next-steps-1272.webp 1272w, assets/images/cs-share/next-steps-1590.webp 1590w, assets/images/cs-share/next-steps-1908.webp 1908w, assets/images/cs-share/next-steps-2099.webp 2099w, assets/images/cs-share/next-steps-2290.webp 2290w, assets/images/cs-share/next-steps-2540.webp 2540w, assets/images/cs-share/next-steps-2544.webp 2544w, assets/images/cs-share/next-steps-2798.webp 2798w, assets/images/cs-share/next-steps-3116.webp 3116w, assets/images/cs-share/next-steps-3434.webp 3434w, assets/images/cs-share/next-steps-3812.webp 3812w, assets/images/cs-share/next-steps-3816.webp 3816w" sizes="(min-width: 1792px) 1272px, 70.9vw" alt="The share sheet with AI suggestions on the Windows desktop" width="1272" height="795" loading="lazy" decoding="async" />
+        <img src="assets/images/cs-share/next-steps-2.webp" srcset="assets/images/cs-share/next-steps-2-1268.webp 1268w, assets/images/cs-share/next-steps-2-1272.webp 1272w, assets/images/cs-share/next-steps-2-1590.webp 1590w, assets/images/cs-share/next-steps-2-1908.webp 1908w, assets/images/cs-share/next-steps-2-2099.webp 2099w, assets/images/cs-share/next-steps-2-2290.webp 2290w, assets/images/cs-share/next-steps-2-2540.webp 2540w, assets/images/cs-share/next-steps-2-2544.webp 2544w, assets/images/cs-share/next-steps-2-2798.webp 2798w, assets/images/cs-share/next-steps-2-3116.webp 3116w, assets/images/cs-share/next-steps-2-3434.webp 3434w, assets/images/cs-share/next-steps-2-3812.webp 3812w, assets/images/cs-share/next-steps-2-3816.webp 3816w" sizes="(min-width: 1792px) 1272px, 70.9vw" alt="The AI share sheet suggesting Remove people and Auto enhance for a photo" width="1272" height="795" loading="lazy" decoding="async" />
+        <img src="assets/images/cs-share/next-steps-3.webp" srcset="assets/images/cs-share/next-steps-3-1268.webp 1268w, assets/images/cs-share/next-steps-3-1272.webp 1272w, assets/images/cs-share/next-steps-3-1590.webp 1590w, assets/images/cs-share/next-steps-3-1908.webp 1908w, assets/images/cs-share/next-steps-3-2099.webp 2099w, assets/images/cs-share/next-steps-3-2290.webp 2290w, assets/images/cs-share/next-steps-3-2540.webp 2540w, assets/images/cs-share/next-steps-3-2544.webp 2544w, assets/images/cs-share/next-steps-3-2798.webp 2798w, assets/images/cs-share/next-steps-3-3116.webp 3116w, assets/images/cs-share/next-steps-3-3434.webp 3434w, assets/images/cs-share/next-steps-3-3812.webp 3812w, assets/images/cs-share/next-steps-3-3816.webp 3816w" sizes="(min-width: 1792px) 1272px, 70.9vw" alt="The AI share sheet with a summary of a PDF, and Add a summary and Extract images suggestions" width="1272" height="795" loading="lazy" decoding="async" />
+        <img src="assets/images/cs-share/next-steps-4.webp" srcset="assets/images/cs-share/next-steps-4-1268.webp 1268w, assets/images/cs-share/next-steps-4-1272.webp 1272w, assets/images/cs-share/next-steps-4-1590.webp 1590w, assets/images/cs-share/next-steps-4-1908.webp 1908w, assets/images/cs-share/next-steps-4-2099.webp 2099w, assets/images/cs-share/next-steps-4-2290.webp 2290w, assets/images/cs-share/next-steps-4-2540.webp 2540w, assets/images/cs-share/next-steps-4-2544.webp 2544w, assets/images/cs-share/next-steps-4-2798.webp 2798w, assets/images/cs-share/next-steps-4-3116.webp 3116w, assets/images/cs-share/next-steps-4-3434.webp 3434w, assets/images/cs-share/next-steps-4-3812.webp 3812w, assets/images/cs-share/next-steps-4-3816.webp 3816w" sizes="(min-width: 1792px) 1272px, 70.9vw" alt="The AI share sheet merging bill photos, with Merge and convert to PDF and Extract bill details suggestions" width="1272" height="795" loading="lazy" decoding="async" />
+      </div>
+      <button class="cs-arrow cs-arrow--left" type="button" aria-label="Previous image"><img src="assets/images/cs-share/arrow-left.svg" width="30" height="30" alt="" /></button>
+      <button class="cs-arrow cs-arrow--right" type="button" aria-label="Next image"><img src="assets/images/cs-share/arrow-right.svg" width="30" height="30" alt="" /></button>
+    </div>
+  </section>
+
+  <hr class="cs-divider" />
+
+  <!-- Next projects -->
+  <section class="cs-section cs-next">
+    <h2 class="cs-h2 cs-h2--sm">NEXT PROJECTS</h2>
+    <div class="cs-next-cards cs-next-cards--drag-first">
+      <a class="cs-card cs-card--drag" href="dragandrop.html">
+        <h3 class="cs-card-title">DRAG AND DROP</h3>
+        <p class="cs-card-text">Redesigning drag and drop in Windows into a fluid, context-aware experience</p>
+        <img src="assets/images/cs-share/next-dragdrop-tray.webp" srcset="assets/images/cs-share/next-dragdrop-tray-557.webp 557w, assets/images/cs-share/next-dragdrop-tray-561.webp 561w, assets/images/cs-share/next-dragdrop-tray-701.webp 701w, assets/images/cs-share/next-dragdrop-tray-842.webp 842w, assets/images/cs-share/next-dragdrop-tray-926.webp 926w, assets/images/cs-share/next-dragdrop-tray-1010.webp 1010w, assets/images/cs-share/next-dragdrop-tray-1118.webp 1118w, assets/images/cs-share/next-dragdrop-tray-1122.webp 1122w, assets/images/cs-share/next-dragdrop-tray-1234.webp 1234w, assets/images/cs-share/next-dragdrop-tray-1374.webp 1374w, assets/images/cs-share/next-dragdrop-tray-1515.webp 1515w, assets/images/cs-share/next-dragdrop-tray-1679.webp 1679w, assets/images/cs-share/next-dragdrop-tray-1683.webp 1683w" sizes="(max-width: 800px) 70.9vw, (min-width: 1792px) 561px, 31.3vw" alt="" width="561" height="290" loading="lazy" decoding="async" />
+      </a>
+      <a class="cs-card cs-card--search" href="search.html">
+        <h3 class="cs-card-title">AI SEARCH IN WINDOWS</h3>
+        <p class="cs-card-text">Find what you need faster with AI in Windows search</p>
+        <img src="assets/images/cs-share/next-search.webp" srcset="assets/images/cs-share/next-search-570.webp 570w, assets/images/cs-share/next-search-574.webp 574w, assets/images/cs-share/next-search-718.webp 718w, assets/images/cs-share/next-search-861.webp 861w, assets/images/cs-share/next-search-947.webp 947w, assets/images/cs-share/next-search-1033.webp 1033w, assets/images/cs-share/next-search-1144.webp 1144w, assets/images/cs-share/next-search-1148.webp 1148w, assets/images/cs-share/next-search-1263.webp 1263w, assets/images/cs-share/next-search-1406.webp 1406w, assets/images/cs-share/next-search-1550.webp 1550w, assets/images/cs-share/next-search-1718.webp 1718w, assets/images/cs-share/next-search-1722.webp 1722w" sizes="(max-width: 800px) 70.9vw, (min-width: 1792px) 574px, 32vw" alt="" width="574" height="290" loading="lazy" decoding="async" />
+      </a>
+    </div>
+  </section>
+</main>
+
+<!-- Site footer: the same as the homepage (Figma "Footer_homepage", 709:94216). -->
+<footer class="site-footer" id="contact" aria-label="Site footer">
+    <div class="sf-cols" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+
+    <div class="sf-top">
+      <a class="sf-logo" href="index.html" aria-label="Tejasvi Arya — home">
+        <img src="assets/icons/footer-logo.svg" alt="" width="45.0008" height="20" />
+      </a>
+      <a href="mailto:tejasviarya0604@gmail.com">tejasviarya0604@gmail.com</a>
+      <a href="https://www.linkedin.com/in/tejasviarya/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://www.behance.net/tejasviary475e" target="_blank" rel="noopener">Behance</a>
+    </div>
+
+    <nav class="sf-links" aria-label="Footer">
+      <a href="index.html#about">ABOUT ME</a>
+      <a href="work.html">WORK</a>
+      <a href="ai-prototype.html">PROTOTYPED WITH AI</a>
+      <a href="Tejasvi_Resume.pdf" class="js-resume-link" target="_blank" rel="noopener">DOWNLOAD RESUME</a>
+    </nav>
+
+    <!-- Pixel art (Figma frames "27", "11", "28"): each click shows the next, in a loop. -->
+    <button class="sf-mark" type="button" data-state="0" aria-label="Change the pixel art">
+      <svg width="84" height="84" viewBox="0 0 84 84" aria-hidden="true">
+        <g data-s="0"><g fill="#f95b4b"><rect x="34" y="2" width="16" height="16"/><rect x="34" y="66" width="16" height="16"/><rect x="2" y="34" width="16" height="16"/><rect x="66" y="34" width="16" height="16"/></g><g fill="#ff9b64"><rect x="18" y="18" width="16" height="16"/><rect x="18" y="50" width="16" height="16"/><rect x="50" y="18" width="16" height="16"/><rect x="50" y="50" width="16" height="16"/></g></g>
+        <g data-s="1"><g fill="#f95b4b"><rect x="18" y="18" width="16" height="16"/><rect x="18" y="50" width="16" height="16"/><rect x="50" y="18" width="16" height="16"/><rect x="50" y="50" width="16" height="16"/></g><g fill="#ff9b64"><rect x="34" y="34" width="16" height="16"/></g></g>
+        <g data-s="2"><g fill="#ff9b64"><rect x="34" y="18" width="16" height="16"/><rect x="34" y="50" width="16" height="16"/></g><g fill="#f95b4b"><rect x="18" y="34" width="16" height="16"/><rect x="50" y="34" width="16" height="16"/></g></g>
+      </svg>
+    </button>
+
+    <p class="sf-name" aria-hidden="true"><span><span class="sf-t">T</span><i>E</i>JASVI</span><span><i>A</i>RYA</span></p>
+  </footer>
+
+<script src="https://player.vimeo.com/api/player.js"></script>
+<script src="assets/js/case.js"></script>
+</body>
+</html>

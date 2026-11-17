@@ -1,0 +1,369 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="icon" type="image/png" sizes="22x22" href="assets/icons/favicon.png?v=2" />
+<link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg?v=3" />
+<title>Drag and Drop — Tejasvi Arya</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;1,500;1,600&family=Hedvig+Letters+Serif:opsz@12..24&display=swap" />
+<link rel="stylesheet" href="styles.css" />
+<script>
+  // Always start at the first fold on reload (no restored scroll position,
+  // and no jump to a #section left in the address bar).
+  if ("scrollRestoration" in history) history.scrollRestoration = "manual";
+  (function () {
+    var nav = performance.getEntriesByType && performance.getEntriesByType("navigation")[0];
+    if (nav && nav.type === "reload" && location.hash) history.replaceState(null, "", location.pathname + location.search);
+  })();
+  window.scrollTo(0, 0);
+</script>
+</head>
+<body class="cs-page dd-page">
+
+<!-- Case study: Drag and Drop (Figma "Draganddrop", 731:110071). Built on the
+     share.html case study styles (.cs-*); page-specific pieces are .dd-*. -->
+<header class="cs-nav">
+  <a class="cs-logo" href="index.html" aria-label="Tejasvi Arya — home">
+    <img src="assets/icons/logo-red.svg" alt="" width="33" height="14.67" />
+  </a>
+  <nav class="cs-nav-links" aria-label="Primary">
+    <a href="index.html#about">ABOUT ME</a>
+    <a href="work.html" class="is-active" aria-current="page">WORK</a>
+    <a href="ai-prototype.html">PROTOTYPED WITH AI</a>
+    <a href="Tejasvi_Resume.pdf" class="js-resume-link" target="_blank" rel="noopener">DOWNLOAD RESUME</a>
+  </nav>
+</header>
+
+<main class="cs" id="top">
+  <div class="cs-grid" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div>
+
+  <!-- Title and project facts -->
+  <section class="cs-top">
+    <h1 class="cs-title">DRAG AND DROP</h1>
+    <dl class="cs-facts dd-facts">
+      <div><dt>Impact</dt><dd>29X Growth in daily active users,<br />0.72 Million to 21 Million</dd></div>
+      <div><dt>Product</dt><dd class="cs-facts-short">Windows - Microsoft</dd></div>
+      <div><dt>Goal</dt><dd class="cs-w279">Redesign drag and drop in Windows into a fluid, context-aware experience</dd></div>
+    </dl>
+    <img class="dd-hero" src="assets/images/cs-dragdrop/hero.webp" srcset="assets/images/cs-dragdrop/hero-1268.webp 1268w, assets/images/cs-dragdrop/hero-1272.webp 1272w, assets/images/cs-dragdrop/hero-1590.webp 1590w, assets/images/cs-dragdrop/hero-1908.webp 1908w, assets/images/cs-dragdrop/hero-2099.webp 2099w, assets/images/cs-dragdrop/hero-2290.webp 2290w, assets/images/cs-dragdrop/hero-2540.webp 2540w, assets/images/cs-dragdrop/hero-2544.webp 2544w, assets/images/cs-dragdrop/hero-2798.webp 2798w, assets/images/cs-dragdrop/hero-3116.webp 3116w, assets/images/cs-dragdrop/hero-3434.webp 3434w, assets/images/cs-dragdrop/hero-3812.webp 3812w, assets/images/cs-dragdrop/hero-3816.webp 3816w" sizes="(min-width: 1792px) 1272px, 70.9vw" alt="The drag and drop tray above File Explorer, with suggested people, apps and folders, as two photos are dragged toward it" width="1272" height="548" decoding="async" />
+  </section>
+
+  <!-- Context -->
+  <section class="cs-section dd-evolve">
+    <header class="cs-head">
+      <p class="cs-label">CONTEXT</p>
+      <div class="cs-head-row">
+        <h2 class="cs-h2">WHAT IS <i>DRAG AND DROP</i></h2>
+        <div class="dd-story">
+          <p class="cs-body dd-w398">Drag and drop is a core Windows interaction that lets people move files between folders, share content through apps, or open it in another tool. It&rsquo;s one of the most used gestures in Windows.</p>
+          <h3 class="cs-insight-title">Business Objective</h3>
+          <p class="cs-body dd-w401">Redesign drag and drop in Windows into a fluid, context-aware experience that understands user intent and makes moving, sharing, and acting on files faster across people, apps, and devices.</p>
+          <h3 class="cs-insight-title">My Role</h3>
+          <p class="cs-body">Led the concept from hackathon to product: shaped the vision, designed the interactions and visuals, prototyped, aligned stakeholders, and worked with engineering through delivery.</p>
+        </div>
+      </div>
+    </header>
+  </section>
+
+  <!-- Usage statistics -->
+  <section class="cs-section dd-usage">
+    <header class="cs-head">
+      <p class="cs-label">STATISTICS</p>
+      <div class="cs-head-row">
+        <h2 class="cs-h2">USAGE OF DRAG AND DROP</h2>
+      </div>
+    </header>
+    <img src="assets/images/cs-dragdrop/usage.webp" srcset="assets/images/cs-dragdrop/usage-1268.webp 1268w, assets/images/cs-dragdrop/usage-1272.webp 1272w, assets/images/cs-dragdrop/usage-1590.webp 1590w, assets/images/cs-dragdrop/usage-1908.webp 1908w, assets/images/cs-dragdrop/usage-2099.webp 2099w, assets/images/cs-dragdrop/usage-2290.webp 2290w, assets/images/cs-dragdrop/usage-2540.webp 2540w, assets/images/cs-dragdrop/usage-2544.webp 2544w, assets/images/cs-dragdrop/usage-2798.webp 2798w, assets/images/cs-dragdrop/usage-3116.webp 3116w, assets/images/cs-dragdrop/usage-3434.webp 3434w, assets/images/cs-dragdrop/usage-3812.webp 3812w, assets/images/cs-dragdrop/usage-3816.webp 3816w" sizes="(min-width: 1792px) 1272px, 70.9vw" alt="Drag and drop is used 10 billion+ times a month: 55% file management, 20% sharing, 15% opening within browser or editing apps, 10% miscellaneous activities" width="1272" height="454" loading="lazy" decoding="async" />
+  </section>
+
+  <!-- User challenges -->
+  <section class="cs-section dd-problems">
+    <header class="cs-head">
+      <p class="cs-label">PROBLEMS</p>
+      <div class="cs-head-row">
+        <h2 class="cs-h2"><i>USER</i> CHALLENGES</h2>
+      </div>
+    </header>
+    <div class="dd-problem">
+      <img src="assets/images/cs-dragdrop/problem-1.webp" srcset="assets/images/cs-dragdrop/problem-1-634.webp 634w, assets/images/cs-dragdrop/problem-1-638.webp 638w, assets/images/cs-dragdrop/problem-1-798.webp 798w, assets/images/cs-dragdrop/problem-1-957.webp 957w, assets/images/cs-dragdrop/problem-1-1053.webp 1053w, assets/images/cs-dragdrop/problem-1-1148.webp 1148w, assets/images/cs-dragdrop/problem-1-1272.webp 1272w, assets/images/cs-dragdrop/problem-1-1276.webp 1276w, assets/images/cs-dragdrop/problem-1-1404.webp 1404w, assets/images/cs-dragdrop/problem-1-1563.webp 1563w, assets/images/cs-dragdrop/problem-1-1723.webp 1723w, assets/images/cs-dragdrop/problem-1-1910.webp 1910w, assets/images/cs-dragdrop/problem-1-1914.webp 1914w" sizes="(max-width: 800px) 70.9vw, (min-width: 1792px) 638px, 35.6vw" alt="A file being dragged from a Downloads window toward a WhatsApp window behind it" width="638" height="290" loading="lazy" decoding="async" />
+      <div>
+        <h3 class="cs-insight-title">Friction before drag</h3>
+        <p class="cs-body cs-w279">Users find the current way of dragging and dropping lengthy because of the pre-work needed before they can start dragging.</p>
+      </div>
+    </div>
+    <div class="dd-problem">
+      <img src="assets/images/cs-dragdrop/problem-2.webp" srcset="assets/images/cs-dragdrop/problem-2-634.webp 634w, assets/images/cs-dragdrop/problem-2-638.webp 638w, assets/images/cs-dragdrop/problem-2-798.webp 798w, assets/images/cs-dragdrop/problem-2-957.webp 957w, assets/images/cs-dragdrop/problem-2-1053.webp 1053w, assets/images/cs-dragdrop/problem-2-1148.webp 1148w, assets/images/cs-dragdrop/problem-2-1272.webp 1272w, assets/images/cs-dragdrop/problem-2-1276.webp 1276w, assets/images/cs-dragdrop/problem-2-1404.webp 1404w, assets/images/cs-dragdrop/problem-2-1563.webp 1563w, assets/images/cs-dragdrop/problem-2-1723.webp 1723w, assets/images/cs-dragdrop/problem-2-1910.webp 1910w, assets/images/cs-dragdrop/problem-2-1914.webp 1914w" sizes="(max-width: 800px) 70.9vw, (min-width: 1792px) 638px, 35.6vw" alt="Files dragged onto the Windows taskbar, with a small share icon as the only drop target" width="638" height="290" loading="lazy" decoding="async" />
+      <div>
+        <h3 class="cs-insight-title">Poor drop affordance</h3>
+        <p class="cs-body dd-w294">When dragging a file, users are shown options that aren’t droppable or have smaller hit areas.</p>
+      </div>
+    </div>
+    <div class="dd-problem">
+      <img src="assets/images/cs-dragdrop/problem-3.webp" srcset="assets/images/cs-dragdrop/problem-3-634.webp 634w, assets/images/cs-dragdrop/problem-3-638.webp 638w, assets/images/cs-dragdrop/problem-3-798.webp 798w, assets/images/cs-dragdrop/problem-3-957.webp 957w, assets/images/cs-dragdrop/problem-3-1053.webp 1053w, assets/images/cs-dragdrop/problem-3-1148.webp 1148w, assets/images/cs-dragdrop/problem-3-1272.webp 1272w, assets/images/cs-dragdrop/problem-3-1276.webp 1276w, assets/images/cs-dragdrop/problem-3-1404.webp 1404w, assets/images/cs-dragdrop/problem-3-1563.webp 1563w, assets/images/cs-dragdrop/problem-3-1723.webp 1723w, assets/images/cs-dragdrop/problem-3-1910.webp 1910w, assets/images/cs-dragdrop/problem-3-1914.webp 1914w" sizes="(max-width: 800px) 70.9vw, (min-width: 1792px) 638px, 35.6vw" alt="The steps users go through today: find files, open app, take action, share" width="638" height="290" loading="lazy" decoding="async" />
+      <div>
+        <h3 class="cs-insight-title">Outdated workflows</h3>
+        <p class="cs-body dd-w243">User needs and workflows have evolved significantly, but the underlying interactions haven&rsquo;t kept pace.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Hypothesis -->
+  <section class="cs-section dd-hypothesis">
+    <h3 class="cs-h3">HYPOTHESIS</h3>
+    <div class="dd-belief">
+      <img class="cs-glow dd-belief-glow-1" src="assets/images/cs-dragdrop/live/hyp-glow-1.svg" alt="" width="935" height="886" />
+      <img class="cs-glow dd-belief-glow-2" src="assets/images/cs-dragdrop/live/hyp-glow-2.svg" alt="" width="726" height="697" />
+      <p class="dd-belief-text">We believe that showing <span class="dd-belief-ul">relevant drop targets</span> and <span class="dd-belief-ul">reducing complexity</span> will improve drag-and-drop success and increase overall drag-and-drop usage.</p>
+    </div>
+  </section>
+
+  <!-- Design direction (Figma 1133:21264) -->
+  <section class="cs-section dd-direction">
+    <header class="cs-head">
+      <p class="cs-label">DESIGN DIRECTION</p>
+      <div class="cs-head-row">
+        <h2 class="cs-h2">A SIMPLER PATH FROM <i>DRAG TO DROP</i></h2>
+        <p class="cs-body dd-w405">We focused first on sharing and moving files, which accounted for the majority of drag-and-drop activity. Three principles guided our explorations and helped us evaluate each direction.</p>
+      </div>
+    </header>
+    <img src="assets/images/cs-dragdrop/principles.webp?v=2" srcset="assets/images/cs-dragdrop/principles-1268.webp?v=2 1268w, assets/images/cs-dragdrop/principles-1272.webp?v=2 1272w, assets/images/cs-dragdrop/principles-1590.webp?v=2 1590w, assets/images/cs-dragdrop/principles-1908.webp?v=2 1908w, assets/images/cs-dragdrop/principles-2099.webp?v=2 2099w, assets/images/cs-dragdrop/principles-2290.webp?v=2 2290w, assets/images/cs-dragdrop/principles-2540.webp?v=2 2540w, assets/images/cs-dragdrop/principles-2544.webp?v=2 2544w, assets/images/cs-dragdrop/principles-2798.webp?v=2 2798w, assets/images/cs-dragdrop/principles-3116.webp?v=2 3116w, assets/images/cs-dragdrop/principles-3434.webp?v=2 3434w, assets/images/cs-dragdrop/principles-3812.webp?v=2 3812w, assets/images/cs-dragdrop/principles-3816.webp?v=2 3816w" sizes="(min-width: 1792px) 1272px, 70.9vw" alt="Three design principles: Discoverability, make drop destinations easy to notice and understand when a drag begins. Ease of use, make targets easy to reach and drop onto, with minimal precision or effort. Continuity, preserve familiar workflows and access to existing destinations without interrupting the task." width="1272" height="262" loading="lazy" decoding="async" />
+  </section>
+
+  <!-- Explorations -->
+  <section class="cs-section dd-explorations">
+    <header class="cs-head">
+      <div class="cs-head-row">
+        <h2 class="cs-h2">EXPLORATIONS</h2>
+      </div>
+    </header>
+    <article class="dd-explore">
+      <h3 class="cs-h3 dd-explore-title">THE TASKBAR AS DROP TRAY</h3>
+      <div class="cs-video cs-video--center" style="--ar: 3 / 2">
+        <video loop playsinline preload="none" poster="videos/dragandrop/exp1-poster.webp?v=2" width="3600" height="2400" aria-label="The Taskbar as Drop Tray: dragging a file turns the taskbar into a tray of suggested destinations">
+          <source src="videos/dragandrop/exp1.webm" type="video/webm" />
+          <source src="videos/dragandrop/exp1.mp4" type="video/mp4" />
+        </video>
+        <button class="cs-video-toggle" type="button" aria-label="Play video">
+          <span class="cs-video-hot" aria-hidden="true"><span class="cs-video-icon">
+            <img class="cs-video-play" src="assets/images/video/play.svg" width="83" height="55" alt="" />
+            <img class="cs-video-pause" src="assets/images/video/pause.svg" width="83" height="55" alt="" />
+          </span></span>
+        </button>
+      </div>
+      <dl class="dd-explore-notes">
+        <div><dt>The Taskbar as Drop Tray</dt><dd style="--w: 251">Transforms the taskbar into a tray of suggested destinations when a user drags a file.</dd></div>
+        <div><dt>What it enables</dt><dd style="--w: 378">Builds on the familiar behavior of dragging files to the taskbar, bringing apps, devices, and people into one place without adding a separate drop area.</dd></div>
+        <div><dt>What it trades off</dt><dd style="--w: 379">Replacing taskbar icons disrupts familiar positions and window access. Suggested destinations also add noise for users who already know where to drop.</dd></div>
+        <div><dt>Design Takeaway</dt><dd style="--w: 367">Expand destinations without displacing existing targets. The tray should extend the taskbar without disrupting familiar drag-and-drop workflows.</dd></div>
+      </dl>
+    </article>
+    <article class="dd-explore">
+      <h3 class="cs-h3 dd-explore-title">DROP MODE</h3>
+      <div class="cs-video cs-video--center" style="--ar: 3 / 2">
+        <video loop playsinline preload="none" poster="videos/dragandrop/exp2-poster.webp?v=2" width="3600" height="2400" aria-label="Drop mode: dragging a file gathers open windows into one overview, with a tray of extra destinations">
+          <source src="videos/dragandrop/exp2.webm" type="video/webm" />
+          <source src="videos/dragandrop/exp2.mp4" type="video/mp4" />
+        </video>
+        <button class="cs-video-toggle" type="button" aria-label="Play video">
+          <span class="cs-video-hot" aria-hidden="true"><span class="cs-video-icon">
+            <img class="cs-video-play" src="assets/images/video/play.svg" width="83" height="55" alt="" />
+            <img class="cs-video-pause" src="assets/images/video/pause.svg" width="83" height="55" alt="" />
+          </span></span>
+        </button>
+      </div>
+      <dl class="dd-explore-notes">
+        <div><dt>Drop mode</dt><dd style="--w: 353">Dragging gathers open windows into one overview, with a tray for extra destinations: people, devices, apps, and folders.</dd></div>
+        <div><dt>What it enables</dt><dd style="--w: 428">Makes open windows easier to see and target without small taskbar icons or overlapping windows. Extra destinations support sharing and moving files beyond what&rsquo;s open.</dd></div>
+        <div><dt>What it trades off</dt><dd style="--w: 360">Reorganizing the desktop on every drag can interrupt simple drops, force users to relocate known destinations, and add complexity.</dd></div>
+        <div><dt>Design Takeaway</dt><dd style="--w: 455">Larger targets ease dropping, but the mode should preserve context and not interrupt simple workflows. It also offers a scalable base for smart file actions and future capabilities.</dd></div>
+      </dl>
+    </article>
+    <article class="dd-explore">
+      <h3 class="cs-h3 dd-explore-title">DROP TRAY ENTRY POINT ON THE TASKBAR</h3>
+      <div class="cs-video cs-video--center" style="--ar: 3 / 2">
+        <video loop playsinline preload="none" poster="videos/dragandrop/exp3-poster.webp?v=2" width="3600" height="2400" aria-label="Drop tray entry point on the taskbar: hovering over it during a drag opens a tray of destinations">
+          <source src="videos/dragandrop/exp3.webm" type="video/webm" />
+          <source src="videos/dragandrop/exp3.mp4" type="video/mp4" />
+        </video>
+        <button class="cs-video-toggle" type="button" aria-label="Play video">
+          <span class="cs-video-hot" aria-hidden="true"><span class="cs-video-icon">
+            <img class="cs-video-play" src="assets/images/video/play.svg" width="83" height="55" alt="" />
+            <img class="cs-video-pause" src="assets/images/video/pause.svg" width="83" height="55" alt="" />
+          </span></span>
+        </button>
+      </div>
+      <dl class="dd-explore-notes">
+        <div><dt>Drop Tray Entry Point on the Taskbar</dt><dd style="--w: 411">Adds a dedicated entry point during a drag. Hovering over it opens a tray of destinations for sharing or moving files, while keeping existing taskbar apps available.</dd></div>
+        <div><dt>What it enables</dt><dd style="--w: 428">Preserves familiar taskbar targets while providing access to people, apps, devices, and folders. Users can share files or move them to a folder without opening the destination first.</dd></div>
+        <div><dt>What it trades off</dt><dd style="--w: 438">An entry point that appears only during a drag may be easy to miss. Accessing the tray requires an additional hover step, while existing taskbar icons remain small and difficult to target.</dd></div>
+        <div><dt>Design Takeaway</dt><dd style="--w: 469">Extend drag-and-drop options while preserving familiar targets. A dedicated entry point supports both sharing and moving, though its discoverability and the additional hover step introduce friction.</dd></div>
+      </dl>
+    </article>
+    <article class="dd-explore">
+      <h3 class="cs-h3 dd-explore-title">DROP TO HOLD</h3>
+      <div class="cs-video cs-video--center" style="--ar: 3 / 2">
+        <video loop playsinline preload="none" poster="videos/dragandrop/exp4-poster.webp?v=2" width="3600" height="2400" aria-label="Drop to hold: files collected from different places into a holding space in the drop tray">
+          <source src="videos/dragandrop/exp4.webm" type="video/webm" />
+          <source src="videos/dragandrop/exp4.mp4" type="video/mp4" />
+        </video>
+        <button class="cs-video-toggle" type="button" aria-label="Play video">
+          <span class="cs-video-hot" aria-hidden="true"><span class="cs-video-icon">
+            <img class="cs-video-play" src="assets/images/video/play.svg" width="83" height="55" alt="" />
+            <img class="cs-video-pause" src="assets/images/video/pause.svg" width="83" height="55" alt="" />
+          </span></span>
+        </button>
+      </div>
+      <dl class="dd-explore-notes">
+        <div><dt>Drop to hold</dt><dd style="--w: 365">Introduces a temporary holding space within the drop tray, allowing users to collect files from different locations and act on them later.</dd></div>
+        <div><dt>What it enables</dt><dd style="--w: 334">Lets users build a collection while continuing their work, without creating temporary folders or committing to an immediate action.</dd></div>
+        <div><dt>What it trades off</dt><dd style="--w: 442">Expands drag and drop into a workflow that supports collection, pause, and continuation. Separating collection from action gives users control over when they are ready to proceed.</dd></div>
+      </dl>
+    </article>
+  </section>
+
+  <!-- Solution (placeholder in the design) -->
+  <section class="cs-section dd-solution">
+    <header class="cs-head dd-head-far">
+      <p class="cs-label">SOLUTION</p>
+      <div class="dd-head-wide">
+        <h2 class="cs-h2">THE <i>DROP</i> TRAY</h2>
+        <p class="cs-intro dd-w431">Drop Tray is a Windows surface that appears when you start dragging a file. It brings relevant destinations for sharing and moving files into one place, making it easier to find where to drop.</p>
+      </div>
+    </header>
+    <img src="assets/images/cs-dragdrop/solution.webp" srcset="assets/images/cs-dragdrop/solution-1268.webp 1268w, assets/images/cs-dragdrop/solution-1272.webp 1272w, assets/images/cs-dragdrop/solution-1590.webp 1590w, assets/images/cs-dragdrop/solution-1908.webp 1908w, assets/images/cs-dragdrop/solution-2099.webp 2099w, assets/images/cs-dragdrop/solution-2290.webp 2290w, assets/images/cs-dragdrop/solution-2540.webp 2540w, assets/images/cs-dragdrop/solution-2544.webp 2544w, assets/images/cs-dragdrop/solution-2798.webp 2798w, assets/images/cs-dragdrop/solution-3116.webp 3116w, assets/images/cs-dragdrop/solution-3434.webp 3434w, assets/images/cs-dragdrop/solution-3812.webp 3812w, assets/images/cs-dragdrop/solution-3816.webp 3816w" sizes="(min-width: 1792px) 1272px, 70.9vw" alt="The drag and drop tray above File Explorer: suggested people, WhatsApp, Outlook and folders appear as two selected photos are dragged toward it" width="1272" height="660" loading="lazy" decoding="async" />
+  </section>
+
+  <!-- The impact -->
+  <section class="cs-section dd-impact">
+    <header class="cs-head">
+      <p class="cs-label">STATISTICS</p>
+      <div class="cs-head-row">
+        <h2 class="cs-h2">THE IMPACT</h2>
+      </div>
+    </header>
+    <img src="assets/images/cs-dragdrop/impact.webp?v=2" srcset="assets/images/cs-dragdrop/impact-1268.webp?v=2 1268w, assets/images/cs-dragdrop/impact-1272.webp?v=2 1272w, assets/images/cs-dragdrop/impact-1590.webp?v=2 1590w, assets/images/cs-dragdrop/impact-1908.webp?v=2 1908w, assets/images/cs-dragdrop/impact-2099.webp?v=2 2099w, assets/images/cs-dragdrop/impact-2290.webp?v=2 2290w, assets/images/cs-dragdrop/impact-2540.webp?v=2 2540w, assets/images/cs-dragdrop/impact-2544.webp?v=2 2544w, assets/images/cs-dragdrop/impact-2798.webp?v=2 2798w, assets/images/cs-dragdrop/impact-3116.webp?v=2 3116w, assets/images/cs-dragdrop/impact-3434.webp?v=2 3434w, assets/images/cs-dragdrop/impact-3812.webp?v=2 3812w, assets/images/cs-dragdrop/impact-3816.webp?v=2 3816w" sizes="(min-width: 1792px) 1272px, 70.9vw" alt="The impact: 29x growth in daily active users, from 0.72 M to 21.01 M; 57.3 M launch sessions, up from 1.75 million (32.8x); 22.5x monthly users completing actions, from 0.22 M to 4.95 M" width="1272" height="262" loading="lazy" decoding="async" />
+  </section>
+
+  <!-- What people said -->
+  <section class="cs-section dd-media">
+    <header class="cs-head">
+      <p class="cs-label">MEDIA</p>
+      <div class="cs-head-row">
+        <h2 class="cs-h2">IN THE PRESS</h2>
+      </div>
+    </header>
+    <img src="assets/images/cs-dragdrop/media.webp" srcset="assets/images/cs-dragdrop/media-1268.webp 1268w, assets/images/cs-dragdrop/media-1272.webp 1272w, assets/images/cs-dragdrop/media-1590.webp 1590w, assets/images/cs-dragdrop/media-1908.webp 1908w, assets/images/cs-dragdrop/media-2099.webp 2099w, assets/images/cs-dragdrop/media-2290.webp 2290w, assets/images/cs-dragdrop/media-2540.webp 2540w, assets/images/cs-dragdrop/media-2544.webp 2544w, assets/images/cs-dragdrop/media-2798.webp 2798w, assets/images/cs-dragdrop/media-3116.webp 3116w, assets/images/cs-dragdrop/media-3434.webp 3434w, assets/images/cs-dragdrop/media-3812.webp 3812w, assets/images/cs-dragdrop/media-3816.webp 3816w" sizes="(min-width: 1792px) 1272px, 70.9vw" alt="Four news articles about the Windows 11 Drag Tray, with screenshots of the tray" width="1272" height="876" loading="lazy" decoding="async" />
+  </section>
+
+  <!-- Beyond sharing: Universal Composer -->
+  <section class="cs-section dd-evolve dd-evolve--2">
+    <header class="cs-head">
+      <p class="cs-label">EVOLVING DRAG AND DROP</p>
+      <div class="cs-head-row">
+        <h2 class="cs-h2">BEYOND MOVING AND SHARING</h2>
+        <div class="dd-story">
+          <p class="cs-body">Drop Tray made it easier to get files to a destination. The next opportunity was to help users do more with those files. With Universal Composer, drag and drop needed to go beyond moving and sharing, so users could act on their files right where they dropped them.</p>
+          <h3 class="cs-insight-title dd-story-title--tight">Introducing Drag and Drop in Universal Composer</h3>
+          <p class="cs-body">Universal Composer brings finding and doing together, helping users search for what they want and take action directly within Windows.<br />Supporting drag and drop, one of Windows&rsquo; most common interactions, lets users bring files in and act on them in a familiar way.</p>
+        </div>
+      </div>
+    </header>
+  </section>
+
+  <section class="dd-composer">
+    <p class="cs-label dd-composer-label">EVOLVING DRAG AND DROP</p>
+    <h3 class="cs-h3 dd-demo-title dd-composer-title">UNIVERSAL COMPOSER: A SMARTER WAY TO SEARCH AND ACT IN WINDOWS</h3>
+    <video class="cs-loop cs-loop--round" muted loop playsinline preload="none" poster="videos/dragandrop/introducing-poster.webp" width="3840" height="2400" aria-label="Universal Composer opening above the Windows taskbar, with suggested actions and an Ask Copilot box">
+      <source src="videos/dragandrop/introducing.webm" type="video/webm" />
+      <source src="videos/dragandrop/introducing.mp4" type="video/mp4" />
+    </video>
+  </section>
+
+  <!-- Placeholders in the design -->
+  <section class="cs-section dd-demo">
+    <h3 class="cs-h3 dd-demo-title"><span><i>DRAG AND DROP</i> IN UNIVERSAL COMPOSER</span></h3>
+    <div class="cs-slides" aria-roledescription="carousel" aria-label="Drag and drop in Universal Composer examples">
+      <div class="cs-slides-track">
+        <img src="assets/images/cs-dragdrop/composer-slide-1.webp" srcset="assets/images/cs-dragdrop/composer-slide-1-1268.webp 1268w, assets/images/cs-dragdrop/composer-slide-1-1272.webp 1272w, assets/images/cs-dragdrop/composer-slide-1-1590.webp 1590w, assets/images/cs-dragdrop/composer-slide-1-1908.webp 1908w, assets/images/cs-dragdrop/composer-slide-1-2099.webp 2099w, assets/images/cs-dragdrop/composer-slide-1-2290.webp 2290w, assets/images/cs-dragdrop/composer-slide-1-2540.webp 2540w, assets/images/cs-dragdrop/composer-slide-1-2544.webp 2544w, assets/images/cs-dragdrop/composer-slide-1-2798.webp 2798w, assets/images/cs-dragdrop/composer-slide-1-3116.webp 3116w, assets/images/cs-dragdrop/composer-slide-1-3434.webp 3434w, assets/images/cs-dragdrop/composer-slide-1-3812.webp 3812w, assets/images/cs-dragdrop/composer-slide-1-3816.webp 3816w" sizes="(min-width: 1792px) 1272px, 70.9vw" alt="Universal Composer with dropped files: formatting a cover letter from a resume, and renaming medical bills into a new folder" width="1272" height="660" loading="lazy" decoding="async" />
+        <img src="assets/images/cs-dragdrop/composer-slide-2.webp" srcset="assets/images/cs-dragdrop/composer-slide-2-1268.webp 1268w, assets/images/cs-dragdrop/composer-slide-2-1272.webp 1272w, assets/images/cs-dragdrop/composer-slide-2-1590.webp 1590w, assets/images/cs-dragdrop/composer-slide-2-1908.webp 1908w, assets/images/cs-dragdrop/composer-slide-2-2099.webp 2099w, assets/images/cs-dragdrop/composer-slide-2-2290.webp 2290w, assets/images/cs-dragdrop/composer-slide-2-2540.webp 2540w, assets/images/cs-dragdrop/composer-slide-2-2544.webp 2544w, assets/images/cs-dragdrop/composer-slide-2-2798.webp 2798w, assets/images/cs-dragdrop/composer-slide-2-3116.webp 3116w, assets/images/cs-dragdrop/composer-slide-2-3434.webp 3434w, assets/images/cs-dragdrop/composer-slide-2-3812.webp 3812w, assets/images/cs-dragdrop/composer-slide-2-3816.webp 3816w" sizes="(min-width: 1792px) 1272px, 70.9vw" alt="Universal Composer with dropped files: comparing two quotes, and finding the images on slides 3 and 5 of a deck" width="1272" height="660" loading="lazy" decoding="async" />
+      </div>
+      <button class="cs-arrow cs-arrow--left" type="button" aria-label="Previous image"><img src="assets/images/cs-share/arrow-left.svg" width="30" height="30" alt="" /></button>
+      <button class="cs-arrow cs-arrow--right" type="button" aria-label="Next image"><img src="assets/images/cs-share/arrow-right.svg" width="30" height="30" alt="" /></button>
+    </div>
+  </section>
+
+  <section class="cs-section dd-demo dd-demo--2">
+    <header class="dd-head-wide dd-hold-head">
+      <h3 class="cs-h3"><span>INTRODUCING <i>DROP TO HOLD</i></span></h3>
+      <p class="cs-intro dd-w431">Drop-to-hold adds a temporary space in Universal Composer where people can drop content and come back to it later. They can gather files from different places while they keep working, then act on everything together when ready.</p>
+    </header>
+    <div class="cs-video cs-video--center" style="--ar: 384 / 240" data-quality="locked">
+      <iframe src="https://player.vimeo.com/video/1243319040?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;loop=1&amp;controls=0&amp;quality=1080p" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" title="Drop to hold in UC" allowfullscreen></iframe>
+      <button class="cs-video-toggle" type="button" aria-label="Play video">
+        <span class="cs-video-hot" aria-hidden="true"><span class="cs-video-icon">
+          <img class="cs-video-play" src="assets/images/video/play.svg" width="83" height="55" alt="" />
+          <img class="cs-video-pause" src="assets/images/video/pause.svg" width="83" height="55" alt="" />
+        </span></span>
+      </button>
+    </div>
+  </section>
+
+  <hr class="cs-divider" />
+
+  <!-- Next projects -->
+  <section class="cs-section cs-next">
+    <h2 class="cs-h2 cs-h2--sm">NEXT PROJECTS</h2>
+    <div class="cs-next-cards cs-next-cards--drag-first">
+      <a class="cs-card cs-card--search cs-card--fit" href="search.html">
+        <h3 class="cs-card-title">AI SEARCH IN WINDOWS</h3>
+        <p class="cs-card-text">Find what you need faster with AI in Windows search</p>
+        <img src="assets/images/cs-share/next-search-dd.webp" srcset="assets/images/cs-share/next-search-dd-557.webp 557w, assets/images/cs-share/next-search-dd-561.webp 561w, assets/images/cs-share/next-search-dd-701.webp 701w, assets/images/cs-share/next-search-dd-842.webp 842w, assets/images/cs-share/next-search-dd-926.webp 926w, assets/images/cs-share/next-search-dd-1010.webp 1010w, assets/images/cs-share/next-search-dd-1118.webp 1118w, assets/images/cs-share/next-search-dd-1122.webp 1122w, assets/images/cs-share/next-search-dd-1234.webp 1234w, assets/images/cs-share/next-search-dd-1374.webp 1374w, assets/images/cs-share/next-search-dd-1515.webp 1515w, assets/images/cs-share/next-search-dd-1679.webp 1679w, assets/images/cs-share/next-search-dd-1683.webp 1683w" sizes="(max-width: 800px) 70.9vw, (min-width: 1792px) 561px, 31.3vw" alt="" width="561" height="290" loading="lazy" decoding="async" />
+      </a>
+      <a class="cs-card cs-card--people cs-card--fit" href="people.html">
+        <h3 class="cs-card-title">PEOPLE IN WINDOWS</h3>
+        <p class="cs-card-text">Bringing people you connect with most right into Windows</p>
+        <img src="assets/images/cs-share/next-people-dd.webp" srcset="assets/images/cs-share/next-people-dd-571.webp 571w, assets/images/cs-share/next-people-dd-714.webp 714w, assets/images/cs-share/next-people-dd-857.webp 857w, assets/images/cs-share/next-people-dd-942.webp 942w, assets/images/cs-share/next-people-dd-1028.webp 1028w, assets/images/cs-share/next-people-dd-1142.webp 1142w, assets/images/cs-share/next-people-dd-1256.webp 1256w, assets/images/cs-share/next-people-dd-1399.webp 1399w, assets/images/cs-share/next-people-dd-1542.webp 1542w, assets/images/cs-share/next-people-dd-1713.webp 1713w" sizes="(max-width: 800px) 70.9vw, (min-width: 1792px) 571px, 31.8vw" alt="" width="571" height="290" loading="lazy" decoding="async" />
+      </a>
+    </div>
+  </section>
+</main>
+
+<!-- Site footer: the same as the homepage (Figma "Footer_homepage", 709:94216). -->
+<footer class="site-footer" id="contact" aria-label="Site footer">
+    <div class="sf-cols" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+
+    <div class="sf-top">
+      <a class="sf-logo" href="index.html" aria-label="Tejasvi Arya — home">
+        <img src="assets/icons/footer-logo.svg" alt="" width="45.0008" height="20" />
+      </a>
+      <a href="mailto:tejasviarya0604@gmail.com">tejasviarya0604@gmail.com</a>
+      <a href="https://www.linkedin.com/in/tejasviarya/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://www.behance.net/tejasviary475e" target="_blank" rel="noopener">Behance</a>
+    </div>
+
+    <nav class="sf-links" aria-label="Footer">
+      <a href="index.html#about">ABOUT ME</a>
+      <a href="work.html">WORK</a>
+      <a href="ai-prototype.html">PROTOTYPED WITH AI</a>
+      <a href="Tejasvi_Resume.pdf" class="js-resume-link" target="_blank" rel="noopener">DOWNLOAD RESUME</a>
+    </nav>
+
+    <!-- Pixel art (Figma frames "27", "11", "28"): each click shows the next, in a loop. -->
+    <button class="sf-mark" type="button" data-state="0" aria-label="Change the pixel art">
+      <svg width="84" height="84" viewBox="0 0 84 84" aria-hidden="true">
+        <g data-s="0"><g fill="#f95b4b"><rect x="34" y="2" width="16" height="16"/><rect x="34" y="66" width="16" height="16"/><rect x="2" y="34" width="16" height="16"/><rect x="66" y="34" width="16" height="16"/></g><g fill="#ff9b64"><rect x="18" y="18" width="16" height="16"/><rect x="18" y="50" width="16" height="16"/><rect x="50" y="18" width="16" height="16"/><rect x="50" y="50" width="16" height="16"/></g></g>
+        <g data-s="1"><g fill="#f95b4b"><rect x="18" y="18" width="16" height="16"/><rect x="18" y="50" width="16" height="16"/><rect x="50" y="18" width="16" height="16"/><rect x="50" y="50" width="16" height="16"/></g><g fill="#ff9b64"><rect x="34" y="34" width="16" height="16"/></g></g>
+        <g data-s="2"><g fill="#ff9b64"><rect x="34" y="18" width="16" height="16"/><rect x="34" y="50" width="16" height="16"/></g><g fill="#f95b4b"><rect x="18" y="34" width="16" height="16"/><rect x="50" y="34" width="16" height="16"/></g></g>
+      </svg>
+    </button>
+
+    <p class="sf-name" aria-hidden="true"><span><span class="sf-t">T</span><i>E</i>JASVI</span><span><i>A</i>RYA</span></p>
+  </footer>
+
+<script src="https://player.vimeo.com/api/player.js"></script>
+<script src="assets/js/case.js"></script>
+</body>
+</html>

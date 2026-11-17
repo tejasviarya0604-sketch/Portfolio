@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="icon" type="image/png" sizes="22x22" href="assets/icons/favicon.png?v=2" />
+<link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg?v=3" />
+<title>AI Search in Windows — Tejasvi Arya</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;1,500;1,600&family=Hedvig+Letters+Serif:opsz@12..24&display=swap" />
+<link rel="stylesheet" href="styles.css" />
+<script>
+  // Always start at the first fold on reload (no restored scroll position,
+  // and no jump to a #section left in the address bar).
+  if ("scrollRestoration" in history) history.scrollRestoration = "manual";
+  (function () {
+    var nav = performance.getEntriesByType && performance.getEntriesByType("navigation")[0];
+    if (nav && nav.type === "reload" && location.hash) history.replaceState(null, "", location.pathname + location.search);
+  })();
+  window.scrollTo(0, 0);
+</script>
+</head>
+<body class="cs-page dd-page sr-page">
+
+<!-- Case study: AI Search in Windows (Figma 1151:22289). Built on the shared
+     case study styles (.cs-*, .dd-*); page-specific pieces are .sr-*.
+     Generated from a template: images are listed from assets/images/cs-search. -->
+<header class="cs-nav">
+  <a class="cs-logo" href="index.html" aria-label="Tejasvi Arya — home">
+    <img src="assets/icons/logo-red.svg" alt="" width="33" height="14.67" />
+  </a>
+  <nav class="cs-nav-links" aria-label="Primary">
+    <a href="index.html#about">ABOUT ME</a>
+    <a href="work.html" class="is-active" aria-current="page">WORK</a>
+    <a href="ai-prototype.html">PROTOTYPED WITH AI</a>
+    <a href="Tejasvi_Resume.pdf" class="js-resume-link" target="_blank" rel="noopener">DOWNLOAD RESUME</a>
+  </nav>
+</header>
+
+<main class="cs" id="top">
+  <div class="cs-grid" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div>
+
+  <!-- Title and project facts -->
+  <section class="cs-top">
+    <h1 class="cs-title">AI SEARCH <i>IN WINDOWS</i></h1>
+    <dl class="cs-facts sr-facts">
+      <div><dt>Product</dt><dd class="cs-facts-short">Windows - Microsoft</dd></div>
+      <div class="sr-facts-wide"><dt>Goal</dt><dd>Find what you need faster with AI in Windows search</dd></div>
+    </dl>
+    <!-- Hero (Figma 1417:146725) -->
+    <img class="sr-hero" src="assets/images/cs-search/hero.webp" srcset="assets/images/cs-search/hero-1268.webp 1268w, assets/images/cs-search/hero-1272.webp 1272w, assets/images/cs-search/hero-1590.webp 1590w, assets/images/cs-search/hero-1908.webp 1908w, assets/images/cs-search/hero-2099.webp 2099w, assets/images/cs-search/hero-2290.webp 2290w, assets/images/cs-search/hero-2540.webp 2540w, assets/images/cs-search/hero-2544.webp 2544w, assets/images/cs-search/hero-2798.webp 2798w, assets/images/cs-search/hero-3116.webp 3116w, assets/images/cs-search/hero-3434.webp 3434w, assets/images/cs-search/hero-3812.webp 3812w, assets/images/cs-search/hero-3816.webp 3816w" sizes="(min-width: 1792px) 1272px, 70.9vw" alt="AI search in Windows: searching &ldquo;White dress&rdquo; shows suggested filters, matching files and photos, and a preview of the bridal collection presentation with an AI summary" width="1272" height="600" decoding="async" fetchpriority="high" />
+  </section>
+
+  <!-- Current experience -->
+  <section class="cs-section sr-current">
+    <header class="cs-head">
+      <p class="cs-label">CURRENT EXPERIENCE</p>
+      <div class="cs-head-row">
+        <h2 class="cs-h2"><i>SEARCH</i> IN WINDOWS</h2>
+        <p class="cs-body sr-w416">Windows search uses a lexical approach, matching results by exact words rather than context. It functions across various areas, including File Explorer, Settings, and the main Windows search box.</p>
+      </div>
+    </header>
+    <div class="sr-shots">
+      <figure>
+        <img src="assets/images/cs-search/cur-explorer.webp" srcset="assets/images/cs-search/cur-explorer-634.webp 634w, assets/images/cs-search/cur-explorer-638.webp 638w, assets/images/cs-search/cur-explorer-798.webp 798w, assets/images/cs-search/cur-explorer-957.webp 957w, assets/images/cs-search/cur-explorer-1053.webp 1053w, assets/images/cs-search/cur-explorer-1148.webp 1148w, assets/images/cs-search/cur-explorer-1272.webp 1272w, assets/images/cs-search/cur-explorer-1276.webp 1276w, assets/images/cs-search/cur-explorer-1404.webp 1404w, assets/images/cs-search/cur-explorer-1563.webp 1563w, assets/images/cs-search/cur-explorer-1723.webp 1723w, assets/images/cs-search/cur-explorer-1910.webp 1910w, assets/images/cs-search/cur-explorer-1914.webp 1914w" sizes="(max-width: 800px) 70.9vw, (min-width: 1792px) 638px, 35.6vw" alt="File Explorer search for “screen”, highlighting only file names that contain the exact word" width="638" height="380" loading="lazy" decoding="async" />
+        <figcaption class="cs-caption">File Explorer</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/images/cs-search/cur-searchbar.webp" srcset="assets/images/cs-search/cur-searchbar-620.webp 620w, assets/images/cs-search/cur-searchbar-624.webp 624w, assets/images/cs-search/cur-searchbar-780.webp 780w, assets/images/cs-search/cur-searchbar-936.webp 936w, assets/images/cs-search/cur-searchbar-1030.webp 1030w, assets/images/cs-search/cur-searchbar-1123.webp 1123w, assets/images/cs-search/cur-searchbar-1244.webp 1244w, assets/images/cs-search/cur-searchbar-1248.webp 1248w, assets/images/cs-search/cur-searchbar-1373.webp 1373w, assets/images/cs-search/cur-searchbar-1529.webp 1529w, assets/images/cs-search/cur-searchbar-1685.webp 1685w, assets/images/cs-search/cur-searchbar-1868.webp 1868w, assets/images/cs-search/cur-searchbar-1872.webp 1872w" sizes="(max-width: 800px) 70.9vw, (min-width: 1792px) 624px, 34.8vw" alt="The Windows search bar showing best match, apps and settings for “screen”" width="624" height="380" loading="lazy" decoding="async" />
+        <figcaption class="cs-caption">Windows search bar</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/images/cs-search/cur-settings.webp" srcset="assets/images/cs-search/cur-settings-634.webp 634w, assets/images/cs-search/cur-settings-638.webp 638w, assets/images/cs-search/cur-settings-798.webp 798w, assets/images/cs-search/cur-settings-957.webp 957w, assets/images/cs-search/cur-settings-1053.webp 1053w, assets/images/cs-search/cur-settings-1148.webp 1148w, assets/images/cs-search/cur-settings-1272.webp 1272w, assets/images/cs-search/cur-settings-1276.webp 1276w, assets/images/cs-search/cur-settings-1404.webp 1404w, assets/images/cs-search/cur-settings-1563.webp 1563w, assets/images/cs-search/cur-settings-1723.webp 1723w, assets/images/cs-search/cur-settings-1910.webp 1910w, assets/images/cs-search/cur-settings-1914.webp 1914w" sizes="(max-width: 800px) 70.9vw, (min-width: 1792px) 638px, 35.6vw" alt="Settings search for “power” with a list of matching settings" width="638" height="380" loading="lazy" decoding="async" />
+        <figcaption class="cs-caption">Settings</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/images/cs-search/cur-photos.webp" srcset="assets/images/cs-search/cur-photos-620.webp 620w, assets/images/cs-search/cur-photos-624.webp 624w, assets/images/cs-search/cur-photos-780.webp 780w, assets/images/cs-search/cur-photos-936.webp 936w, assets/images/cs-search/cur-photos-1030.webp 1030w, assets/images/cs-search/cur-photos-1123.webp 1123w, assets/images/cs-search/cur-photos-1244.webp 1244w, assets/images/cs-search/cur-photos-1248.webp 1248w, assets/images/cs-search/cur-photos-1373.webp 1373w, assets/images/cs-search/cur-photos-1529.webp 1529w, assets/images/cs-search/cur-photos-1685.webp 1685w, assets/images/cs-search/cur-photos-1868.webp 1868w, assets/images/cs-search/cur-photos-1872.webp 1872w" sizes="(max-width: 800px) 70.9vw, (min-width: 1792px) 624px, 34.8vw" alt="Photos app search results for “screen” in the gallery" width="624" height="380" loading="lazy" decoding="async" />
+        <figcaption class="cs-caption">Photos</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- Pain points -->
+  <section class="cs-section sr-pain">
+    <h2 class="cs-h2 sr-pain-title">PAIN POINTS</h2>
+    <img src="assets/images/cs-search/pain.webp?v=2" srcset="assets/images/cs-search/pain-1268.webp?v=2 1268w, assets/images/cs-search/pain-1272.webp?v=2 1272w, assets/images/cs-search/pain-1590.webp?v=2 1590w, assets/images/cs-search/pain-1908.webp?v=2 1908w, assets/images/cs-search/pain-2099.webp?v=2 2099w, assets/images/cs-search/pain-2290.webp?v=2 2290w, assets/images/cs-search/pain-2540.webp?v=2 2540w, assets/images/cs-search/pain-2544.webp?v=2 2544w, assets/images/cs-search/pain-2798.webp?v=2 2798w, assets/images/cs-search/pain-3116.webp?v=2 3116w, assets/images/cs-search/pain-3434.webp?v=2 3434w, assets/images/cs-search/pain-3812.webp?v=2 3812w, assets/images/cs-search/pain-3816.webp?v=2 3816w" sizes="(min-width: 1792px) 1272px, 70.9vw" alt="Three pain points. Precise keyword: Windows relies on exact word matching, lacks context or concept-based understanding. Inaccurate results: results don’t always match the user intent, often showing unrelated items. Web suggestions: web results appear even when users are searching for local files." width="1272" height="270" loading="lazy" decoding="async" />
+  </section>
+
+  <!-- Enabling AI in search -->
+  <section class="cs-section sr-enable">
+    <header class="cs-head sr-head-far">
+      <p class="cs-label">ENABLING AI IN SEARCH</p>
+      <div class="cs-head-row">
+        <h2 class="cs-h2"><i>SEMANTIC</i> SEARCH IN WINDOWS</h2>
+        <p class="cs-body sr-w416">Windows search uses a lexical approach, matching results by exact words rather than context. It functions across various areas, including File Explorer, Settings, and the main Windows search box.</p>
+      </div>
+    </header>
+    <img src="assets/images/cs-search/features.webp?v=4" srcset="assets/images/cs-search/features-1268.webp?v=4 1268w, assets/images/cs-search/features-1272.webp?v=4 1272w, assets/images/cs-search/features-1590.webp?v=4 1590w, assets/images/cs-search/features-1908.webp?v=4 1908w, assets/images/cs-search/features-2099.webp?v=4 2099w, assets/images/cs-search/features-2290.webp?v=4 2290w, assets/images/cs-search/features-2540.webp?v=4 2540w, assets/images/cs-search/features-2544.webp?v=4 2544w, assets/images/cs-search/features-2798.webp?v=4 2798w, assets/images/cs-search/features-3116.webp?v=4 3116w, assets/images/cs-search/features-3434.webp?v=4 3434w, assets/images/cs-search/features-3812.webp?v=4 3812w, assets/images/cs-search/features-3816.webp?v=4 3816w" sizes="(min-width: 1792px) 1272px, 70.9vw" alt="Three capabilities of semantic search. Related word search: expands search results beyond exact word matches by identifying relevant terms and concepts. Deep content search: enables users to discover specific information within documents without needing to open them. People in semantic search: integrates information about individuals to enhance the relevance and connections in search results." width="1272" height="364" loading="lazy" decoding="async" />
+  </section>
+
+  <!-- Related word search -->
+  <section class="cs-section sr-related">
+    <header class="dd-head-wide sr-feature-head">
+      <h3 class="cs-h3 sr-h3">RELATED WORD SEARCH</h3>
+      <div class="cs-body sr-text sr-w466">
+        <p>Semantic search gets the context behind the query. It goes beyond keywords to find related terms and concepts.</p>
+        <p>For example, a search for &ldquo;car&rdquo; may include results for &ldquo;vehicle registration,&rdquo; &ldquo;insurance,&rdquo; and &ldquo;driver&rsquo;s license,&rdquo; reflecting the user&rsquo;s need for all items associated with the concept of a car. This approach ensures a more comprehensive and intuitive search experience, where users find relevant information that aligns with their overall goal.</p>
+      </div>
+    </header>
+    <img src="assets/images/cs-search/related.webp" srcset="assets/images/cs-search/related-1268.webp 1268w, assets/images/cs-search/related-1272.webp 1272w, assets/images/cs-search/related-1590.webp 1590w, assets/images/cs-search/related-1908.webp 1908w, assets/images/cs-search/related-2099.webp 2099w, assets/images/cs-search/related-2290.webp 2290w, assets/images/cs-search/related-2540.webp 2540w, assets/images/cs-search/related-2544.webp 2544w, assets/images/cs-search/related-2798.webp 2798w, assets/images/cs-search/related-3116.webp 3116w, assets/images/cs-search/related-3434.webp 3434w, assets/images/cs-search/related-3812.webp 3812w, assets/images/cs-search/related-3816.webp 3816w" sizes="(min-width: 1792px) 1272px, 70.9vw" alt="A search for “car”: lexical search lists only files whose names start with “car”, while semantic search also finds related items such as vehicle registration, insurance and a driver’s license" width="1272" height="460" loading="lazy" decoding="async" />
+    <div class="sr-panel">
+      <h4 class="cs-insight-title sr-cap">Related word search</h4>
+      <div class="cs-video sr-video" data-quality="locked">
+        <iframe src="https://player.vimeo.com/video/1245019297?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;loop=1&amp;controls=0&amp;quality=1080p" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" title="relatedword" allowfullscreen></iframe>
+        <button class="cs-video-toggle" type="button" aria-label="Play video">
+          <span class="cs-video-icon" aria-hidden="true">
+            <img class="cs-video-play" src="assets/images/video/play.svg" width="83" height="55" alt="" />
+            <img class="cs-video-pause" src="assets/images/video/pause.svg" width="83" height="55" alt="" />
+          </span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Deep content search -->
+  <section class="cs-section sr-deep">
+    <header class="dd-head-wide sr-feature-head">
+      <h3 class="cs-h3 sr-h3">DEEP CONTENT SEARCH</h3>
+      <div class="cs-body sr-text sr-w484">
+        <p>Semantic search understands user intent, not just keywords, allowing for more relevant document retrieval. For example, searching for &ldquo;white dress&rdquo; can yield results like &ldquo;wedding dress&rdquo; or &ldquo;wedding planning.&rdquo;</p>
+        <p>It also identifies relevant content within a single file, scanning across slides or pages. This makes it easy for users to find all the information they need without opening each file individually.</p>
+      </div>
+    </header>
+    <img src="assets/images/cs-search/deep.webp" srcset="assets/images/cs-search/deep-1268.webp 1268w, assets/images/cs-search/deep-1272.webp 1272w, assets/images/cs-search/deep-1590.webp 1590w, assets/images/cs-search/deep-1908.webp 1908w, assets/images/cs-search/deep-2099.webp 2099w, assets/images/cs-search/deep-2290.webp 2290w, assets/images/cs-search/deep-2540.webp 2540w, assets/images/cs-search/deep-2544.webp 2544w, assets/images/cs-search/deep-2798.webp 2798w, assets/images/cs-search/deep-3116.webp 3116w, assets/images/cs-search/deep-3434.webp 3434w, assets/images/cs-search/deep-3812.webp 3812w, assets/images/cs-search/deep-3816.webp 3816w" sizes="(min-width: 1792px) 1272px, 70.9vw" alt="A search for “car”: lexical search lists file names, while semantic search finds an AutoExpo presentation and the car photos inside it" width="1272" height="460" loading="lazy" decoding="async" />
+    <div class="sr-panels">
+      <div class="sr-panel">
+        <h4 class="sr-cap sr-cap--sm">Deep Content Search in File</h4>
+        <div class="cs-video sr-video" data-quality="locked">
+          <iframe src="https://player.vimeo.com/video/1245019296?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;loop=1&amp;controls=0&amp;quality=1080p" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" title="Deep content search in file" allowfullscreen></iframe>
+          <button class="cs-video-toggle" type="button" aria-label="Play video">
+            <span class="cs-video-icon" aria-hidden="true">
+              <img class="cs-video-play" src="assets/images/video/play.svg" width="83" height="55" alt="" />
+              <img class="cs-video-pause" src="assets/images/video/pause.svg" width="83" height="55" alt="" />
+            </span>
+          </button>
+        </div>
+      </div>
+      <div class="sr-panel">
+        <h4 class="sr-cap sr-cap--sm">Deep Content Search in Video</h4>
+        <div class="cs-video sr-video" data-quality="locked">
+          <iframe src="https://player.vimeo.com/video/1245019298?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;loop=1&amp;controls=0&amp;quality=1080p" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" title="Deep content search in video" allowfullscreen></iframe>
+          <button class="cs-video-toggle" type="button" aria-label="Play video">
+            <span class="cs-video-icon" aria-hidden="true">
+              <img class="cs-video-play" src="assets/images/video/play.svg" width="83" height="55" alt="" />
+              <img class="cs-video-pause" src="assets/images/video/pause.svg" width="83" height="55" alt="" />
+            </span>
+          </button>
+        </div>
+      </div>
+      <div class="sr-panel">
+        <h4 class="sr-cap sr-cap--sm">Search in File Explorer</h4>
+        <img src="assets/images/cs-search/deep-fe-1.webp" srcset="assets/images/cs-search/deep-fe-1-1268.webp 1268w, assets/images/cs-search/deep-fe-1-1272.webp 1272w, assets/images/cs-search/deep-fe-1-1590.webp 1590w, assets/images/cs-search/deep-fe-1-1908.webp 1908w, assets/images/cs-search/deep-fe-1-2099.webp 2099w, assets/images/cs-search/deep-fe-1-2290.webp 2290w, assets/images/cs-search/deep-fe-1-2540.webp 2540w, assets/images/cs-search/deep-fe-1-2544.webp 2544w, assets/images/cs-search/deep-fe-1-2798.webp 2798w, assets/images/cs-search/deep-fe-1-3116.webp 3116w, assets/images/cs-search/deep-fe-1-3434.webp 3434w, assets/images/cs-search/deep-fe-1-3812.webp 3812w, assets/images/cs-search/deep-fe-1-3816.webp 3816w" sizes="(min-width: 1792px) 1272px, 70.9vw" alt="File Explorer search for “vacation” finding photos and videos by what they show, such as kids on a beach" width="1272" height="696" loading="lazy" decoding="async" />
+      </div>
+      <div class="sr-panel">
+        <h4 class="sr-cap sr-cap--sm">Search in File Explorer</h4>
+        <img src="assets/images/cs-search/deep-fe-2.webp?v=2" srcset="assets/images/cs-search/deep-fe-2-1268.webp?v=2 1268w, assets/images/cs-search/deep-fe-2-1272.webp?v=2 1272w, assets/images/cs-search/deep-fe-2-1590.webp?v=2 1590w, assets/images/cs-search/deep-fe-2-1908.webp?v=2 1908w, assets/images/cs-search/deep-fe-2-2099.webp?v=2 2099w, assets/images/cs-search/deep-fe-2-2290.webp?v=2 2290w, assets/images/cs-search/deep-fe-2-2540.webp?v=2 2540w, assets/images/cs-search/deep-fe-2-2544.webp?v=2 2544w, assets/images/cs-search/deep-fe-2-2798.webp?v=2 2798w, assets/images/cs-search/deep-fe-2-3116.webp?v=2 3116w, assets/images/cs-search/deep-fe-2-3434.webp?v=2 3434w, assets/images/cs-search/deep-fe-2-3812.webp?v=2 3812w, assets/images/cs-search/deep-fe-2-3816.webp?v=2 3816w" sizes="(min-width: 1792px) 1272px, 70.9vw" alt="File Explorer search for “white dress” showing top results and all media with matching photos of wedding dresses" width="1272" height="696" loading="lazy" decoding="async" />
+      </div>
+      <div class="sr-panel">
+        <h4 class="sr-cap sr-cap--sm">Search in Windows Search bar</h4>
+        <img src="assets/images/cs-search/deep-wsb.webp" srcset="assets/images/cs-search/deep-wsb-1268.webp 1268w, assets/images/cs-search/deep-wsb-1272.webp 1272w, assets/images/cs-search/deep-wsb-1590.webp 1590w, assets/images/cs-search/deep-wsb-1908.webp 1908w, assets/images/cs-search/deep-wsb-2099.webp 2099w, assets/images/cs-search/deep-wsb-2290.webp 2290w, assets/images/cs-search/deep-wsb-2540.webp 2540w, assets/images/cs-search/deep-wsb-2544.webp 2544w, assets/images/cs-search/deep-wsb-2798.webp 2798w, assets/images/cs-search/deep-wsb-3116.webp 3116w, assets/images/cs-search/deep-wsb-3434.webp 3434w, assets/images/cs-search/deep-wsb-3812.webp 3812w, assets/images/cs-search/deep-wsb-3816.webp 3816w" sizes="(min-width: 1792px) 1272px, 70.9vw" alt="The Windows search box on the desktop with results for “white dress”: files, photos and a summary of a bridal collection presentation" width="1272" height="696" loading="lazy" decoding="async" />
+      </div>
+      <div class="sr-panel">
+        <h4 class="sr-cap sr-cap--sm">Recall</h4>
+        <img src="assets/images/cs-search/deep-recall.webp" srcset="assets/images/cs-search/deep-recall-1268.webp 1268w, assets/images/cs-search/deep-recall-1272.webp 1272w, assets/images/cs-search/deep-recall-1590.webp 1590w, assets/images/cs-search/deep-recall-1908.webp 1908w, assets/images/cs-search/deep-recall-2099.webp 2099w, assets/images/cs-search/deep-recall-2290.webp 2290w, assets/images/cs-search/deep-recall-2540.webp 2540w, assets/images/cs-search/deep-recall-2544.webp 2544w, assets/images/cs-search/deep-recall-2798.webp 2798w, assets/images/cs-search/deep-recall-3116.webp 3116w, assets/images/cs-search/deep-recall-3434.webp 3434w, assets/images/cs-search/deep-recall-3812.webp 3812w, assets/images/cs-search/deep-recall-3816.webp 3816w" sizes="(min-width: 1792px) 1272px, 70.9vw" alt="Search results for “white dress” across text matches and visual matches from earlier activity" width="1272" height="696" loading="lazy" decoding="async" />
+      </div>
+
+    </div>
+  </section>
+
+  <!-- People search -->
+  <section class="cs-section sr-people">
+    <header class="dd-head-wide sr-feature-head">
+      <h3 class="cs-h3 sr-h3">PEOPLE SEARCH</h3>
+      <div class="cs-body sr-text dd-w431">
+        <p>Semantic search also enables recognition of people in images by identifying contextual clues and linking them to known profiles.</p>
+        <p>For example, if Tejasvi appears in a group photo or event-related image, semantic search can infer her presence through context &ndash; like her associations with specific projects, teams, or frequent collaborators. This level of context-aware tagging makes it easier to locate relevant files and provides a fuller picture of someone&rsquo;s involvement across various media.</p>
+      </div>
+    </header>
+    <img src="assets/images/cs-search/people.webp" srcset="assets/images/cs-search/people-1268.webp 1268w, assets/images/cs-search/people-1272.webp 1272w, assets/images/cs-search/people-1590.webp 1590w, assets/images/cs-search/people-1908.webp 1908w, assets/images/cs-search/people-2099.webp 2099w, assets/images/cs-search/people-2290.webp 2290w, assets/images/cs-search/people-2540.webp 2540w, assets/images/cs-search/people-2544.webp 2544w, assets/images/cs-search/people-2798.webp 2798w, assets/images/cs-search/people-3116.webp 3116w, assets/images/cs-search/people-3434.webp 3434w, assets/images/cs-search/people-3812.webp 3812w, assets/images/cs-search/people-3816.webp 3816w" sizes="(min-width: 1792px) 1272px, 70.9vw" alt="A search for “car”: lexical search lists file names, while semantic search finds an AutoExpo presentation and the car photos inside it" width="1272" height="460" loading="lazy" decoding="async" />
+    <div class="sr-panel">
+      <h4 class="cs-insight-title sr-cap">People Video</h4>
+      <div class="cs-video sr-video" data-quality="locked">
+        <iframe src="https://player.vimeo.com/video/1245019295?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;loop=1&amp;controls=0&amp;quality=1080p" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" title="searchpeople" allowfullscreen></iframe>
+        <button class="cs-video-toggle" type="button" aria-label="Play video">
+          <span class="cs-video-icon" aria-hidden="true">
+            <img class="cs-video-play" src="assets/images/video/play.svg" width="83" height="55" alt="" />
+            <img class="cs-video-pause" src="assets/images/video/pause.svg" width="83" height="55" alt="" />
+          </span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <hr class="cs-divider" />
+
+  <!-- Next projects -->
+  <section class="cs-section cs-next">
+    <h2 class="cs-h2 cs-h2--sm">NEXT PROJECTS</h2>
+    <div class="cs-next-cards">
+      <a class="cs-card cs-card--drag cs-card--fit" href="people.html">
+        <h3 class="cs-card-title">PEOPLE IN WINDOWS</h3>
+        <p class="cs-card-text">Bringing people you connect with most right into Windows</p>
+        <img src="assets/images/cs-search/next-people-sr.webp" srcset="assets/images/cs-search/next-people-sr-574.webp 574w, assets/images/cs-search/next-people-sr-718.webp 718w, assets/images/cs-search/next-people-sr-861.webp 861w, assets/images/cs-search/next-people-sr-947.webp 947w, assets/images/cs-search/next-people-sr-1033.webp 1033w, assets/images/cs-search/next-people-sr-1148.webp 1148w, assets/images/cs-search/next-people-sr-1263.webp 1263w, assets/images/cs-search/next-people-sr-1406.webp 1406w, assets/images/cs-search/next-people-sr-1550.webp 1550w, assets/images/cs-search/next-people-sr-1722.webp 1722w" sizes="(max-width: 800px) 70.9vw, (min-width: 1792px) 574px, 32vw" alt="" width="574" height="290" loading="lazy" decoding="async" />
+      </a>
+      <a class="cs-card cs-card--connected cs-card--fit" href="connected.html">
+        <h3 class="cs-card-title">CONNECTED INTELLIGENCE</h3>
+        <p class="cs-card-text">Bring your devices together and unlock new ways with AI</p>
+        <img src="assets/images/cs-search/next-connected.webp" srcset="assets/images/cs-search/next-connected-558.webp 558w, assets/images/cs-search/next-connected-698.webp 698w, assets/images/cs-search/next-connected-837.webp 837w, assets/images/cs-search/next-connected-921.webp 921w, assets/images/cs-search/next-connected-1004.webp 1004w, assets/images/cs-search/next-connected-1116.webp 1116w, assets/images/cs-search/next-connected-1228.webp 1228w, assets/images/cs-search/next-connected-1367.webp 1367w, assets/images/cs-search/next-connected-1507.webp 1507w, assets/images/cs-search/next-connected-1674.webp 1674w" sizes="(max-width: 800px) 70.9vw, (min-width: 1792px) 558px, 31.1vw" alt="" width="558" height="290" loading="lazy" decoding="async" />
+      </a>
+    </div>
+  </section>
+</main>
+
+<!-- Site footer: the same as the homepage (Figma "Footer_homepage", 709:94216). -->
+<footer class="site-footer" id="contact" aria-label="Site footer">
+    <div class="sf-cols" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+
+    <div class="sf-top">
+      <a class="sf-logo" href="index.html" aria-label="Tejasvi Arya — home">
+        <img src="assets/icons/footer-logo.svg" alt="" width="45.0008" height="20" />
+      </a>
+      <a href="mailto:tejasviarya0604@gmail.com">tejasviarya0604@gmail.com</a>
+      <a href="https://www.linkedin.com/in/tejasviarya/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://www.behance.net/tejasviary475e" target="_blank" rel="noopener">Behance</a>
+    </div>
+
+    <nav class="sf-links" aria-label="Footer">
+      <a href="index.html#about">ABOUT ME</a>
+      <a href="work.html">WORK</a>
+      <a href="ai-prototype.html">PROTOTYPED WITH AI</a>
+      <a href="Tejasvi_Resume.pdf" class="js-resume-link" target="_blank" rel="noopener">DOWNLOAD RESUME</a>
+    </nav>
+
+    <!-- Pixel art (Figma frames "27", "11", "28"): each click shows the next, in a loop. -->
+    <button class="sf-mark" type="button" data-state="0" aria-label="Change the pixel art">
+      <svg width="84" height="84" viewBox="0 0 84 84" aria-hidden="true">
+        <g data-s="0"><g fill="#f95b4b"><rect x="34" y="2" width="16" height="16"/><rect x="34" y="66" width="16" height="16"/><rect x="2" y="34" width="16" height="16"/><rect x="66" y="34" width="16" height="16"/></g><g fill="#ff9b64"><rect x="18" y="18" width="16" height="16"/><rect x="18" y="50" width="16" height="16"/><rect x="50" y="18" width="16" height="16"/><rect x="50" y="50" width="16" height="16"/></g></g>
+        <g data-s="1"><g fill="#f95b4b"><rect x="18" y="18" width="16" height="16"/><rect x="18" y="50" width="16" height="16"/><rect x="50" y="18" width="16" height="16"/><rect x="50" y="50" width="16" height="16"/></g><g fill="#ff9b64"><rect x="34" y="34" width="16" height="16"/></g></g>
+        <g data-s="2"><g fill="#ff9b64"><rect x="34" y="18" width="16" height="16"/><rect x="34" y="50" width="16" height="16"/></g><g fill="#f95b4b"><rect x="18" y="34" width="16" height="16"/><rect x="50" y="34" width="16" height="16"/></g></g>
+      </svg>
+    </button>
+
+    <p class="sf-name" aria-hidden="true"><span><span class="sf-t">T</span><i>E</i>JASVI</span><span><i>A</i>RYA</span></p>
+  </footer>
+
+<script src="https://player.vimeo.com/api/player.js"></script>
+<script src="assets/js/case.js"></script>
+</body>
+</html>
