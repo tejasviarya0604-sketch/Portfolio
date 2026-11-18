@@ -9,6 +9,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;1,500;1,600&family=Hedvig+Letters+Serif:opsz@12..24&display=swap" />
+<!-- Title font, fetched up front so the title renders in it straight away. -->
+<link rel="preload" href="assets/fonts/GT-America-Compressed-Bold-Trial.otf" as="font" type="font/otf" crossorigin />
+<link rel="preload" href="assets/fonts/GT-America-Compressed-Light-Trial.otf" as="font" type="font/otf" crossorigin />
 <link rel="stylesheet" href="styles.css" />
 <script>
   // Always start at the first fold on reload (no restored scroll position,
@@ -33,7 +36,7 @@
     <a href="index.html#about">ABOUT ME</a>
     <a href="work.html" class="is-active" aria-current="page">WORK</a>
     <a href="ai-prototype.html">PROTOTYPED WITH AI</a>
-    <a href="Tejasvi_Resume.pdf" class="js-resume-link" target="_blank" rel="noopener">DOWNLOAD RESUME</a>
+    <a href="Tejasvi%20Arya.pdf" class="js-resume-link" target="_blank" rel="noopener">DOWNLOAD RESUME</a>
   </nav>
 </header>
 
@@ -44,9 +47,10 @@
   <section class="cs-top">
     <h1 class="cs-title">SHARE <span class="cs-title-sep">\</span> WINDOWS os</h1>
     <dl class="cs-facts">
-      <div><dt>Impact</dt><dd>6.3X Growth, from<br />18 Million to 112.9 Million users</dd></div>
+      <div><dt>Impact</dt><dd>3X Growth, from<br />18 Million to 112 Million user</dd></div>
+      <div><dt>Goal</dt><dd class="cs-w279">Share seamlessly with people,<br /> devices, and apps, right from your PC</dd></div>
       <div><dt>Product</dt><dd class="cs-facts-short">Windows - Microsoft</dd></div>
-      <div><dt>Goal</dt><dd class="cs-w279">Share seamlessly with people, across devices and apps, right from your PC</dd></div>
+      <div><dt>Team Size</dt><dd>2 PM, 10 Eng, 1 Designer</dd></div>
     </dl>
     <div class="cs-hero cs-video cs-video--center">
       <iframe src="https://player.vimeo.com/video/1240732783?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;loop=1&amp;controls=0&amp;quality=1080p" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" title="WindowsShare" allowfullscreen></iframe>
@@ -57,6 +61,8 @@
         </span></span>
       </button>
       <span class="cs-video-pill" aria-hidden="true"><img src="assets/images/video/pill-play.svg" width="10" height="10" alt="" />Video</span>
+      <!-- Open in new tab (Figma 979:50975) -->
+      <a class="cs-video-open" href="https://vimeo.com/1240732783" target="_blank" rel="noopener" aria-label="Open the video on Vimeo in a new tab"><img src="assets/images/video/open.svg" width="21.0003" height="21.0006" alt="" /></a>
     </div>
   </section>
 
@@ -69,7 +75,7 @@
         <p class="cs-intro">Share on Windows lets you send anything from your PC to anyone, including yourself, through the apps and devices you already use. With people, apps and devices in one place, sharing becomes a natural part of what you&rsquo;re already doing.</p>
       </div>
     </header>
-    <video class="cs-loop" autoplay muted loop playsinline preload="auto" poster="videos/share/ctx-hands-poster.webp" width="1272" height="548" aria-label="Two hands passing a folder between them">
+    <video disablepictureinpicture class="cs-loop" autoplay muted loop playsinline preload="auto" poster="videos/share/ctx-hands-poster.webp" width="1272" height="548" aria-label="Two hands passing a folder between them">
       <source src="videos/share/ctx-hands.mp4" type="video/mp4" media="(max-width: 800px)" />
       <source src="videos/share/ctx-hands@2x.mp4" type="video/mp4" />
     </video>
@@ -292,7 +298,7 @@
       </div>
     </header>
     <div class="cs-feature"><h3 class="cs-h3"><span>SHARE WITH <i>WHO MATTER</i> THE MOST</span></h3><div class="cs-video cs-video--center" style="--ar: 2560 / 1600">
-      <video muted loop playsinline preload="none" poster="videos/share/share1-poster.webp" width="2560" height="1600" aria-label="Selecting photos on the desktop and sharing them with a person suggested in the share sheet">
+      <video disablepictureinpicture muted loop playsinline preload="none" poster="videos/share/share1-poster.webp" width="2560" height="1600" aria-label="Selecting photos on the desktop and sharing them with a person suggested in the share sheet">
         <source src="videos/share/share1.webm" type="video/webm" />
         <source src="videos/share/share1.mp4" type="video/mp4" />
       </video>
@@ -304,7 +310,7 @@
       </button>
     </div></div>
     <div class="cs-feature"><h3 class="cs-h3"><span><i>SHARE</i> WITH THE <i>APP YOU USE</i> THE MOST</span></h3><div class="cs-video cs-video--center" style="--ar: 2560 / 1600">
-      <video muted loop playsinline preload="none" poster="videos/share/share2-poster.webp" width="2560" height="1600" aria-label="Sharing PDF tickets to a contact through the Teams share dialog">
+      <video disablepictureinpicture muted loop playsinline preload="none" poster="videos/share/share2-poster.webp" width="2560" height="1600" aria-label="Sharing PDF tickets to a contact through the Teams share dialog">
         <source src="videos/share/share2.webm" type="video/webm" />
         <source src="videos/share/share2.mp4" type="video/mp4" />
       </video>
@@ -316,7 +322,7 @@
       </button>
     </div></div>
     <div class="cs-feature"><h3 class="cs-h3"><span><i>SHARE WITH YOURSELF</i> MADE EASY</span></h3><div class="cs-video cs-video--center" style="--ar: 2560 / 1600">
-      <video muted loop playsinline preload="none" poster="videos/share/share3-poster.webp" width="2560" height="1600" aria-label="Sending photos from the PC to your own phone, with a progress notification">
+      <video disablepictureinpicture muted loop playsinline preload="none" poster="videos/share/share3-poster.webp" width="2560" height="1600" aria-label="Sending photos from the PC to your own phone, with a progress notification">
         <source src="videos/share/share3.webm" type="video/webm" />
         <source src="videos/share/share3.mp4" type="video/mp4" />
       </video>
@@ -328,7 +334,7 @@
       </button>
     </div></div>
     <div class="cs-feature"><h3 class="cs-h3"><span>SHARE IN <i>CONTEXT</i> MENU</span></h3><div class="cs-video cs-video--center" style="--ar: 2560 / 1600">
-      <video muted loop playsinline preload="none" poster="videos/share/share4-poster.webp" width="2560" height="1600" aria-label="Opening Share from the right-click context menu on selected photos">
+      <video disablepictureinpicture muted loop playsinline preload="none" poster="videos/share/share4-poster.webp" width="2560" height="1600" aria-label="Opening Share from the right-click context menu on selected photos">
         <source src="videos/share/share4.webm" type="video/webm" />
         <source src="videos/share/share4.mp4" type="video/mp4" />
       </video>
@@ -370,7 +376,7 @@
     <div class="cs-next-cards cs-next-cards--drag-first">
       <a class="cs-card cs-card--drag" href="dragandrop.html">
         <h3 class="cs-card-title">DRAG AND DROP</h3>
-        <p class="cs-card-text">Redesigning drag and drop in Windows into a fluid, context-aware experience</p>
+        <p class="cs-card-text">Redesigning drag &amp; drop in Windows into a fluid, context-aware experience</p>
         <img src="assets/images/cs-share/next-dragdrop-tray.webp" srcset="assets/images/cs-share/next-dragdrop-tray-557.webp 557w, assets/images/cs-share/next-dragdrop-tray-561.webp 561w, assets/images/cs-share/next-dragdrop-tray-701.webp 701w, assets/images/cs-share/next-dragdrop-tray-842.webp 842w, assets/images/cs-share/next-dragdrop-tray-926.webp 926w, assets/images/cs-share/next-dragdrop-tray-1010.webp 1010w, assets/images/cs-share/next-dragdrop-tray-1118.webp 1118w, assets/images/cs-share/next-dragdrop-tray-1122.webp 1122w, assets/images/cs-share/next-dragdrop-tray-1234.webp 1234w, assets/images/cs-share/next-dragdrop-tray-1374.webp 1374w, assets/images/cs-share/next-dragdrop-tray-1515.webp 1515w, assets/images/cs-share/next-dragdrop-tray-1679.webp 1679w, assets/images/cs-share/next-dragdrop-tray-1683.webp 1683w" sizes="(max-width: 800px) 70.9vw, (min-width: 1792px) 561px, 31.3vw" alt="" width="561" height="290" loading="lazy" decoding="async" />
       </a>
       <a class="cs-card cs-card--search" href="search.html">
@@ -399,7 +405,7 @@
       <a href="index.html#about">ABOUT ME</a>
       <a href="work.html">WORK</a>
       <a href="ai-prototype.html">PROTOTYPED WITH AI</a>
-      <a href="Tejasvi_Resume.pdf" class="js-resume-link" target="_blank" rel="noopener">DOWNLOAD RESUME</a>
+      <a href="Tejasvi%20Arya.pdf" class="js-resume-link" target="_blank" rel="noopener">DOWNLOAD RESUME</a>
     </nav>
 
     <!-- Pixel art (Figma frames "27", "11", "28"): each click shows the next, in a loop. -->

@@ -32,7 +32,7 @@
   src: url("assets/fonts/GT-America-Compressed-Black-Trial.otf") format("opentype");
   font-weight: 900;
   font-style: normal;
-  font-display: swap;
+  font-display: block; /* no fallback flash on titles */
 }
 
 @font-face {
@@ -40,7 +40,7 @@
   src: url("assets/fonts/GT-America-Compressed-Black-Italic-Trial.otf") format("opentype");
   font-weight: 900;
   font-style: italic;
-  font-display: swap;
+  font-display: block; /* no fallback flash on titles */
 }
 
 @font-face {
@@ -48,7 +48,7 @@
   src: url("assets/fonts/GT-America-Compressed-Bold-Trial.otf") format("opentype");
   font-weight: 700;
   font-style: normal;
-  font-display: swap;
+  font-display: block; /* no fallback flash on titles */
 }
 
 @font-face {
@@ -56,7 +56,7 @@
   src: url("assets/fonts/GT-America-Compressed-Bold-Italic-Trial.otf") format("opentype");
   font-weight: 700;
   font-style: italic;
-  font-display: swap;
+  font-display: block; /* no fallback flash on titles */
 }
 
 @font-face {
@@ -64,7 +64,7 @@
   src: url("assets/fonts/GT-America-Compressed-Light-Trial.otf") format("opentype");
   font-weight: 300;
   font-style: normal;
-  font-display: swap;
+  font-display: block; /* no fallback flash on titles */
 }
 
 @font-face {
@@ -80,7 +80,7 @@
   src: url("assets/fonts/GT-America-Compressed-Medium-Trial.otf") format("opentype");
   font-weight: 500;
   font-style: normal;
-  font-display: swap;
+  font-display: block; /* no fallback flash on titles */
 }
 
 @font-face {
@@ -88,7 +88,7 @@
   src: url("assets/fonts/GT-America-Compressed-Medium-Italic-Trial.otf") format("opentype");
   font-weight: 500;
   font-style: italic;
-  font-display: swap;
+  font-display: block; /* no fallback flash on titles */
 }
 
 @font-face {
@@ -1355,13 +1355,12 @@ html.js .work-cards {
   height: 39.5px;
 }
 
-/* Work page "SCROLL" pill (Figma 174:45829): red on pale pink, bottom right,
-   on the right grid line. */
+/* Work page "SCROLL" pill (Figma 174:45829): red text and arrow, no fill,
+   bottom right, on the right grid line. */
 .work-scroll {
   right: var(--side-pad);
-  bottom: clamp(12px, 2.62dvh, 29px); /* 29 / 1107 */
+  bottom: clamp(10px, 2.26dvh, 25px); /* 25 / 1107 */
   z-index: 2;
-  background: #f7e7e7;
   color: var(--red-wordmark);
 }
 
@@ -2175,12 +2174,15 @@ html.js .site-footer {
   height: auto;
 }
 
-/* Short silent autoplay loops (replacing a still image). */
+/* Short silent autoplay loops (replacing a still image). They take no mouse
+   input, so browsers don't draw their own hover toolbars on them (Edge shows
+   Picture-in-Picture and video-enhance buttons over any hovered <video>). */
 .cs-loop {
   display: block;
   width: 100%;
   height: auto;
   background: var(--cs-tint);
+  pointer-events: none;
 }
 
 .cs-loop--round { border-radius: 8px; }
@@ -2311,10 +2313,13 @@ html.js .site-footer {
 
 /* ---- Title, facts, hero ---- */
 
+/* 48px of visible space from the title's letters to the facts (the title's
+   line box runs 0.1117em below its baseline, so that part is taken off), and
+   48px from the facts to the hero. Figma trims the title box to its letters. */
 .cs-facts {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  margin: calc(48 * var(--u)) 0 0;
+  margin: calc(48 * var(--u) - 0.1117 * max(48px, 78 * var(--u))) 0 0;
   font-weight: 500;
 }
 
@@ -2345,7 +2350,7 @@ html.js .site-footer {
 }
 
 .cs-hero {
-  margin-top: calc(42 * var(--u));
+  margin-top: calc(48 * var(--u));
   aspect-ratio: 1272 / 650;
   background: var(--cs-tint);
 }
@@ -2414,6 +2419,27 @@ html.js .site-footer {
 
 .has-played .cs-video-pill { opacity: 0; }
 
+/* "Open in new tab" icon in the top-right corner (Figma 979:50975): a 20px
+   icon 20px in from the edges, inside a larger 40px tap target. */
+.cs-video-open {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  transition: opacity 0.2s ease;
+}
+
+.cs-video-open img {
+  width: 21px;
+  height: 21px;
+}
+
+.cs-video-open:hover { opacity: 0.7; }
+
 /* Ambient videos have no button and can't be clicked: they just loop on screen.
    Rounded so the clip's own small black corners never show (isolation makes
    Safari clip the iframe to the radius). */
@@ -2440,6 +2466,67 @@ html.js .site-footer {
 .cs-video-icon {
   display: grid;
   transition: opacity 0.2s ease;
+}
+
+/* Progress bar of the custom Vimeo player (Figma 1505:138850), added by
+   assets/js/case.js to every Vimeo video with a play button: a 4px track on
+   the video's bottom edge, the played part in blue, and a 14 x 10 handle
+   on the track at the play position. The hit area is taller than the
+   track so it is easy to click or drag; it sits above the play/pause button. */
+/* Wrapper that case.js puts around each Vimeo video with a progress bar, so
+   the bar is not clipped by the video's rounded corners. */
+.cs-video-frame {
+  position: relative;
+}
+
+.cs-video-bar {
+  --p: 0;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  height: 18px;
+  cursor: pointer;
+  touch-action: none;
+}
+
+.cs-video-bar::before,
+.cs-video-bar-fill {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 4px;
+}
+
+.cs-video-bar::before {
+  right: 0;
+  background: #b7ceff;
+}
+
+.cs-video-bar-fill {
+  width: calc(var(--p) * 100%);
+  background: #1b63ff;
+}
+
+.cs-video-bar-thumb {
+  position: absolute;
+  bottom: -3px; /* centred on the 4px track */
+  left: clamp(0px, calc(var(--p) * 100% - 3px), calc(100% - 14px)); /* starts 3px before the fill ends (Figma) */
+  width: 14px;
+  height: 10px;
+  border-radius: 4px;
+  background: #1b63ff;
+}
+
+.cs-video-bar:focus-visible {
+  outline: none;
+}
+
+.cs-video-bar:focus-visible .cs-video-bar-thumb {
+  outline: 2px solid #1b63ff;
+  outline-offset: 2px;
 }
 
 .cs-video-icon img {
@@ -3354,13 +3441,8 @@ a.cs-card:focus-visible img {
 /* ---------- Drag and drop case study (dragandrop.html, Figma "Draganddrop", 731:110071) ----------
    Built on the case study styles above; only what differs is here. */
 
-/* 56px of visible space between the title's letters and "Impact". */
-.dd-facts {
-  margin-top: calc(46 * var(--u));
-}
-
 .dd-hero {
-  margin-top: calc(43 * var(--u));
+  margin-top: calc(48 * var(--u));
 }
 
 /* Gaps between sections, from the Figma frame (Draganddrop, 1060:78101), so
@@ -3384,6 +3466,26 @@ a.cs-card:focus-visible img {
 .dd-demo--2 { margin-top: calc(230 * var(--u)); }
 /* 240px of visible space between the last Explorations note and "SOLUTION". */
 .dd-solution { margin-top: calc(216 * var(--u)); }
+/* Line under the Drop Tray image, 17px below it (Figma 1499:135108). */
+.dd-proto-link {
+  margin: 17px 0 0;
+  font-weight: 400;
+  font-size: 16.6px;
+  line-height: 1.94;
+  letter-spacing: -0.014em; /* -0.2324 / 16.6 */
+  color: #2c3644;
+}
+
+/* Universal Composer's link sits 16px under its video (Figma 1502:135116). */
+.dd-proto-link--16 { margin-top: 16px; }
+
+.dd-proto-link a {
+  color: #1d6cff;
+  text-decoration: none;
+}
+
+.dd-proto-link a:hover,
+.dd-proto-link a:focus-visible { text-decoration: underline; }
 /* 190px of visible space between the Evolving text and the "EVOLVING DRAG AND DROP" label
    (the label is trimmed to its capitals, so the margin is the visible gap). */
 .dd-composer { margin-top: calc(190 * var(--u)); }
@@ -3745,8 +3847,6 @@ a.cs-card:focus-visible img {
    frame's, box to box, on the 1792 artboard.
    ========================================================================== */
 
-.sr-facts .sr-facts-wide { grid-column: span 2; }
-.sr-facts .sr-facts-wide dd { max-width: 539px; }
 
 /* Placeholder boxes in the design, at their Figma height (--h) on the 1272 column. */
 .sr-ph {
@@ -3755,7 +3855,7 @@ a.cs-card:focus-visible img {
 }
 
 .sr-hero {
-  margin-top: calc(42 * var(--u));
+  margin-top: calc(48 * var(--u));
   background: #f3fbff;
 }
 
@@ -3833,6 +3933,12 @@ img.sr-hero {
   letter-spacing: -0.02em;
 }
 
+/* "Semantic search across various surfaces" (Figma 1502:135484): a title over
+   its first caption (32px), and two File Explorer shots under one caption,
+   60px apart. */
+.sr-surfaces-title { margin-bottom: calc(32 * var(--u)); }
+.sr-panel-next { margin-top: calc(60 * var(--u)); }
+
 @media (max-width: 800px) {
   .sr-current,
   .sr-pain,
@@ -3843,11 +3949,12 @@ img.sr-hero {
 
   .sr-shots { grid-template-columns: 1fr; row-gap: 24px; }
   .sr-shots figure:nth-child(odd) img { width: 100%; }
-  .sr-facts .sr-facts-wide { grid-column: auto; }
 
   .sr-panel,
   .sr-panels { margin-top: 48px; }
   .sr-panels > :is(.sr-panel, .sr-ph) + :is(.sr-panel, .sr-ph) { margin-top: 40px; }
+  .sr-surfaces-title { margin-bottom: 20px; }
+  .sr-panel-next { margin-top: 24px; }
 }
 
 /* Vimeo clips whose own frame has rounded corners on black, plus a hairline
@@ -4147,6 +4254,24 @@ img.sr-hero {
 /* ---- work.html cards (Figma 1342:118999) ---- */
 /* People's card is blue on the Work page (#edf3f9); elsewhere it is pink. */
 .pg-work .pg-card--people { background: #edf3f9; }
+
+/* Work page, side by side: the cards in a row share their rows (title,
+   subtext, image, impact) through subgrid, so when one subtext wraps to two
+   lines the other card's subtext takes the same height and the images stay
+   level. The last row takes any spare height. */
+@media (min-width: 801px) {
+  .pg-work .pg-row {
+    grid-template-rows: auto auto auto 1fr;
+  }
+
+  .pg-work .pg-row > .cs-card {
+    display: grid;
+    grid-row: span 4;
+    grid-template-rows: subgrid;
+    row-gap: 0;
+    align-items: start;
+  }
+}
 /* First row: the impact line, 20px under the image (Figma 1451:125976/125980). */
 .pg-card-impact {
   margin: 20px 0 0;

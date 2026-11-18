@@ -98,7 +98,114 @@
       if (e.detail !== box && playing) player.pause().catch(function () {});
     });
 
+    addProgressBar(box, player);
   });
+
+  // Progress bar (custom player, Figma 1505:138850): follows playback, and a
+  // click or drag on it jumps to that point. Keyboard: arrows move 5 s,
+  // Home / End jump to the start / end.
+  function addProgressBar(box, player) {
+    var bar = document.createElement("div");
+    bar.className = "cs-video-bar";
+    bar.tabIndex = 0;
+    bar.setAttribute("role", "slider");
+    bar.setAttribute("aria-label", "Video position");
+    bar.setAttribute("aria-valuemin", "0");
+    bar.setAttribute("aria-valuemax", "100");
+    bar.setAttribute("aria-valuenow", "0");
+    bar.innerHTML = '<span class="cs-video-bar-fill"></span><span class="cs-video-bar-thumb"></span>';
+    // The bar goes in a wrapper around the video, not inside it: many video
+    // boxes clip their content (rounded corners), which would cut the handle
+    // where it hangs below the bottom edge.
+    var frame = document.createElement("div");
+    frame.className = "cs-video-frame";
+    box.parentNode.insertBefore(frame, box);
+    frame.appendChild(box);
+    frame.appendChild(bar);
+
+    var duration = 0;
+    var dragging = false;
+    player.getDuration().then(function (d) { duration = d; }).catch(function () {});
+
+    // Smooth movement: Vimeo reports the time only about 4 times a second, so
+    // between reports the bar is moved every frame from the last known time.
+    var last = { t: 0, at: 0 };
+    var running = false;
+    var raf = 0;
+    var tick = function () {
+      if (!running) return;
+      if (!dragging && duration) {
+        var t = last.t + (performance.now() - last.at) / 1000;
+        show(Math.min(t, duration) / duration);
+      }
+      raf = requestAnimationFrame(tick);
+    };
+    var run = function (on) {
+      running = on;
+      cancelAnimationFrame(raf);
+      if (on) raf = requestAnimationFrame(tick);
+    };
+    player.on("play", function () { last.at = performance.now(); run(true); });
+    player.on("pause", function () { run(false); });
+    player.on("ended", function () { run(false); });
+
+    var show = function (p) {
+      p = Math.min(1, Math.max(0, p));
+      bar.style.setProperty("--p", p);
+      bar.setAttribute("aria-valuenow", Math.round(p * 100));
+    };
+    var seek = function (p) {
+      if (!duration) return;
+      player.setCurrentTime(Math.min(1, Math.max(0, p)) * duration).catch(function () {});
+    };
+    var at = function (e) {
+      var r = bar.getBoundingClientRect();
+      return (e.clientX - r.left) / r.width;
+    };
+
+    player.on("timeupdate", function (d) {
+      duration = d.duration || duration;
+      last = { t: d.seconds, at: performance.now() };
+      if (!dragging && !running) show(d.percent);
+    });
+    player.on("seeked", function (d) {
+      last = { t: d.seconds, at: performance.now() };
+      if (!dragging) show(d.percent);
+    });
+
+    bar.addEventListener("pointerdown", function (e) {
+      dragging = true;
+      bar.setPointerCapture(e.pointerId);
+      show(at(e));
+      e.preventDefault();
+    });
+    bar.addEventListener("pointermove", function (e) {
+      if (dragging) show(at(e));
+    });
+    var end = function (e) {
+      if (!dragging) return;
+      dragging = false;
+      seek(at(e));
+    };
+    bar.addEventListener("pointerup", end);
+    bar.addEventListener("pointercancel", function () { dragging = false; });
+    // Clicks on the bar must not reach the play/pause button underneath.
+    bar.addEventListener("click", function (e) { e.stopPropagation(); });
+
+    bar.addEventListener("keydown", function (e) {
+      if (!duration) return;
+      var now = parseFloat(bar.style.getPropertyValue("--p") || 0) * duration;
+      var t = null;
+      if (e.key === "ArrowRight" || e.key === "ArrowUp") t = now + 5;
+      else if (e.key === "ArrowLeft" || e.key === "ArrowDown") t = now - 5;
+      else if (e.key === "Home") t = 0;
+      else if (e.key === "End") t = duration - 0.1;
+      if (t === null) return;
+      e.preventDefault();
+      show(t / duration);
+      seek(t / duration);
+    });
+  }
 })();
 
 // Self-hosted videos with our play/pause button (.cs-video holding a <video>

@@ -9,6 +9,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;1,500;1,600&family=Hedvig+Letters+Serif:opsz@12..24&display=swap" />
+<!-- Title font, fetched up front so the title renders in it straight away. -->
+<link rel="preload" href="assets/fonts/GT-America-Compressed-Bold-Trial.otf" as="font" type="font/otf" crossorigin />
+<link rel="preload" href="assets/fonts/GT-America-Compressed-Bold-Italic-Trial.otf" as="font" type="font/otf" crossorigin />
 <link rel="stylesheet" href="styles.css" />
 <script>
   // Always start at the first fold on reload (no restored scroll position,
@@ -34,7 +37,7 @@
     <a href="index.html#about">ABOUT ME</a>
     <a href="work.html" class="is-active" aria-current="page">WORK</a>
     <a href="ai-prototype.html">PROTOTYPED WITH AI</a>
-    <a href="Tejasvi_Resume.pdf" class="js-resume-link" target="_blank" rel="noopener">DOWNLOAD RESUME</a>
+    <a href="Tejasvi%20Arya.pdf" class="js-resume-link" target="_blank" rel="noopener">DOWNLOAD RESUME</a>
   </nav>
 </header>
 
@@ -44,9 +47,11 @@
   <!-- Title and project facts -->
   <section class="cs-top">
     <h1 class="cs-title">AI SEARCH <i>IN WINDOWS</i></h1>
-    <dl class="cs-facts sr-facts">
+    <!-- Facts (Figma 1481:134422): Goal, Product, Team Size -->
+    <dl class="cs-facts">
+      <div><dt>Goal</dt><dd>Find what you need faster with AI in Windows search</dd></div>
       <div><dt>Product</dt><dd class="cs-facts-short">Windows - Microsoft</dd></div>
-      <div class="sr-facts-wide"><dt>Goal</dt><dd>Find what you need faster with AI in Windows search</dd></div>
+      <div><dt>Team Size</dt><dd>1 PM, 3 Eng, 1 Designer</dd></div>
     </dl>
     <!-- Hero (Figma 1417:146725) -->
     <img class="sr-hero" src="assets/images/cs-search/hero.webp" srcset="assets/images/cs-search/hero-1268.webp 1268w, assets/images/cs-search/hero-1272.webp 1272w, assets/images/cs-search/hero-1590.webp 1590w, assets/images/cs-search/hero-1908.webp 1908w, assets/images/cs-search/hero-2099.webp 2099w, assets/images/cs-search/hero-2290.webp 2290w, assets/images/cs-search/hero-2540.webp 2540w, assets/images/cs-search/hero-2544.webp 2544w, assets/images/cs-search/hero-2798.webp 2798w, assets/images/cs-search/hero-3116.webp 3116w, assets/images/cs-search/hero-3434.webp 3434w, assets/images/cs-search/hero-3812.webp 3812w, assets/images/cs-search/hero-3816.webp 3816w" sizes="(min-width: 1792px) 1272px, 70.9vw" alt="AI search in Windows: searching &ldquo;White dress&rdquo; shows suggested filters, matching files and photos, and a preview of the bridal collection presentation with an AI summary" width="1272" height="600" decoding="async" fetchpriority="high" />
@@ -93,7 +98,7 @@
       <p class="cs-label">ENABLING AI IN SEARCH</p>
       <div class="cs-head-row">
         <h2 class="cs-h2"><i>SEMANTIC</i> SEARCH IN WINDOWS</h2>
-        <p class="cs-body sr-w416">Windows search uses a lexical approach, matching results by exact words rather than context. It functions across various areas, including File Explorer, Settings, and the main Windows search box.</p>
+        <p class="cs-body sr-w416">A search experience that aligns more closely with how humans naturally seek information context insight data</p>
       </div>
     </header>
     <img src="assets/images/cs-search/features.webp?v=4" srcset="assets/images/cs-search/features-1268.webp?v=4 1268w, assets/images/cs-search/features-1272.webp?v=4 1272w, assets/images/cs-search/features-1590.webp?v=4 1590w, assets/images/cs-search/features-1908.webp?v=4 1908w, assets/images/cs-search/features-2099.webp?v=4 2099w, assets/images/cs-search/features-2290.webp?v=4 2290w, assets/images/cs-search/features-2540.webp?v=4 2540w, assets/images/cs-search/features-2544.webp?v=4 2544w, assets/images/cs-search/features-2798.webp?v=4 2798w, assets/images/cs-search/features-3116.webp?v=4 3116w, assets/images/cs-search/features-3434.webp?v=4 3434w, assets/images/cs-search/features-3812.webp?v=4 3812w, assets/images/cs-search/features-3816.webp?v=4 3816w" sizes="(min-width: 1792px) 1272px, 70.9vw" alt="Three capabilities of semantic search. Related word search: expands search results beyond exact word matches by identifying relevant terms and concepts. Deep content search: enables users to discover specific information within documents without needing to open them. People in semantic search: integrates information about individuals to enhance the relevance and connections in search results." width="1272" height="364" loading="lazy" decoding="async" />
@@ -158,20 +163,19 @@
           </button>
         </div>
       </div>
+      <!-- Semantic search across surfaces (Figma 1502:135484) -->
       <div class="sr-panel">
-        <h4 class="sr-cap sr-cap--sm">Search in File Explorer</h4>
+        <h3 class="cs-h3 sr-h3 sr-surfaces-title">SEMANTIC SEARCH ACROSS VARIOUS SURFACES ON WINDOWS</h3>
+        <h4 class="sr-cap sr-cap--sm">Deep Content Search in File Explorer</h4>
         <img src="assets/images/cs-search/deep-fe-1.webp" srcset="assets/images/cs-search/deep-fe-1-1268.webp 1268w, assets/images/cs-search/deep-fe-1-1272.webp 1272w, assets/images/cs-search/deep-fe-1-1590.webp 1590w, assets/images/cs-search/deep-fe-1-1908.webp 1908w, assets/images/cs-search/deep-fe-1-2099.webp 2099w, assets/images/cs-search/deep-fe-1-2290.webp 2290w, assets/images/cs-search/deep-fe-1-2540.webp 2540w, assets/images/cs-search/deep-fe-1-2544.webp 2544w, assets/images/cs-search/deep-fe-1-2798.webp 2798w, assets/images/cs-search/deep-fe-1-3116.webp 3116w, assets/images/cs-search/deep-fe-1-3434.webp 3434w, assets/images/cs-search/deep-fe-1-3812.webp 3812w, assets/images/cs-search/deep-fe-1-3816.webp 3816w" sizes="(min-width: 1792px) 1272px, 70.9vw" alt="File Explorer search for “vacation” finding photos and videos by what they show, such as kids on a beach" width="1272" height="696" loading="lazy" decoding="async" />
+        <img class="sr-panel-next" src="assets/images/cs-search/deep-fe-2.webp?v=2" srcset="assets/images/cs-search/deep-fe-2-1268.webp?v=2 1268w, assets/images/cs-search/deep-fe-2-1272.webp?v=2 1272w, assets/images/cs-search/deep-fe-2-1590.webp?v=2 1590w, assets/images/cs-search/deep-fe-2-1908.webp?v=2 1908w, assets/images/cs-search/deep-fe-2-2099.webp?v=2 2099w, assets/images/cs-search/deep-fe-2-2290.webp?v=2 2290w, assets/images/cs-search/deep-fe-2-2540.webp?v=2 2540w, assets/images/cs-search/deep-fe-2-2544.webp?v=2 2544w, assets/images/cs-search/deep-fe-2-2798.webp?v=2 2798w, assets/images/cs-search/deep-fe-2-3116.webp?v=2 3116w, assets/images/cs-search/deep-fe-2-3434.webp?v=2 3434w, assets/images/cs-search/deep-fe-2-3812.webp?v=2 3812w, assets/images/cs-search/deep-fe-2-3816.webp?v=2 3816w" sizes="(min-width: 1792px) 1272px, 70.9vw" alt="File Explorer search for “white dress” showing top results and all media with matching photos of wedding dresses" width="1272" height="696" loading="lazy" decoding="async" />
       </div>
       <div class="sr-panel">
-        <h4 class="sr-cap sr-cap--sm">Search in File Explorer</h4>
-        <img src="assets/images/cs-search/deep-fe-2.webp?v=2" srcset="assets/images/cs-search/deep-fe-2-1268.webp?v=2 1268w, assets/images/cs-search/deep-fe-2-1272.webp?v=2 1272w, assets/images/cs-search/deep-fe-2-1590.webp?v=2 1590w, assets/images/cs-search/deep-fe-2-1908.webp?v=2 1908w, assets/images/cs-search/deep-fe-2-2099.webp?v=2 2099w, assets/images/cs-search/deep-fe-2-2290.webp?v=2 2290w, assets/images/cs-search/deep-fe-2-2540.webp?v=2 2540w, assets/images/cs-search/deep-fe-2-2544.webp?v=2 2544w, assets/images/cs-search/deep-fe-2-2798.webp?v=2 2798w, assets/images/cs-search/deep-fe-2-3116.webp?v=2 3116w, assets/images/cs-search/deep-fe-2-3434.webp?v=2 3434w, assets/images/cs-search/deep-fe-2-3812.webp?v=2 3812w, assets/images/cs-search/deep-fe-2-3816.webp?v=2 3816w" sizes="(min-width: 1792px) 1272px, 70.9vw" alt="File Explorer search for “white dress” showing top results and all media with matching photos of wedding dresses" width="1272" height="696" loading="lazy" decoding="async" />
-      </div>
-      <div class="sr-panel">
-        <h4 class="sr-cap sr-cap--sm">Search in Windows Search bar</h4>
+        <h4 class="sr-cap sr-cap--sm">Deep Content Search in Windows Search bar</h4>
         <img src="assets/images/cs-search/deep-wsb.webp" srcset="assets/images/cs-search/deep-wsb-1268.webp 1268w, assets/images/cs-search/deep-wsb-1272.webp 1272w, assets/images/cs-search/deep-wsb-1590.webp 1590w, assets/images/cs-search/deep-wsb-1908.webp 1908w, assets/images/cs-search/deep-wsb-2099.webp 2099w, assets/images/cs-search/deep-wsb-2290.webp 2290w, assets/images/cs-search/deep-wsb-2540.webp 2540w, assets/images/cs-search/deep-wsb-2544.webp 2544w, assets/images/cs-search/deep-wsb-2798.webp 2798w, assets/images/cs-search/deep-wsb-3116.webp 3116w, assets/images/cs-search/deep-wsb-3434.webp 3434w, assets/images/cs-search/deep-wsb-3812.webp 3812w, assets/images/cs-search/deep-wsb-3816.webp 3816w" sizes="(min-width: 1792px) 1272px, 70.9vw" alt="The Windows search box on the desktop with results for “white dress”: files, photos and a summary of a bridal collection presentation" width="1272" height="696" loading="lazy" decoding="async" />
       </div>
       <div class="sr-panel">
-        <h4 class="sr-cap sr-cap--sm">Recall</h4>
+        <h4 class="sr-cap sr-cap--sm">Deep Content Search in Recall</h4>
         <img src="assets/images/cs-search/deep-recall.webp" srcset="assets/images/cs-search/deep-recall-1268.webp 1268w, assets/images/cs-search/deep-recall-1272.webp 1272w, assets/images/cs-search/deep-recall-1590.webp 1590w, assets/images/cs-search/deep-recall-1908.webp 1908w, assets/images/cs-search/deep-recall-2099.webp 2099w, assets/images/cs-search/deep-recall-2290.webp 2290w, assets/images/cs-search/deep-recall-2540.webp 2540w, assets/images/cs-search/deep-recall-2544.webp 2544w, assets/images/cs-search/deep-recall-2798.webp 2798w, assets/images/cs-search/deep-recall-3116.webp 3116w, assets/images/cs-search/deep-recall-3434.webp 3434w, assets/images/cs-search/deep-recall-3812.webp 3812w, assets/images/cs-search/deep-recall-3816.webp 3816w" sizes="(min-width: 1792px) 1272px, 70.9vw" alt="Search results for “white dress” across text matches and visual matches from earlier activity" width="1272" height="696" loading="lazy" decoding="async" />
       </div>
 
@@ -211,7 +215,7 @@
       <a class="cs-card cs-card--drag cs-card--fit" href="people.html">
         <h3 class="cs-card-title">PEOPLE IN WINDOWS</h3>
         <p class="cs-card-text">Bringing people you connect with most right into Windows</p>
-        <img src="assets/images/cs-search/next-people-sr.webp" srcset="assets/images/cs-search/next-people-sr-574.webp 574w, assets/images/cs-search/next-people-sr-718.webp 718w, assets/images/cs-search/next-people-sr-861.webp 861w, assets/images/cs-search/next-people-sr-947.webp 947w, assets/images/cs-search/next-people-sr-1033.webp 1033w, assets/images/cs-search/next-people-sr-1148.webp 1148w, assets/images/cs-search/next-people-sr-1263.webp 1263w, assets/images/cs-search/next-people-sr-1406.webp 1406w, assets/images/cs-search/next-people-sr-1550.webp 1550w, assets/images/cs-search/next-people-sr-1722.webp 1722w" sizes="(max-width: 800px) 70.9vw, (min-width: 1792px) 574px, 32vw" alt="" width="574" height="290" loading="lazy" decoding="async" />
+        <img src="assets/images/cs-search/next-people-sr.webp?v=2" srcset="assets/images/cs-search/next-people-sr-570.webp?v=2 570w, assets/images/cs-search/next-people-sr-574.webp?v=2 574w, assets/images/cs-search/next-people-sr-718.webp?v=2 718w, assets/images/cs-search/next-people-sr-861.webp?v=2 861w, assets/images/cs-search/next-people-sr-947.webp?v=2 947w, assets/images/cs-search/next-people-sr-1033.webp?v=2 1033w, assets/images/cs-search/next-people-sr-1144.webp?v=2 1144w, assets/images/cs-search/next-people-sr-1148.webp?v=2 1148w, assets/images/cs-search/next-people-sr-1263.webp?v=2 1263w, assets/images/cs-search/next-people-sr-1406.webp?v=2 1406w, assets/images/cs-search/next-people-sr-1550.webp?v=2 1550w, assets/images/cs-search/next-people-sr-1718.webp?v=2 1718w, assets/images/cs-search/next-people-sr-1722.webp?v=2 1722w" sizes="(max-width: 800px) 70.9vw, (min-width: 1792px) 574px, 32vw" alt="" width="574" height="290" loading="lazy" decoding="async" />
       </a>
       <a class="cs-card cs-card--connected cs-card--fit" href="connected.html">
         <h3 class="cs-card-title">CONNECTED INTELLIGENCE</h3>
@@ -239,7 +243,7 @@
       <a href="index.html#about">ABOUT ME</a>
       <a href="work.html">WORK</a>
       <a href="ai-prototype.html">PROTOTYPED WITH AI</a>
-      <a href="Tejasvi_Resume.pdf" class="js-resume-link" target="_blank" rel="noopener">DOWNLOAD RESUME</a>
+      <a href="Tejasvi%20Arya.pdf" class="js-resume-link" target="_blank" rel="noopener">DOWNLOAD RESUME</a>
     </nav>
 
     <!-- Pixel art (Figma frames "27", "11", "28"): each click shows the next, in a loop. -->

@@ -9,6 +9,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;1,500;1,600&family=Hedvig+Letters+Serif:opsz@12..24&display=swap" />
+<!-- Title font, fetched up front so the title renders in it straight away. -->
+<link rel="preload" href="assets/fonts/GT-America-Compressed-Bold-Trial.otf" as="font" type="font/otf" crossorigin />
 <link rel="stylesheet" href="styles.css" />
 <script>
   // Always start at the first fold on reload (no restored scroll position,
@@ -33,7 +35,7 @@
     <a href="index.html#about">ABOUT ME</a>
     <a href="work.html" class="is-active" aria-current="page">WORK</a>
     <a href="ai-prototype.html">PROTOTYPED WITH AI</a>
-    <a href="Tejasvi_Resume.pdf" class="js-resume-link" target="_blank" rel="noopener">DOWNLOAD RESUME</a>
+    <a href="Tejasvi%20Arya.pdf" class="js-resume-link" target="_blank" rel="noopener">DOWNLOAD RESUME</a>
   </nav>
 </header>
 
@@ -46,14 +48,14 @@
     <div class="cs-next-cards cs-next-cards--drag-first pg-row">
       <a class="cs-card cs-card--share cs-card--fit" href="share.html">
         <h3 class="cs-card-title">SHARE <span class="cs-title-sep">\</span> WINDOWS os</h3>
-        <p class="cs-card-text">Share seamlessly with people, devices, and apps, right from your PC</p>
+        <p class="cs-card-text">Share seamlessly with your people via apps and devices, right from your PC</p>
         <img src="assets/images/work/wk-share.webp?v=2" srcset="assets/images/work/wk-share-561.webp?v=2 561w, assets/images/work/wk-share-701.webp?v=2 701w, assets/images/work/wk-share-842.webp?v=2 842w, assets/images/work/wk-share-926.webp?v=2 926w, assets/images/work/wk-share-1010.webp?v=2 1010w, assets/images/work/wk-share-1122.webp?v=2 1122w, assets/images/work/wk-share-1234.webp?v=2 1234w, assets/images/work/wk-share-1374.webp?v=2 1374w, assets/images/work/wk-share-1515.webp?v=2 1515w, assets/images/work/wk-share-1683.webp?v=2 1683w" sizes="(max-width: 800px) 70.9vw, (min-width: 1792px) 561px, 31.3vw" alt="" width="561" height="290" loading="lazy" decoding="async" />
         <p class="pg-card-impact"><span>Impact:</span> 6.3X Growth, 18 Million to 112.9 Million users</p>
       </a>
       <a class="cs-card cs-card--drag cs-card--bleed" href="dragandrop.html">
         <h3 class="cs-card-title">DRAG AND DROP</h3>
-        <p class="cs-card-text">Redesigning drag and drop in Windows into a fluid, context-aware experience.</p>
-        <img src="assets/images/work/wk-drag.webp" srcset="assets/images/work/wk-drag-574.webp 574w, assets/images/work/wk-drag-718.webp 718w, assets/images/work/wk-drag-861.webp 861w, assets/images/work/wk-drag-947.webp 947w, assets/images/work/wk-drag-1033.webp 1033w, assets/images/work/wk-drag-1148.webp 1148w, assets/images/work/wk-drag-1263.webp 1263w, assets/images/work/wk-drag-1406.webp 1406w, assets/images/work/wk-drag-1550.webp 1550w, assets/images/work/wk-drag-1722.webp 1722w" sizes="(max-width: 800px) 70.9vw, (min-width: 1792px) 574px, 32vw" alt="" width="574" height="290" loading="lazy" decoding="async" />
+        <p class="cs-card-text">Redesigning drag &amp; drop in Windows into a fluid, context-aware experience.</p>
+        <img src="assets/images/work/wk-drag.webp?v=2" srcset="assets/images/work/wk-drag-570.webp?v=2 570w, assets/images/work/wk-drag-574.webp?v=2 574w, assets/images/work/wk-drag-718.webp?v=2 718w, assets/images/work/wk-drag-861.webp?v=2 861w, assets/images/work/wk-drag-947.webp?v=2 947w, assets/images/work/wk-drag-1033.webp?v=2 1033w, assets/images/work/wk-drag-1144.webp?v=2 1144w, assets/images/work/wk-drag-1148.webp?v=2 1148w, assets/images/work/wk-drag-1263.webp?v=2 1263w, assets/images/work/wk-drag-1406.webp?v=2 1406w, assets/images/work/wk-drag-1550.webp?v=2 1550w, assets/images/work/wk-drag-1718.webp?v=2 1718w, assets/images/work/wk-drag-1722.webp?v=2 1722w" sizes="(max-width: 800px) 70.9vw, (min-width: 1792px) 574px, 32vw" alt="" width="574" height="290" loading="lazy" decoding="async" />
         <p class="pg-card-impact"><span>Impact:</span> 22.5X Growth in completion, 0.22 Million to 4.95 Million</p>
       </a>
     </div>
@@ -67,7 +69,7 @@
       <a class="cs-card cs-card--people pg-card--people" href="people.html">
         <h3 class="cs-card-title">PEOPLE IN WINDOWS</h3>
         <p class="cs-card-text">Bringing people you connect with most right into Windows</p>
-        <img src="assets/images/work/wk-people.webp" srcset="assets/images/work/wk-people-574.webp 574w, assets/images/work/wk-people-718.webp 718w, assets/images/work/wk-people-861.webp 861w, assets/images/work/wk-people-947.webp 947w, assets/images/work/wk-people-1033.webp 1033w, assets/images/work/wk-people-1148.webp 1148w, assets/images/work/wk-people-1263.webp 1263w, assets/images/work/wk-people-1406.webp 1406w, assets/images/work/wk-people-1550.webp 1550w, assets/images/work/wk-people-1722.webp 1722w" sizes="(max-width: 800px) 70.9vw, (min-width: 1792px) 574px, 32vw" alt="" width="574" height="290" loading="lazy" decoding="async" />
+        <img src="assets/images/work/wk-people.webp?v=2" srcset="assets/images/work/wk-people-570.webp?v=2 570w, assets/images/work/wk-people-574.webp?v=2 574w, assets/images/work/wk-people-718.webp?v=2 718w, assets/images/work/wk-people-861.webp?v=2 861w, assets/images/work/wk-people-947.webp?v=2 947w, assets/images/work/wk-people-1033.webp?v=2 1033w, assets/images/work/wk-people-1144.webp?v=2 1144w, assets/images/work/wk-people-1148.webp?v=2 1148w, assets/images/work/wk-people-1263.webp?v=2 1263w, assets/images/work/wk-people-1406.webp?v=2 1406w, assets/images/work/wk-people-1550.webp?v=2 1550w, assets/images/work/wk-people-1718.webp?v=2 1718w, assets/images/work/wk-people-1722.webp?v=2 1722w" sizes="(max-width: 800px) 70.9vw, (min-width: 1792px) 574px, 32vw" alt="" width="574" height="290" loading="lazy" decoding="async" />
       </a>
     </div>
 
@@ -98,7 +100,7 @@
       <a href="index.html#about">ABOUT ME</a>
       <a href="work.html">WORK</a>
       <a href="ai-prototype.html">PROTOTYPED WITH AI</a>
-      <a href="Tejasvi_Resume.pdf" class="js-resume-link" target="_blank" rel="noopener">DOWNLOAD RESUME</a>
+      <a href="Tejasvi%20Arya.pdf" class="js-resume-link" target="_blank" rel="noopener">DOWNLOAD RESUME</a>
     </nav>
 
     <!-- Pixel art (Figma frames "27", "11", "28"): each click shows the next, in a loop. -->

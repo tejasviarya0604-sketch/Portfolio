@@ -9,6 +9,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;1,500;1,600&family=Hedvig+Letters+Serif:opsz@12..24&display=swap" />
+<!-- Title font, fetched up front so the title renders in it straight away. -->
+<link rel="preload" href="assets/fonts/GT-America-Compressed-Bold-Trial.otf" as="font" type="font/otf" crossorigin />
 <link rel="stylesheet" href="styles.css" />
 <script>
   // Always start at the first fold on reload (no restored scroll position,
@@ -33,7 +35,7 @@
     <a href="index.html#about">ABOUT ME</a>
     <a href="work.html" class="is-active" aria-current="page">WORK</a>
     <a href="ai-prototype.html">PROTOTYPED WITH AI</a>
-    <a href="Tejasvi_Resume.pdf" class="js-resume-link" target="_blank" rel="noopener">DOWNLOAD RESUME</a>
+    <a href="Tejasvi%20Arya.pdf" class="js-resume-link" target="_blank" rel="noopener">DOWNLOAD RESUME</a>
   </nav>
 </header>
 
@@ -43,10 +45,11 @@
   <!-- Title and project facts -->
   <section class="cs-top">
     <h1 class="cs-title">DRAG AND DROP</h1>
-    <dl class="cs-facts dd-facts">
-      <div><dt>Impact</dt><dd>29X Growth in daily active users,<br />0.72 Million to 21 Million</dd></div>
-      <div><dt>Product</dt><dd class="cs-facts-short">Windows - Microsoft</dd></div>
+    <dl class="cs-facts">
+      <div><dt>Impact</dt><dd>22.5x growth in completion<br />sessions (0.22M to 4.9M)</dd></div>
       <div><dt>Goal</dt><dd class="cs-w279">Redesign drag and drop in Windows into a fluid, context-aware experience</dd></div>
+      <div><dt>Product</dt><dd class="cs-facts-short">Windows - Microsoft</dd></div>
+      <div><dt>Team Size</dt><dd>1 PM, 3 Eng, 1 Designer</dd></div>
     </dl>
     <img class="dd-hero" src="assets/images/cs-dragdrop/hero.webp" srcset="assets/images/cs-dragdrop/hero-1268.webp 1268w, assets/images/cs-dragdrop/hero-1272.webp 1272w, assets/images/cs-dragdrop/hero-1590.webp 1590w, assets/images/cs-dragdrop/hero-1908.webp 1908w, assets/images/cs-dragdrop/hero-2099.webp 2099w, assets/images/cs-dragdrop/hero-2290.webp 2290w, assets/images/cs-dragdrop/hero-2540.webp 2540w, assets/images/cs-dragdrop/hero-2544.webp 2544w, assets/images/cs-dragdrop/hero-2798.webp 2798w, assets/images/cs-dragdrop/hero-3116.webp 3116w, assets/images/cs-dragdrop/hero-3434.webp 3434w, assets/images/cs-dragdrop/hero-3812.webp 3812w, assets/images/cs-dragdrop/hero-3816.webp 3816w" sizes="(min-width: 1792px) 1272px, 70.9vw" alt="The drag and drop tray above File Explorer, with suggested people, apps and folders, as two photos are dragged toward it" width="1272" height="548" decoding="async" />
   </section>
@@ -142,7 +145,7 @@
     <article class="dd-explore">
       <h3 class="cs-h3 dd-explore-title">THE TASKBAR AS DROP TRAY</h3>
       <div class="cs-video cs-video--center" style="--ar: 3 / 2">
-        <video loop playsinline preload="none" poster="videos/dragandrop/exp1-poster.webp?v=2" width="3600" height="2400" aria-label="The Taskbar as Drop Tray: dragging a file turns the taskbar into a tray of suggested destinations">
+        <video disablepictureinpicture loop playsinline preload="none" poster="videos/dragandrop/exp1-poster.webp?v=2" width="3600" height="2400" aria-label="The Taskbar as Drop Tray: dragging a file turns the taskbar into a tray of suggested destinations">
           <source src="videos/dragandrop/exp1.webm" type="video/webm" />
           <source src="videos/dragandrop/exp1.mp4" type="video/mp4" />
         </video>
@@ -163,7 +166,7 @@
     <article class="dd-explore">
       <h3 class="cs-h3 dd-explore-title">DROP MODE</h3>
       <div class="cs-video cs-video--center" style="--ar: 3 / 2">
-        <video loop playsinline preload="none" poster="videos/dragandrop/exp2-poster.webp?v=2" width="3600" height="2400" aria-label="Drop mode: dragging a file gathers open windows into one overview, with a tray of extra destinations">
+        <video disablepictureinpicture loop playsinline preload="none" poster="videos/dragandrop/exp2-poster.webp?v=2" width="3600" height="2400" aria-label="Drop mode: dragging a file gathers open windows into one overview, with a tray of extra destinations">
           <source src="videos/dragandrop/exp2.webm" type="video/webm" />
           <source src="videos/dragandrop/exp2.mp4" type="video/mp4" />
         </video>
@@ -184,7 +187,7 @@
     <article class="dd-explore">
       <h3 class="cs-h3 dd-explore-title">DROP TRAY ENTRY POINT ON THE TASKBAR</h3>
       <div class="cs-video cs-video--center" style="--ar: 3 / 2">
-        <video loop playsinline preload="none" poster="videos/dragandrop/exp3-poster.webp?v=2" width="3600" height="2400" aria-label="Drop tray entry point on the taskbar: hovering over it during a drag opens a tray of destinations">
+        <video disablepictureinpicture loop playsinline preload="none" poster="videos/dragandrop/exp3-poster.webp?v=2" width="3600" height="2400" aria-label="Drop tray entry point on the taskbar: hovering over it during a drag opens a tray of destinations">
           <source src="videos/dragandrop/exp3.webm" type="video/webm" />
           <source src="videos/dragandrop/exp3.mp4" type="video/mp4" />
         </video>
@@ -205,7 +208,7 @@
     <article class="dd-explore">
       <h3 class="cs-h3 dd-explore-title">DROP TO HOLD</h3>
       <div class="cs-video cs-video--center" style="--ar: 3 / 2">
-        <video loop playsinline preload="none" poster="videos/dragandrop/exp4-poster.webp?v=2" width="3600" height="2400" aria-label="Drop to hold: files collected from different places into a holding space in the drop tray">
+        <video disablepictureinpicture loop playsinline preload="none" poster="videos/dragandrop/exp4-poster.webp?v=2" width="3600" height="2400" aria-label="Drop to hold: files collected from different places into a holding space in the drop tray">
           <source src="videos/dragandrop/exp4.webm" type="video/webm" />
           <source src="videos/dragandrop/exp4.mp4" type="video/mp4" />
         </video>
@@ -234,6 +237,8 @@
       </div>
     </header>
     <img src="assets/images/cs-dragdrop/solution.webp" srcset="assets/images/cs-dragdrop/solution-1268.webp 1268w, assets/images/cs-dragdrop/solution-1272.webp 1272w, assets/images/cs-dragdrop/solution-1590.webp 1590w, assets/images/cs-dragdrop/solution-1908.webp 1908w, assets/images/cs-dragdrop/solution-2099.webp 2099w, assets/images/cs-dragdrop/solution-2290.webp 2290w, assets/images/cs-dragdrop/solution-2540.webp 2540w, assets/images/cs-dragdrop/solution-2544.webp 2544w, assets/images/cs-dragdrop/solution-2798.webp 2798w, assets/images/cs-dragdrop/solution-3116.webp 3116w, assets/images/cs-dragdrop/solution-3434.webp 3434w, assets/images/cs-dragdrop/solution-3812.webp 3812w, assets/images/cs-dragdrop/solution-3816.webp 3816w" sizes="(min-width: 1792px) 1272px, 70.9vw" alt="The drag and drop tray above File Explorer: suggested people, WhatsApp, Outlook and folders appear as two selected photos are dragged toward it" width="1272" height="660" loading="lazy" decoding="async" />
+    <!-- Prototype link (Figma 1499:135108) -->
+    <p class="dd-proto-link">Explore the interactive AI prototype of Drop Tray: <a href="https://tejasviarya0604-sketch.github.io/Drag-and-drop-P1/wedding-decor/" target="_blank" rel="noopener">Prototype Link</a></p>
   </section>
 
   <!-- The impact -->
@@ -241,10 +246,11 @@
     <header class="cs-head">
       <p class="cs-label">STATISTICS</p>
       <div class="cs-head-row">
-        <h2 class="cs-h2">THE IMPACT</h2>
+        <h2 class="cs-h2">IMPACT</h2>
       </div>
     </header>
-    <img src="assets/images/cs-dragdrop/impact.webp?v=2" srcset="assets/images/cs-dragdrop/impact-1268.webp?v=2 1268w, assets/images/cs-dragdrop/impact-1272.webp?v=2 1272w, assets/images/cs-dragdrop/impact-1590.webp?v=2 1590w, assets/images/cs-dragdrop/impact-1908.webp?v=2 1908w, assets/images/cs-dragdrop/impact-2099.webp?v=2 2099w, assets/images/cs-dragdrop/impact-2290.webp?v=2 2290w, assets/images/cs-dragdrop/impact-2540.webp?v=2 2540w, assets/images/cs-dragdrop/impact-2544.webp?v=2 2544w, assets/images/cs-dragdrop/impact-2798.webp?v=2 2798w, assets/images/cs-dragdrop/impact-3116.webp?v=2 3116w, assets/images/cs-dragdrop/impact-3434.webp?v=2 3434w, assets/images/cs-dragdrop/impact-3812.webp?v=2 3812w, assets/images/cs-dragdrop/impact-3816.webp?v=2 3816w" sizes="(min-width: 1792px) 1272px, 70.9vw" alt="The impact: 29x growth in daily active users, from 0.72 M to 21.01 M; 57.3 M launch sessions, up from 1.75 million (32.8x); 22.5x monthly users completing actions, from 0.22 M to 4.95 M" width="1272" height="262" loading="lazy" decoding="async" />
+    <!-- Impact panel (Figma 1502:135457) -->
+    <img src="assets/images/cs-dragdrop/impact-growth.webp" srcset="assets/images/cs-dragdrop/impact-growth-1268.webp 1268w, assets/images/cs-dragdrop/impact-growth-1272.webp 1272w, assets/images/cs-dragdrop/impact-growth-1590.webp 1590w, assets/images/cs-dragdrop/impact-growth-1908.webp 1908w, assets/images/cs-dragdrop/impact-growth-2099.webp 2099w, assets/images/cs-dragdrop/impact-growth-2290.webp 2290w, assets/images/cs-dragdrop/impact-growth-2540.webp 2540w, assets/images/cs-dragdrop/impact-growth-2544.webp 2544w, assets/images/cs-dragdrop/impact-growth-2798.webp 2798w, assets/images/cs-dragdrop/impact-growth-3116.webp 3116w, assets/images/cs-dragdrop/impact-growth-3434.webp 3434w, assets/images/cs-dragdrop/impact-growth-3812.webp 3812w, assets/images/cs-dragdrop/impact-growth-3816.webp 3816w" sizes="(min-width: 1792px) 1272px, 70.9vw" alt="Impact: the completion rate grew from 0.22 million to 4.95 million, a bar growing from 0.22 M to 4.9 M, 22.5x growth" width="1272" height="391" loading="lazy" decoding="async" />
   </section>
 
   <!-- What people said -->
@@ -276,10 +282,12 @@
   <section class="dd-composer">
     <p class="cs-label dd-composer-label">EVOLVING DRAG AND DROP</p>
     <h3 class="cs-h3 dd-demo-title dd-composer-title">UNIVERSAL COMPOSER: A SMARTER WAY TO SEARCH AND ACT IN WINDOWS</h3>
-    <video class="cs-loop cs-loop--round" muted loop playsinline preload="none" poster="videos/dragandrop/introducing-poster.webp" width="3840" height="2400" aria-label="Universal Composer opening above the Windows taskbar, with suggested actions and an Ask Copilot box">
+    <video disablepictureinpicture class="cs-loop cs-loop--round" muted loop playsinline preload="none" poster="videos/dragandrop/introducing-poster.webp" width="3840" height="2400" aria-label="Universal Composer opening above the Windows taskbar, with suggested actions and an Ask Copilot box">
       <source src="videos/dragandrop/introducing.webm" type="video/webm" />
       <source src="videos/dragandrop/introducing.mp4" type="video/mp4" />
     </video>
+    <!-- Prototype link (Figma 1502:135116) -->
+    <p class="dd-proto-link dd-proto-link--16">Try the Drop feature in Universal Composer prototype here: <a href="https://tejasviarya0604-sketch.github.io/Drag-and-drop-P1/" target="_blank" rel="noopener">Prototype Link</a></p>
   </section>
 
   <!-- Placeholders in the design -->
@@ -325,7 +333,7 @@
       <a class="cs-card cs-card--people cs-card--fit" href="people.html">
         <h3 class="cs-card-title">PEOPLE IN WINDOWS</h3>
         <p class="cs-card-text">Bringing people you connect with most right into Windows</p>
-        <img src="assets/images/cs-share/next-people-dd.webp" srcset="assets/images/cs-share/next-people-dd-571.webp 571w, assets/images/cs-share/next-people-dd-714.webp 714w, assets/images/cs-share/next-people-dd-857.webp 857w, assets/images/cs-share/next-people-dd-942.webp 942w, assets/images/cs-share/next-people-dd-1028.webp 1028w, assets/images/cs-share/next-people-dd-1142.webp 1142w, assets/images/cs-share/next-people-dd-1256.webp 1256w, assets/images/cs-share/next-people-dd-1399.webp 1399w, assets/images/cs-share/next-people-dd-1542.webp 1542w, assets/images/cs-share/next-people-dd-1713.webp 1713w" sizes="(max-width: 800px) 70.9vw, (min-width: 1792px) 571px, 31.8vw" alt="" width="571" height="290" loading="lazy" decoding="async" />
+        <img src="assets/images/cs-share/next-people-dd.webp?v=2" srcset="assets/images/cs-share/next-people-dd-567.webp?v=2 567w, assets/images/cs-share/next-people-dd-571.webp?v=2 571w, assets/images/cs-share/next-people-dd-714.webp?v=2 714w, assets/images/cs-share/next-people-dd-857.webp?v=2 857w, assets/images/cs-share/next-people-dd-942.webp?v=2 942w, assets/images/cs-share/next-people-dd-1028.webp?v=2 1028w, assets/images/cs-share/next-people-dd-1138.webp?v=2 1138w, assets/images/cs-share/next-people-dd-1142.webp?v=2 1142w, assets/images/cs-share/next-people-dd-1256.webp?v=2 1256w, assets/images/cs-share/next-people-dd-1399.webp?v=2 1399w, assets/images/cs-share/next-people-dd-1542.webp?v=2 1542w, assets/images/cs-share/next-people-dd-1709.webp?v=2 1709w, assets/images/cs-share/next-people-dd-1713.webp?v=2 1713w" sizes="(max-width: 800px) 70.9vw, (min-width: 1792px) 571px, 31.8vw" alt="" width="571" height="290" loading="lazy" decoding="async" />
       </a>
     </div>
   </section>
@@ -348,7 +356,7 @@
       <a href="index.html#about">ABOUT ME</a>
       <a href="work.html">WORK</a>
       <a href="ai-prototype.html">PROTOTYPED WITH AI</a>
-      <a href="Tejasvi_Resume.pdf" class="js-resume-link" target="_blank" rel="noopener">DOWNLOAD RESUME</a>
+      <a href="Tejasvi%20Arya.pdf" class="js-resume-link" target="_blank" rel="noopener">DOWNLOAD RESUME</a>
     </nav>
 
     <!-- Pixel art (Figma frames "27", "11", "28"): each click shows the next, in a loop. -->
