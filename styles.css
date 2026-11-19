@@ -1009,36 +1009,51 @@ html.js .work-cards {
   position: relative;
 }
 
-/* The hovered (grown) card sits above its neighbours. */
-.wk-card.is-hovered {
-  z-index: 1;
-}
-
 .wk-card--share {
-  border-color: #ece2cc;
+  border-color: #f7f2e8;
   background: #fcf7ec;
 }
 
 .wk-card--drag {
   border-color: #e5e5ec;
-  background: #f7f7f8;
+  background: #f3fafe;
 }
 
 /* The later tiles have no outline in Figma; a border in the fill colour keeps
    their stage the same size as the outlined ones. */
 .wk-card--search {
-  border-color: #fbf5f4;
-  background: #fbf5f4;
+  border-color: #fff7f1;
+  background: #fff7f1;
 }
 
 .wk-card--people {
-  border-color: #edf3f9;
-  background: #edf3f9;
+  border-color: #f5f4fc;
+  background: #f5f4fc;
 }
 
 .wk-card--connected {
   border-color: #fef7f2;
   background: #fef7f2;
+}
+
+/* Hovering a tile deepens its colour slightly (Figma 1354:39845, "On hover"),
+   in step with the elements inside it growing. Tiles whose outline matches
+   their fill change both. */
+.wk-card {
+  transition: background-color 0.5s cubic-bezier(0.215, 0.61, 0.355, 1),
+    border-color 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .wk-card--share:hover { background: #fbf4e5; }
+  .wk-card--drag:hover { background: #f1f8fc; }
+  .wk-card--search:hover { border-color: #fff4ec; background: #fff4ec; }
+  .wk-card--people:hover { border-color: #f3f3fe; background: #f3f3fe; }
+  .wk-card--connected:hover { border-color: #fcede3; background: #fcede3; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wk-card { transition: none; }
 }
 
 .wk-title {
@@ -1150,13 +1165,13 @@ html.js .work-cards {
   opacity: 0.375;
 }
 
-/* Drag and drop tile: the drop tray (Figma 798:121588), centred on the stage. */
+/* Drag and drop tile: the drop tray (Figma 1354:38161), centred on the stage. */
 .dd-tray {
   position: absolute;
-  left: 42px;
-  top: 149.06px;
-  width: 651.219px;
-  height: 138.877px;
+  left: 50.93px;
+  top: 169.66px;
+  width: 633.355px;
+  height: 97.674px;
   /* power3.out, like the card grow. The box grows rather than the tray being
      scaled: a transform would isolate the shell's luminosity blend and turn
      the tray grey. Only the contents (no blend) are scaled. */
@@ -1168,10 +1183,10 @@ html.js .work-cards {
 /* Hovering the Drag and drop card grows the tray 8% about its centre. */
 @media (hover: hover) and (pointer: fine) {
   .wk-card--drag:hover .dd-tray {
-    left: 15.951px;
-    top: 143.505px;
-    width: 703.317px;
-    height: 149.987px;
+    left: 25.6px;
+    top: 165.75px;
+    width: 684.023px;
+    height: 105.488px;
   }
 
   .wk-card--drag:hover .dd-content {
@@ -1187,38 +1202,27 @@ html.js .work-cards {
 }
 
 .dd-shell,
-.dd-shadow,
 .dd-stroke {
   position: absolute;
-  inset: 0.938px;
-  border-radius: 7px;
+  inset: 0.763px;
+  border-radius: 5.342px;
 }
 
 .dd-shell {
   background: rgba(243, 243, 243, 0.9);
   /* Acrylic: takes the wallpaper's colour, keeps the grey's lightness. */
   mix-blend-mode: luminosity;
-  -webkit-backdrop-filter: blur(28.151px);
-  backdrop-filter: blur(28.151px);
-}
-
-.dd-shadow {
-  background: #fff;
-  mix-blend-mode: multiply;
-  opacity: 0.4;
-  box-shadow: 0 30.027px 60.055px rgba(0, 0, 0, 0.19), 0 1.877px 19.705px rgba(0, 0, 0, 0.15);
+  -webkit-backdrop-filter: blur(22.892px);
+  backdrop-filter: blur(22.892px);
 }
 
 .dd-stroke {
-  border: 0.938px solid rgba(117, 117, 117, 0.4);
+  border: 0.763px solid rgba(117, 117, 117, 0.4);
 }
 
 .dd-content {
   position: relative;
-  display: flex;
-  flex-direction: column;
-  gap: 13.137px;
-  padding: 13.137px;
+  padding: 6.87px 0 0 8.39px;
   transform-origin: 0 0;
   transition: transform 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
@@ -1226,33 +1230,27 @@ html.js .work-cards {
 .dd-targets {
   display: flex;
   align-items: center;
-  gap: 3.753px;
-  height: 80.699px;
+  gap: 3.052px;
+  height: 83.939px;
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
 .dd-target {
-  display: flex;
+  position: relative;
   flex: none;
-  flex-direction: column;
-  align-items: center;
-  gap: 3.753px;
-  width: 84.452px;
-  height: 80.699px;
-  padding: 11.26px 5.63px 3.753px;
-  font-size: 11.26px;
-  line-height: 15.014px;
-  text-align: center;
+  width: 73.256px;
+  height: 74.782px;
 }
 
 .dd-icon {
-  position: relative;
-  flex: none;
-  width: 30.027px;
-  height: 30.027px;
-  overflow: hidden;
+  position: absolute;
+  left: 50%;
+  top: 12.21px;
+  width: 33.575px;
+  height: 33.575px;
+  margin-left: -16.788px;
 }
 
 .dd-icon img {
@@ -1260,11 +1258,47 @@ html.js .work-cards {
   max-width: none;
 }
 
+.dd-avatar {
+  left: 0;
+  top: 0;
+  box-sizing: border-box;
+  border: 0.763px solid rgba(0, 0, 0, 0.06);
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.dd-avatar--plain {
+  border: 0;
+}
+
+/* WhatsApp badge on the contacts' bottom-right. */
+.dd-icon .dd-badge {
+  left: 22.89px;
+  top: 15.26px;
+}
+
+.dd-icon .dd-badge-app {
+  left: 25.81px;
+  top: 18.31px;
+}
+
+.dd-label {
+  position: absolute;
+  left: 50%;
+  top: 50.36px;
+  width: 68.677px;
+  margin-left: -34.339px;
+  font-size: 9.157px;
+  line-height: 12.209px;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.9);
+}
+
 .dd-divider {
   position: relative;
   flex: none;
   width: 0;
-  height: 65.685px;
+  height: 53.416px;
 }
 
 .dd-divider img {
@@ -1275,20 +1309,39 @@ html.js .work-cards {
   transform: translate(-50%, -50%) rotate(90deg);
 }
 
-.dd-hint {
-  display: flex;
-  align-items: center;
-  gap: 5.63px;
-  height: 19.705px;
-  margin: 0;
-  font-size: 13.137px;
-  line-height: 18.767px;
-  color: rgba(0, 0, 0, 0.61);
-  white-space: nowrap;
+/* People and Connected tiles: the part that grows on hover (the composer;
+   the devices, arc and diamond) is its own image over the stage, placed at
+   its Figma position as a share of the 736 x 436 stage. */
+.wk-grow {
+  position: absolute;
+  z-index: 1;
+  max-width: none;
+  transition: transform 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 
-.dd-hint img {
-  flex: none;
+.pp-tile-composer {
+  left: calc(180.66 / 736 * 100%);
+  top: calc(58.74 / 436 * 100%);
+  width: calc(374.68 / 736 * 100%);
+  height: calc(327.68 / 436 * 100%);
+}
+
+.cn-tile-devices {
+  left: calc(25 / 736 * 100%);
+  top: calc(84 / 436 * 100%);
+  width: calc(655 / 736 * 100%);
+  height: calc(352 / 436 * 100%);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .wk-card--people:hover .wk-grow,
+  .wk-card--connected:hover .wk-grow {
+    transform: scale(1.06);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wk-grow { transition: none; }
 }
 
 /* AI Search, People and Connected: 2x (3x) exports of Figma's visible stage, so they fill
@@ -2917,11 +2970,29 @@ html.js .site-footer {
   padding: 23px 32px;
 }
 
+/* Tile colours and their hover colours: the same as the home page's
+   Featured projects tiles (Figma 1354:39845). */
 .cs-card--share { background: #fcf7ec; }
-.cs-card--drag { background: #f7f7f8; }
+.cs-card--drag { background: #f3fafe; }
 .cs-card--connected { background: #fef7f2; }
-.cs-card--people,
-.cs-card--search { background: #fbf5f4; }
+.cs-card--people { background: #f5f4fc; }
+.cs-card--search { background: #fff7f1; }
+
+a.cs-card {
+  transition: background-color 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  a.cs-card--share:hover { background: #fbf4e5; }
+  a.cs-card--drag:hover { background: #f1f8fc; }
+  a.cs-card--connected:hover { background: #fcede3; }
+  a.cs-card--people:hover { background: #f3f3fe; }
+  a.cs-card--search:hover { background: #fff4ec; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  a.cs-card { transition: none; }
+}
 
 /* share.html: Drag and drop (625) first, AI search in Windows (635) second;
    the second card's 574px image runs 1.5px past the card padding on each side (Figma). */
@@ -4252,9 +4323,6 @@ img.sr-hero {
 }
 
 /* ---- work.html cards (Figma 1342:118999) ---- */
-/* People's card is blue on the Work page (#edf3f9); elsewhere it is pink. */
-.pg-work .pg-card--people { background: #edf3f9; }
-
 /* Work page, side by side: the cards in a row share their rows (title,
    subtext, image, impact) through subgrid, so when one subtext wraps to two
    lines the other card's subtext takes the same height and the images stay

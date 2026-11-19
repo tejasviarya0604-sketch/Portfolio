@@ -46,48 +46,6 @@
   });
 })();
 
-// Work page: a hovered card grows 5% and the cards after it slide right to make
-// room, so the row never overlaps and the first card stays on the "FEATURED
-// PROJECTS" line. The last card grows leftwards instead (pushing the others
-// left) so it doesn't run past the right grid line. Leaving the row (not just a
-// card) settles it back, so gliding across the gaps doesn't bounce.
-(function () {
-  var row = document.querySelector(".work-cards");
-  if (!row || typeof gsap === "undefined") return;
-  if (!window.matchMedia("(hover: hover) and (pointer: fine)").matches) return;
-  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-
-  var SCALE = 1.05;
-  var cards = Array.prototype.slice.call(row.querySelectorAll(".wk-card"));
-  var ease = { duration: 0.5, ease: "power3.out", overwrite: "auto" };
-
-  var focus = function (active) {
-    var grow = active.offsetWidth * (SCALE - 1);
-    var i = cards.indexOf(active);
-    var fromRight = i === cards.length - 1;
-    cards.forEach(function (card, j) {
-      card.classList.toggle("is-hovered", j === i);
-      if (j === i) gsap.set(card, { transformOrigin: fromRight ? "100% 50%" : "0% 50%" });
-      gsap.to(card, Object.assign({
-        scale: j === i ? SCALE : 1,
-        x: fromRight ? (j < i ? -grow : 0) : (j > i ? grow : 0)
-      }, ease));
-    });
-  };
-
-  var reset = function () {
-    cards.forEach(function (card) {
-      card.classList.remove("is-hovered");
-      gsap.to(card, Object.assign({ scale: 1, x: 0 }, ease));
-    });
-  };
-
-  cards.forEach(function (card) {
-    card.addEventListener("pointerenter", function () { focus(card); });
-  });
-  row.addEventListener("pointerleave", reset);
-})();
-
 (function () {
   var root = document.documentElement;
   var title = document.querySelector(".hero-title");
