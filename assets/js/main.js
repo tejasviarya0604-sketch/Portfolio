@@ -337,6 +337,24 @@
 
     var workCards = document.querySelector(".work-cards");
 
+    // The tiles row is driven by the page's vertical scroll, so a sideways
+    // swipe/wheel over the work page is turned into vertical scroll: right
+    // moves the row on (scrolls down), left moves it back. preventDefault
+    // also stops the browser's swipe-to-go-back gesture here.
+    var workEl = document.querySelector(".work");
+    if (workEl) {
+      workEl.addEventListener("wheel", function (e) {
+        if (e.ctrlKey) return; // pinch-zoom
+        var dx = e.deltaX;
+        if (!dx && e.shiftKey) dx = e.deltaY; // shift + mouse wheel
+        else if (Math.abs(dx) <= Math.abs(e.deltaY)) return; // mostly vertical: leave it
+        if (!dx) return;
+        e.preventDefault();
+        var unit = e.deltaMode === 1 ? 16 : e.deltaMode === 2 ? window.innerHeight : 1;
+        window.scrollBy(0, dx * unit);
+      }, { passive: false });
+    }
+
     // The about text is centred, so its left edge moves with the viewport (and
     // as its illustrations open); line the SCROLL pill up with it as it shows.
     var aboutPill = document.querySelector(".about-scroll");
