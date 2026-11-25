@@ -351,7 +351,14 @@
         if (!dx) return;
         e.preventDefault();
         var unit = e.deltaMode === 1 ? 16 : e.deltaMode === 2 ? window.innerHeight : 1;
-        window.scrollBy(0, dx * unit);
+        if (window.lenis) {
+          // Keep this wheel event from Lenis (it would add its own vertical
+          // delta) and let Lenis glide the sideways amount instead.
+          e.stopPropagation();
+          window.lenis.scrollTo(window.lenis.targetScroll + dx * unit);
+        } else {
+          window.scrollBy(0, dx * unit);
+        }
       }, { passive: false });
     }
 
@@ -626,7 +633,9 @@
       var st = seq.scrollTrigger;
       var at = function (step) { return st.start + (st.end - st.start) * step / STEPS; };
       var href = link.getAttribute("href");
-      window.scrollTo({ top: href === "#work" ? at(SLIDE_STEP + 2) : 0, behavior: "smooth" });
+      var top = href === "#work" ? at(SLIDE_STEP + 2) : 0;
+      if (window.lenis) window.lenis.scrollTo(top, { duration: 1.6 });
+      else window.scrollTo({ top: top, behavior: "smooth" });
     });
 
     // Arriving from another page at index.html#work or #about (e.g. the case
@@ -641,7 +650,9 @@
       requestAnimationFrame(function () {
         ScrollTrigger.refresh();
         var st = seq.scrollTrigger;
-        window.scrollTo(0, deepLink === "#work" ? st.start + (st.end - st.start) * (SLIDE_STEP + 2) / STEPS : 0);
+        var top = deepLink === "#work" ? st.start + (st.end - st.start) * (SLIDE_STEP + 2) / STEPS : 0;
+        if (window.lenis) window.lenis.scrollTo(top, { immediate: true, force: true });
+        else window.scrollTo(0, top);
       });
     }
   }
